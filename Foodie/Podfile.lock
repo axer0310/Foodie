@@ -1,4 +1,7 @@
 PODS:
+  - Firebase/Auth (4.1.0):
+    - Firebase/Core
+    - FirebaseAuth (= 4.1.0)
   - Firebase/Core (4.1.0):
     - FirebaseAnalytics (= 4.0.3)
     - FirebaseCore (= 4.0.5)
@@ -7,14 +10,37 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
+  - FirebaseAuth (4.1.0):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.5):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
   - FirebaseInstanceID (2.0.1):
     - FirebaseCore (~> 4.0)
+  - GoogleSignIn (4.1.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.13):
+    - GTMSessionFetcher/Full (= 1.1.13)
+  - GTMSessionFetcher/Core (1.1.13)
+  - GTMSessionFetcher/Full (1.1.13):
+    - GTMSessionFetcher/Core (= 1.1.13)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -22,16 +48,22 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - Firebase/Auth
   - Firebase/Core
+  - GoogleSignIn
 
 SPEC CHECKSUMS:
   Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
+  FirebaseAuth: 8d1d2389cf82f891048d6d50d27d044f55ae09a6
   FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
   FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: f9690b8ace4dea98789049539cd57873a506a88e
+PODFILE CHECKSUM: 9408d008b4a85279fc57e2f75a6c518a3dee1c9d
 
 COCOAPODS: 1.4.0
