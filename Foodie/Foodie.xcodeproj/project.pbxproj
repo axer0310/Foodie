@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
+		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
+		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8EB670B92021004200E9228B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670B82021004200E9228B /* AppDelegate.swift */; };
 		8EB670BB2021004200E9228B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670BA2021004200E9228B /* ViewController.swift */; };
-		8EB670BE2021004200E9228B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BC2021004200E9228B /* Main.storyboard */; };
+		8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BC2021004200E9228B /* MainPage.storyboard */; };
 		8EB670C02021004200E9228B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BF2021004200E9228B /* Assets.xcassets */; };
 		8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670C12021004200E9228B /* LaunchScreen.storyboard */; };
 		8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670CA2021048600E9228B /* GoogleService-Info.plist */; };
@@ -18,10 +20,12 @@
 
 /* Begin PBXFileReference section */
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
+		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
+		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8EB670B52021004200E9228B /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB670B82021004200E9228B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EB670BA2021004200E9228B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8EB670BD2021004200E9228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EB670BD2021004200E9228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainPage.storyboard; sourceTree = "<group>"; };
 		8EB670BF2021004200E9228B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EB670C22021004200E9228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EB670C42021004200E9228B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,8 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				8EB670B82021004200E9228B /* AppDelegate.swift */,
+				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
 				8EB670BA2021004200E9228B /* ViewController.swift */,
-				8EB670BC2021004200E9228B /* Main.storyboard */,
+				8EB670BC2021004200E9228B /* MainPage.storyboard */,
+				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
 				8EB670BF2021004200E9228B /* Assets.xcassets */,
 				8EB670C12021004200E9228B /* LaunchScreen.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
@@ -153,10 +159,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
+				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
-				8EB670BE2021004200E9228B /* Main.storyboard in Resources */,
+				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,12 +239,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8EB670BC2021004200E9228B /* Main.storyboard */ = {
+		8EB670BC2021004200E9228B /* MainPage.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8EB670BD2021004200E9228B /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainPage.storyboard;
 			sourceTree = "<group>";
 		};
 		8EB670C12021004200E9228B /* LaunchScreen.storyboard */ = {
