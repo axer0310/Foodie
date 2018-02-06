@@ -11,7 +11,7 @@
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8EB670B92021004200E9228B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670B82021004200E9228B /* AppDelegate.swift */; };
-		8EB670BB2021004200E9228B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670BA2021004200E9228B /* ViewController.swift */; };
+		8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670BA2021004200E9228B /* LoginViewController.swift */; };
 		8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BC2021004200E9228B /* MainPage.storyboard */; };
 		8EB670C02021004200E9228B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BF2021004200E9228B /* Assets.xcassets */; };
 		8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670C12021004200E9228B /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8EB670B52021004200E9228B /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB670B82021004200E9228B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8EB670BA2021004200E9228B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8EB670BA2021004200E9228B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8EB670BD2021004200E9228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainPage.storyboard; sourceTree = "<group>"; };
 		8EB670BF2021004200E9228B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EB670C22021004200E9228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			children = (
 				8EB670B82021004200E9228B /* AppDelegate.swift */,
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
-				8EB670BA2021004200E9228B /* ViewController.swift */,
+				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
 				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
 				8EB670BF2021004200E9228B /* Assets.xcassets */,
@@ -196,11 +196,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Foodie/Pods-Foodie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -215,9 +219,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Foodie/Pods-Foodie-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -231,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB670BB2021004200E9228B /* ViewController.swift in Sources */,
+				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
