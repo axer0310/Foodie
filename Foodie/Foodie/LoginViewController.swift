@@ -14,6 +14,9 @@ import GoogleSignIn
 class LoginViewController: UIViewController, GIDSignInUIDelegate
 {
 
+    
+    @IBOutlet var signButton: GIDSignInButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
