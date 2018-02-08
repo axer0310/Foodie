@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-xh-LYJ" customClass="GIDSignInButton" customModule="Foodie" customModuleProvider="target">
-                                <rect key="frame" x="94" y="251" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7i-0i-Wdq" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="341" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32408737033870294" green="1" blue="0.95168178490829058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="login:" destination="cX1-qh-0fO" eventType="valueChanged" id="pR0-Yx-aDS"/>
-                                </connections>
+                                <color key="backgroundColor" red="0.30369792591925948" green="1" blue="0.31678270996315572" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Gwd-4y-zTx"/>
                     </view>
+                    <connections>
+                        <outlet property="signButton" destination="a7i-0i-Wdq" id="iIV-Bb-R1K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uy-BE-ilF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
