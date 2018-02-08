@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
+		3F786FC1202CA19800644F96 /* ResturantPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F786FC0202CA19800644F96 /* ResturantPage.storyboard */; };
+		3F786FC5202CA37500644F96 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F786FC4202CA37500644F96 /* ResturantViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8EB670B92021004200E9228B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670B82021004200E9228B /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F786FC0202CA19800644F96 /* ResturantPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
+		3F786FC4202CA37500644F96 /* ResturantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				8EB670B82021004200E9228B /* AppDelegate.swift */,
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
+				3F786FC4202CA37500644F96 /* ResturantViewController.swift */,
+				3F786FC0202CA19800644F96 /* ResturantPage.storyboard */,
 				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
 				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
@@ -165,6 +171,7 @@
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
 				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
+				3F786FC1202CA19800644F96 /* ResturantPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
+				3F786FC5202CA37500644F96 /* ResturantViewController.swift in Sources */,
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
