@@ -8,35 +8,35 @@
 
 import UIKit
 import Firebase
-import MapKit
+import GoogleMaps
 
-class ResturantViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager!
-    let regionRad: CLLocationDistance =1000
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture
-        mapView.delgate = self
-        locationManager = CLLocationManager()
-        locationManager.delegate=self
-        locationManager.desiredAccurcy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-//        GIDSignIn.sharedInstance().uiDelegate = self
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRad * 2.0, regionRad * 2.0)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
-    @IBAction func tapPiece(_ gestureRecogniser: UITapGestureRecognizer)
-    guard gestureRecognizer.view != nil else { return }
+class ResturantViewController: UIViewController {
+override func viewDidLoad(){
+    super.viewDidLoad()
+    GMSServices.provideAPIKey("AIzaSyAfqMr44xiniiI-caeIV2bo8lh3z-QfzrE")
+    let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+    view = mapView
     
-    if gestureRecognizer.state == .ended {      // Move the view down and to the right when tapped.
-        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut, animations: {
-            gestureRecognizer.view!.center.x += 100
-            gestureRecognizer.view!.center.y += 100
-        })
-        animator.startAnimation()
-    }}
+    let currentLocation = CLLocationCoordinate2DMake(-33.86, 151.20)
+    let marker = GMSMarker(position: currentLocation)
+    marker.title = "Sydney"
+    marker.map = mapView
+    
+//    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action:"next")
 }
+    
+//override func loadView() {
+//    // Create a GMSCameraPosition that tells the map to display the
+//    // coordinate -33.86,151.20 at zoom level 6.
+//    l
+//    // Creates a marker in the center of the map.
+//    let marker = GMSMarker()
+//    marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+//    marker.title = "Sydney"
+//    marker.snippet = "Australia"
+//    marker.map = mapView
+//}
+//}
+}
+

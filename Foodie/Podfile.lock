@@ -19,6 +19,11 @@ PODS:
     - nanopb (~> 0.3)
   - FirebaseInstanceID (2.0.1):
     - FirebaseCore (~> 4.0)
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
+    - GoogleMaps/Base
   - GoogleSignIn (4.1.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -50,6 +55,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - GoogleMaps
   - GoogleSignIn
 
 SPEC CHECKSUMS:
@@ -58,12 +64,13 @@ SPEC CHECKSUMS:
   FirebaseAuth: 8d1d2389cf82f891048d6d50d27d044f55ae09a6
   FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
   FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 9408d008b4a85279fc57e2f75a6c518a3dee1c9d
+PODFILE CHECKSUM: 57ea55222178e5adf53ca5a86ff377116392b11c
 
 COCOAPODS: 1.4.0
