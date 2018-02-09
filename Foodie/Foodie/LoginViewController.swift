@@ -11,9 +11,10 @@ import Firebase
 import GoogleSignIn
 
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate
+class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate
 {
 
+    var user = User()
     
     @IBOutlet var signButton: GIDSignInButton!
     
@@ -21,13 +22,59 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate
     {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self as! GIDSignInDelegate
+        
+
         
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func login(_ sender: Any)
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?)
     {
-        GIDSignIn.sharedInstance().signIn()
+        print("In sign in")
+        if let error = error
+        {
+            print("Error: \(error) " )
+        }
+        else
+        {
+        
+            guard let authentication = user.authentication else { return }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,accessToken: authentication.accessToken)
+            Auth.auth().signIn(with: credential){(user, error) in
+                if let error = error
+                {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                if let name = user?.displayName
+                {
+                    self.user.name = name
+                }
+                
+                
+                if let storyboard =  UIStoryboard(name: "MainPage", bundle: nil) as? UIStoryboard
+                {
+                    
+                    if let vc = storyboard.instantiateViewController(withIdentifier: "MainPageView") as? MainPageViewController
+                    {
+                        vc.user = self.user
+                        
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+                
+                
+                
+                
+                
+            }
+        }
+        
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
