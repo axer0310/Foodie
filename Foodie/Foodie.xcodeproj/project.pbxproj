@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
+		3F628109202D62FF007C5EDD /* GMSMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F628108202D62FF007C5EDD /* GMSMapView.xib */; };
 		3F786FC1202CA19800644F96 /* ResturantPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F786FC0202CA19800644F96 /* ResturantPage.storyboard */; };
 		3F786FC5202CA37500644F96 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F786FC4202CA37500644F96 /* ResturantViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F628108202D62FF007C5EDD /* GMSMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMSMapView.xib; sourceTree = "<group>"; };
 		3F786FC0202CA19800644F96 /* ResturantPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
 		3F786FC4202CA37500644F96 /* ResturantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
 				3F786FC4202CA37500644F96 /* ResturantViewController.swift */,
 				3F786FC0202CA19800644F96 /* ResturantPage.storyboard */,
+				3F628108202D62FF007C5EDD /* GMSMapView.xib */,
 				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
 				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
@@ -172,6 +175,7 @@
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
 				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
 				3F786FC1202CA19800644F96 /* ResturantPage.storyboard in Resources */,
+				3F628109202D62FF007C5EDD /* GMSMapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +231,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Foodie/Pods-Foodie-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +394,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKCXNRA86D;
 				INFOPLIST_FILE = Foodie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Foodie.CS307.Team19;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKCXNRA86D;
 				INFOPLIST_FILE = Foodie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Foodie.CS307.Team19;
 				PRODUCT_NAME = "$(TARGET_NAME)";
