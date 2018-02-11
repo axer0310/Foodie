@@ -11,9 +11,8 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-
-class LoginViewController: UIViewController {
-    
+class ChatViewController: UIViewController {
+    @IBOutlet var tableView: UITableView!
     
 
 }
