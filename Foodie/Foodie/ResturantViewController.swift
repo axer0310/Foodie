@@ -11,24 +11,35 @@ import Firebase
 import MapKit
 import CoreLocation
 
-class ResturantViewController: UIViewController {
+class ResturantViewController: UIViewController , CLLocationManagerDelegate{
     @IBOutlet weak var Map: MKMapView!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad(){
-        var location = CLLocationCoordinate2DMake(-33.86,
-                                                  151.20)
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+//        var location = CLLocationCoordinate2DMake(-33.86,
+//                                                  151.20)
+//
+//         Map.setRegion(region, animated: true)
+//
+//        var annotation = MKPointAnnotation()
+//        annotation.setCoordinate(location);
+//        annotation.title = "Sydney"
+//        annotation.subtitle="australia"
+//
+//        Map.addAnnotation(annotation)
         
-        var span = MKCoordinateSpanMake(0.2, 0.2)
-        var region = MKCoordinateRegion(center: location, span: span)
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let center = location.coordinate
+        let span = MKCoordinateSpanMake( 0.02,  0.02)
+        let region = MKCoordinateRegion(center: center, span: span)
         Map.setRegion(region, animated: true)
-        
-        var annotation = MKPointAnnotation()
-        annotation.setCoordinate(location);
-        annotation.title = "Sydney"
-        annotation.subtitle="australia"
-        
-        Map.addAnnotation(annotation)
-        
+        Map.showsUserLocation = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
