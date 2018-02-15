@@ -16,6 +16,13 @@ struct Places {
     let latitude: Double
     let longtitude: Double
     let rating: Double
+    
+    init (json: [String: Any]){
+    term = json["term"] as? String ?? ""
+        latitude = json["latitude"] as? Double ?? -1
+        longtitude = json["longtitude"] as? Double ?? -1
+        rating = json["rating"] as? Double ?? -1
+    }
 }
 
 class ResturantViewController: UIViewController , CLLocationManagerDelegate{
@@ -31,16 +38,23 @@ class ResturantViewController: UIViewController , CLLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
-        guard let url = URL(string:jsonUrlString) else { return }
-        URLSession.shared.dataTask(with: url){
-            (data, response, err) in
-            
-            guard let data = data else { return }
-            let dataString = String(data: data, encoding: .utf8)
-            print(dataString)
-            print("do stuff")
-        }.resume()
+//        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
+//        guard let url = URL(string:jsonUrlString) else { return }
+//        URLSession.shared.dataTask(with: url){
+//            (data, response, err) in
+//
+//            guard let data = data else { return }
+////            let dataString = String(data: data, encoding: .utf8)
+////            print(dataString)
+//            do {
+//                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {return}
+//
+//                let places = Places(json: json)
+//                print(places.term)
+//            } catch let jsonErr{
+//                print("Error with json ", jsonErr)
+//            }
+//        }.resume()
         
         //Annotation
         let locations : NSMutableArray = []

@@ -10,27 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Jhf-Qz-tnQ">
-            <objects>
-                <navigationController id="TJX-yb-4N7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xZf-k3-rNh">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="VNd-di-zmX" kind="relationship" relationship="rootViewController" id="6IG-3J-pHb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="93L-3T-xqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-23" y="-100"/>
-        </scene>
         <!--Resturant View Controller-->
         <scene sceneID="eLz-nL-BjV">
             <objects>
                 <viewController id="VNd-di-zmX" customClass="ResturantViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ISq-of-MZc" customClass="GMSMapView" customModule="Foodie">
+                    <view key="view" contentMode="scaleToFill" id="ISq-of-MZc" customClass="MapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
