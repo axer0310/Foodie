@@ -25,9 +25,22 @@ class ResturantViewController: UIViewController , CLLocationManagerDelegate{
     var multi_lat1 = -33.86
     var multi_lon1 = 151.20
     override func viewDidLoad(){
+        super.viewDidLoad()
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
+        guard let url = URL(string:jsonUrlString) else { return }
+        URLSession.shared.dataTask(with: url){
+            (data, response, err) in
+            
+            guard let data = data else { return }
+            let dataString = String(data: data, encoding: .utf8)
+            print(dataString)
+            print("do stuff")
+        }.resume()
         
         //Annotation
         let locations : NSMutableArray = []
