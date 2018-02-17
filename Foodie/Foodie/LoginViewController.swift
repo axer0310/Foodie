@@ -67,23 +67,25 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             print(error.localizedDescription)
             return
         }
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        
-        Auth.auth().signIn(with: credential) { (user, error) in
+        else
+        {
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             
-            if let error = error
-            {
-                print(error)
-                return
-            }
-            if let name = user?.displayName
-            {
-                self.user.name = name
-            }
+            Auth.auth().signIn(with: credential) { (user, error) in
+                
+                if let error = error
+                {
+                    print(error)
+                    return
+                }
+                if let name = user?.displayName
+                {
+                    self.user.name = name
+                }
 
-            self.presentMainView()
+                self.presentMainView()
+            }
         }
-        
         // ...
     }
     
@@ -96,12 +98,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
         if let storyboard =  UIStoryboard(name: "MainPage", bundle: nil) as? UIStoryboard
         {
-            
-            if let vc = storyboard.instantiateViewController(withIdentifier: "MainPageView") as? MainPageViewController
+            if let nav = storyboard.instantiateViewController(withIdentifier: "mainPageNav") as? UINavigationController
             {
-                vc.user = self.user
-                
-                self.present(vc, animated: true, completion: nil)
+                let vc = nav.childViewControllers[0] as? MainPageViewController
+                if let vc = vc
+                {
+                    vc.user = self.user
+                }
+                self.present(nav, animated: true, completion: nil)
             }
         }
     }

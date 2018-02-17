@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7i-0i-Wdq" customClass="GIDSignInButton">
-                                <rect key="frame" x="135" y="399" width="104" height="36"/>
+                                <rect key="frame" x="47" y="460" width="104" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.34620164775596785" green="0.74155175751152569" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8N-nB-3lv" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="135" y="460" width="104" height="36"/>
+                                <rect key="frame" x="225" y="460" width="104" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.62594968671139384" green="1" blue="0.5614865661225712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
