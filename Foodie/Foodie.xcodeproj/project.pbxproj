@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
 		8C76B16D202BC62C0080A70D /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* Party.swift */; };
+		8C76B16E2030F3990080A70D /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B16B202BC5D90080A70D /* Party.storyboard */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8EB670B92021004200E9228B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670B82021004200E9228B /* AppDelegate.swift */; };
@@ -164,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C76B16E2030F3990080A70D /* Party.storyboard in Resources */,
 				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
