@@ -12,8 +12,19 @@ import Firebase
 import GoogleSignIn
 
 class ChatViewController: UIViewController {
+    @IBOutlet weak var chatTitle: UILabel!
+    
     @IBOutlet var tableView: UITableView!
     
+    @IBAction func letsParty(sender: AnyObject) {
+        // after touching this button
+        // it has to work which relates the party server
+    }
+    
+    @IBAction func qrcode(sender: AnyObject) {
+        // after touching this button
+        // it has to work which relates the qrcode
+    }
 
 }
 
