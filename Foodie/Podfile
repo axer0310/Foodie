@@ -9,6 +9,7 @@ target 'Foodie' do
     pod 'GoogleSignIn'
 #    source 'https://github.com/CocoaPods/Specs.git
     pod 'GoogleMaps'
+    pod 'YelpAPI'
   # Pods for Foodie
 
 end
