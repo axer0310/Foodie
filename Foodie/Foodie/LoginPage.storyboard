@@ -13,27 +13,33 @@
         <!--Login-->
         <scene sceneID="gHT-dg-yky">
             <objects>
-                <viewController title="Login" id="cX1-qh-0fO" customClass="LoginViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" title="Login" id="cX1-qh-0fO" customClass="LoginViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqn-1P-4PP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-xh-LYJ" customClass="GIDSignInButton" customModule="Foodie" customModuleProvider="target">
-                                <rect key="frame" x="94" y="251" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7i-0i-Wdq" customClass="GIDSignInButton">
+                                <rect key="frame" x="47" y="460" width="104" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32408737033870294" green="1" blue="0.95168178490829058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="login:" destination="cX1-qh-0fO" eventType="valueChanged" id="pR0-Yx-aDS"/>
-                                </connections>
+                                <color key="backgroundColor" red="0.34620164775596785" green="0.74155175751152569" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8N-nB-3lv" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="225" y="460" width="104" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62594968671139384" green="1" blue="0.5614865661225712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Gwd-4y-zTx"/>
                     </view>
+                    <connections>
+                        <outlet property="fbSignInButton" destination="T8N-nB-3lv" id="cgi-gb-1Np"/>
+                        <outlet property="googleSignButton" destination="a7i-0i-Wdq" id="0ZO-xO-JjJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uy-BE-ilF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="16"/>
+            <point key="canvasLocation" x="586.39999999999998" y="15.742128935532236"/>
         </scene>
     </scenes>
 </document>
