@@ -1,5 +1,6 @@
-*.xcworkspace/
-xcuserdata/
-../.DS_Store
+/Foodie/Foodie.xcworkspace/xcuserdata/
+/Foodie/Foodie.xcodeproj/xcuserdata/
+/Foodie/Pods
+/Foodie/.DS_Store
 .DS_Store
 
