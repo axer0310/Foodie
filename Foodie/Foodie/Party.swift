@@ -20,12 +20,6 @@ class Party: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    
-    
-    
-
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
