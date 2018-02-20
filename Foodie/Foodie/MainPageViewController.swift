@@ -18,5 +18,17 @@ class MainPageViewController: UIViewController
             print(user.name)
     }
     
+    @IBAction func showRestaurant(_ sender: Any)
+    {
+        if let sb = UIStoryboard.init(name: "ResturantPage", bundle: nil) as? UIStoryboard
+        {
+            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+        
+    }
     
 }
