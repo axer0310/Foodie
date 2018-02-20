@@ -30,19 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
         GMSServices.provideAPIKey("AIzaSyAfqMr44xiniiI-caeIV2bo8lh3z-QfzrE")
     //GMSPlacesClient.provideAPIKey("AIzaSyAfqMr44xiniiI-caeIV2bo8lh3z-QfzrE")
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
 
 
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
         
         return true
     }

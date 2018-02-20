@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="6ia-M4-t3Z">
             <objects>
-                <viewController id="oPg-J0-kzS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatView" id="oPg-J0-kzS" customClass="ChatViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IZ3-bo-T6k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,13 +31,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.17943024830550147" green="1" blue="0.67422039668883738" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f51-d8-abf">
-                                <rect key="frame" x="264" y="598" width="111" height="69"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <state key="normal" title="QR Code">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDL-c1-x1v">
                                 <rect key="frame" x="0.0" y="598" width="129" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,10 +43,17 @@
                                 <rect key="frame" x="0.0" y="73" width="375" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f51-d8-abf">
+                                <rect key="frame" x="277" y="598" width="98" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <state key="normal" title="QR Code">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66059688590612464" green="1" blue="0.95729776232196673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="f51-d8-abf" firstAttribute="top" secondItem="LeS-69-fHi" secondAttribute="bottom" constant="8" id="1q4-tU-6mq"/>
                             <constraint firstItem="LeS-69-fHi" firstAttribute="leading" secondItem="YWX-qT-o1U" secondAttribute="leading" id="mhd-1r-4Tp"/>
                             <constraint firstItem="LeS-69-fHi" firstAttribute="top" secondItem="D77-qa-4eo" secondAttribute="bottom" constant="8" id="t8C-3P-sMT"/>
                             <constraint firstItem="YWX-qT-o1U" firstAttribute="trailing" secondItem="LeS-69-fHi" secondAttribute="trailing" id="zbU-yc-GPR"/>

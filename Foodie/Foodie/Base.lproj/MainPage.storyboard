@@ -39,6 +39,9 @@
                                     <constraint firstAttribute="width" constant="90" id="jAK-RY-XEu"/>
                                 </constraints>
                                 <state key="normal" image="chat.png"/>
+                                <connections>
+                                    <action selector="showChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLx-mn-537"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-TD-pZz">
                                 <rect key="frame" x="90" y="577" width="195" height="90"/>
