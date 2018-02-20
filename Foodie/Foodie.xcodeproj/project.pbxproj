@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
 		3F786FC5202CA37500644F96 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F786FC4202CA37500644F96 /* ResturantViewController.swift */; };
-
-		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
-
 		3FF204C02035429800D62EF8 /* testingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF204BF2035429700D62EF8 /* testingAPI.swift */; };
-
+		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8E20332E20386C47003B71A7 /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332920386C47003B71A7 /* chat@2x.png */; };
@@ -136,14 +133,11 @@
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
 				8EAB0681202D3C390046A904 /* MainPageViewController.swift */,
 				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
-
 				837C2343202FA7D00050F05E /* ChatViewController.swift */,
-
 				8E20333520386C6D003B71A7 /* Bolts.framework */,
 				8E20333320386C6D003B71A7 /* FBSDKCoreKit.framework */,
 				8E20333620386C6D003B71A7 /* FBSDKLoginKit.framework */,
 				8E20333420386C6D003B71A7 /* FBSDKShareKit.framework */,
-
 				8EB670BF2021004200E9228B /* Assets.xcassets */,
 				8EB670C12021004200E9228B /* LaunchScreen.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
@@ -268,11 +262,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-
 				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
-
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -280,11 +271,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
-
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

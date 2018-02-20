@@ -6,8 +6,9 @@ target 'Foodie' do
   use_frameworks!
 
 
+
 #Firebase for Database 
-	pod 'Firebase/Core'
+
 
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
@@ -16,6 +17,7 @@ target 'Foodie' do
     pod 'GoogleSignIn'
 #    source 'https://github.com/CocoaPods/Specs.git
     pod 'GoogleMaps'
+
 
 # for chat room database
 pod 'Firebase/RemoteConfig'
