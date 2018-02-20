@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
+<<<<<<< HEAD
 		3F786FC5202CA37500644F96 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F786FC4202CA37500644F96 /* ResturantViewController.swift */; };
 		3FF204C02035429800D62EF8 /* testingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF204BF2035429700D62EF8 /* testingAPI.swift */; };
 		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
+=======
+		8C76B16D202BC62C0080A70D /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* Party.swift */; };
+		8C76B16E2030F3990080A70D /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B16B202BC5D90080A70D /* Party.storyboard */; };
+>>>>>>> Samrat
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8E20332E20386C47003B71A7 /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332920386C47003B71A7 /* chat@2x.png */; };
@@ -37,7 +42,12 @@
 		3F786FC4202CA37500644F96 /* ResturantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
 		3FF204BF2035429700D62EF8 /* testingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingAPI.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+=======
+		8C76B16B202BC5D90080A70D /* Party.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Party.storyboard; path = "/Users/Samrat/Desktop/CS307 - Foodie/Foodie/Foodie/Foodie/Party.storyboard"; sourceTree = "<absolute>"; };
+		8C76B16C202BC62C0080A70D /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+>>>>>>> Samrat
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8E20332920386C47003B71A7 /* chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat@2x.png"; sourceTree = "<group>"; };
@@ -126,8 +136,12 @@
 				8EAB0683202D3CD60046A904 /* User.swift */,
 				8EB670B82021004200E9228B /* AppDelegate.swift */,
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
+<<<<<<< HEAD
 				3F786FC4202CA37500644F96 /* ResturantViewController.swift */,
 				3FF204BF2035429700D62EF8 /* testingAPI.swift */,
+=======
+				8C76B16B202BC5D90080A70D /* Party.storyboard */,
+>>>>>>> Samrat
 				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
@@ -140,6 +154,7 @@
 				8E20333420386C6D003B71A7 /* FBSDKShareKit.framework */,
 				8EB670BF2021004200E9228B /* Assets.xcassets */,
 				8EB670C12021004200E9228B /* LaunchScreen.storyboard */,
+				8C76B16C202BC62C0080A70D /* Party.swift */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
 			);
@@ -216,9 +231,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				8E7FF9D2203CD4CB00370B98 /* ResturantPage.storyboard in Resources */,
 				8E20332E20386C47003B71A7 /* chat@2x.png in Resources */,
 				8E20332F20386C47003B71A7 /* party@2x.png in Resources */,
+=======
+				8C76B16E2030F3990080A70D /* Party.storyboard in Resources */,
+>>>>>>> Samrat
 				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8E20333120386C47003B71A7 /* restaurant@2x.png in Resources */,
 				8E20333220386C47003B71A7 /* restaurant@3x.png in Resources */,
@@ -309,9 +328,13 @@
 			files = (
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
+<<<<<<< HEAD
 				3FF204C02035429800D62EF8 /* testingAPI.swift in Sources */,
 				3F786FC5202CA37500644F96 /* ResturantViewController.swift in Sources */,
 				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
+=======
+				8C76B16D202BC62C0080A70D /* Party.swift in Sources */,
+>>>>>>> Samrat
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
 				8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */,
 			);
@@ -452,11 +475,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = DKCXNRA86D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Foodie",
 				);
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> Samrat
 				INFOPLIST_FILE = Foodie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -473,11 +500,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = DKCXNRA86D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Foodie",
 				);
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> Samrat
 				INFOPLIST_FILE = Foodie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
