@@ -28,6 +28,9 @@
                                     <constraint firstAttribute="width" constant="90" id="dYl-94-EZ6"/>
                                 </constraints>
                                 <state key="normal" image="restaurant.png"/>
+                                <connections>
+                                    <action selector="showRestaurant:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKX-wL-HAO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQi-y0-W5B">
                                 <rect key="frame" x="285" y="577" width="90" height="90"/>

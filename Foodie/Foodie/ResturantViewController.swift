@@ -9,34 +9,74 @@
 import UIKit
 import Firebase
 import MapKit
+import CoreLocation
 
-class ResturantViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager!
-    let regionRad: CLLocationDistance =1000
+struct Places {
+    let term: String
+    let latitude: Double
+    let longtitude: Double
+    let rating: Double
+    
+    init (json: [String: Any]){
+    term = json["term"] as? String ?? ""
+        latitude = json["latitude"] as? Double ?? -1
+        longtitude = json["longtitude"] as? Double ?? -1
+        rating = json["rating"] as? Double ?? -1
+    }
+}
+
+class ResturantViewController: UIViewController , CLLocationManagerDelegate{
+    @IBOutlet weak var Map: MKMapView!
+    
+    let locationManager = CLLocationManager()
+    var multi_lat1 = -33.86
+    var multi_lon1 = 151.20
     override func viewDidLoad(){
         super.viewDidLoad()
-        (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture
-        mapView.delgate = self
-        locationManager = CLLocationManager()
-        locationManager.delegate=self
-        locationManager.desiredAccurcy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-//        GIDSignIn.sharedInstance().uiDelegate = self
         
-        // Do any additional setup after loading the view, typically from a nib.
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//        
+//        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
+//        guard let url = URL(string:jsonUrlString) else { return }
+//        URLSession.shared.dataTask(with: url){
+//            (data, response, err) in
+//
+//            guard let data = data else { return }
+//            let dataString = String(data: data, encoding: .utf8)
+//            print(dataString ?? "")
+//            do {
+//                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {return}
+//
+//                let places = Places(json: json)
+//                print(places.term)
+//            } catch let jsonErr{
+//                print("Error with json ", jsonErr)
+//            }
+//        }.resume()
+//        
+//        //Annotation
+//        let locations : NSMutableArray = []
+//        var location = CLLocationCoordinate2D()
+//        let anno1 = MKPointAnnotation()
+//        
+//        location.latitude = multi_lat1
+//        location.longitude = multi_lon1
+//        anno1.coordinate = CLLocationCoordinate2D(latitude: multi_lat1, longitude: multi_lon1)
+//        locations.add(anno1)
+//        
+//        Map.addAnnotation(locations as! MKAnnotation)
     }
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRad * 2.0, regionRad * 2.0)
-        mapView.setRegion(coordinateRegion, animated: true)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let center = location.coordinate
+        let span = MKCoordinateSpanMake(0.02,  0.02)
+        let region = MKCoordinateRegion(center: center, span: span)
+        Map.setRegion(region, animated: true)
+        Map.showsUserLocation = true
     }
-    @IBAction func tapPiece(_ gestureRecogniser: UITapGestureRecognizer)
-    guard gestureRecognizer.view != nil else { return }
-    
-    if gestureRecognizer.state == .ended {      // Move the view down and to the right when tapped.
-        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut, animations: {
-            gestureRecognizer.view!.center.x += 100
-            gestureRecognizer.view!.center.y += 100
-        })
-        animator.startAnimation()
-    }}
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
