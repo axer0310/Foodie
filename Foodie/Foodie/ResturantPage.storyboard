@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Jhf-Qz-tnQ">
-            <objects>
-                <navigationController id="TJX-yb-4N7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xZf-k3-rNh">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="VNd-di-zmX" kind="relationship" relationship="rootViewController" id="6IG-3J-pHb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="93L-3T-xqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-23" y="-100"/>
-        </scene>
-        <!--View Controller-->
+        <!--Resturant View Controller-->
         <scene sceneID="eLz-nL-BjV">
             <objects>
-                <viewController id="VNd-di-zmX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ISq-of-MZc" customClass="GMSMapView">
+                <viewController storyboardIdentifier="RestaurantView" id="VNd-di-zmX" customClass="ResturantViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ISq-of-MZc" customClass="MapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OJ2-mv-Q4u">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OJ2-mv-Q4u" firstAttribute="width" secondItem="ISq-of-MZc" secondAttribute="width" id="BiN-h7-RxN"/>
+                            <constraint firstItem="OJ2-mv-Q4u" firstAttribute="height" secondItem="ISq-of-MZc" secondAttribute="height" id="CQU-PG-lzV"/>
+                            <constraint firstItem="OJ2-mv-Q4u" firstAttribute="centerX" secondItem="TNg-GL-WUZ" secondAttribute="centerX" id="EvV-e2-cWw"/>
+                            <constraint firstItem="OJ2-mv-Q4u" firstAttribute="centerY" secondItem="TNg-GL-WUZ" secondAttribute="centerY" id="Sug-Qf-Wvg"/>
+                            <constraint firstItem="OJ2-mv-Q4u" firstAttribute="height" secondItem="ISq-of-MZc" secondAttribute="height" id="vkB-bi-jM4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TNg-GL-WUZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bby-JC-Vg4"/>
+                    <connections>
+                        <outlet property="Map" destination="OJ2-mv-Q4u" id="mf9-YS-x3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpi-PA-GHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="-100"/>
+            <point key="canvasLocation" x="812" y="-100.29985007496252"/>
         </scene>
     </scenes>
 </document>
