@@ -1,5 +1,4 @@
-*.xcworkspace/
-xcuserdata/
+/Foodie/Foodie.xcworkspace/xcuserdata/
 ../.DS_Store
 .DS_Store
 
