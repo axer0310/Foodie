@@ -13,7 +13,7 @@
         <!--Party-->
         <scene sceneID="da3-Wt-VUf">
             <objects>
-                <viewController title="Party" id="u1v-Yp-RCf" customClass="Party" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PartyView" title="Party" id="u1v-Yp-RCf" customClass="PartyViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RL7-uZ-Z1W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

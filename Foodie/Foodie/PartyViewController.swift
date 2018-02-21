@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Party: UIViewController, UITableViewDelegate, UITableViewDataSource
+class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10;

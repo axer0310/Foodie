@@ -46,6 +46,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-TD-pZz">
                                 <rect key="frame" x="90" y="577" width="195" height="90"/>
                                 <state key="normal" image="party.png"/>
+                                <connections>
+                                    <action selector="showParty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2iM-zI-ZRV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
