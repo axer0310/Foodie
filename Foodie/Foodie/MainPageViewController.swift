@@ -31,4 +31,14 @@ class MainPageViewController: UIViewController
         
     }
     
+    @IBAction func showChat(_ sender: Any)
+    {
+        if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
+        {
+            if let vc = sb.instantiateViewController(withIdentifier: "ChatView") as? ChatViewController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }
