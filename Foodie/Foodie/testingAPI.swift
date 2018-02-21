@@ -1,35 +1,56 @@
-////
-////  File.swift
-////  Foodie
-////
-////  Created by Smile. on 14/02/2018.
-////  Copyright © 2018 Foodie. All rights reserved.
-////
 //
-//typealias ServiceResponse = (JSON, NSError?) -> Void
-//import Foundation
-//class testingAPI: NSObject {
-//static let sharedInstance = RestApiManager()
+//  YLPClient+Futures.swift
+//  YelpAPISample
 //
-//let baseURL = "http://api.randomuser.me/"
-//
-//func getRandomUser(onCompletion: (JSON) -> Void) {
-//    let route = baseURL
-//    makeHTTPGetRequest(route, onCompletion: { json, err in
-//        onCompletion(json as JSON)
-//    })
-//}
-//
-//func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
-//    let request = NSMutableURLRequest(URL: NSURL(string: path)!)
-//    
-//    let session = NSURLSession.sharedSession()
-//    
-//    let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-//        let json:JSON = JSON(data: data)
-//        onCompletion(json, error)
-//    })
-//    task.resume()
-//}
-//}
 
+import YelpAPI
+//import BrightFutures
+
+public extension YLPClient {
+    static func authorize(withAppId appId: String, secret: String) -> Future<YLPClient, NSError> {
+        return makeFutureFromCompletionHandler { completionHandler in
+            YLPClient.authorize(withAppId: appId, secret: secret, completionHandler: completionHandler)
+        }
+    }
+    
+    func business(withId id: String) -> Future<YLPBusiness, NSError> {
+        return makeFutureFromCompletionHandler { completionHandler in
+            self.business(withId: id, completionHandler: completionHandler)
+        }
+    }
+    
+    func business(withPhoneNumber phoneNumber: String) -> Future<YLPSearch, NSError> {
+        return makeFutureFromCompletionHandler { completionHandler in
+            self.business(withPhoneNumber: phoneNumber, completionHandler: completionHandler)
+        }
+    }
+    
+    func search(withQuery query: YLPQuery) -> Future<YLPSearch, NSError> {
+        return makeFutureFromCompletionHandler { completionHandler in
+            self.search(with: query, completionHandler: completionHandler)
+        }
+    }
+    
+    func reviewsForBusiness(withId businessId: String, locale: String? = nil) -> Future<YLPBusinessReviews, NSError> {
+        return makeFutureFromCompletionHandler { completionHandler in
+            self.reviewsForBusiness(withId: businessId, locale: locale, completionHandler: completionHandler)
+        }
+    }
+}
+
+private typealias CompletionHandler<T> = (T?, Error?) -> Void
+
+// Provides a completion handler that, when invoked, completes a future
+private func makeFutureFromCompletionHandler<T>(_ f: (@escaping CompletionHandler<T>) -> Void) -> Future<T, NSError> {
+    let promise = Promise<T, NSError>()
+    let completionHandler: CompletionHandler<T> = { value, error in
+        if let value = value {
+            promise.success(value)
+        } else {
+            promise.failure(error! as NSError)
+        }
+    }
+    
+    f(completionHandler)
+    return promise.future
+}

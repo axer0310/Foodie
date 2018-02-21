@@ -10,34 +10,24 @@ import UIKit
 import Firebase
 import MapKit
 import CoreLocation
+import YelpAPI
 
-struct Places {
-    let term: String
-    let latitude: Double
-    let longtitude: Double
-    let rating: Double
-    
-    init (json: [String: Any]){
-    term = json["term"] as? String ?? ""
-        latitude = json["latitude"] as? Double ?? -1
-        longtitude = json["longtitude"] as? Double ?? -1
-        rating = json["rating"] as? Double ?? -1
-    }
-}
-
-class ResturantViewController: UIViewController , CLLocationManagerDelegate{
+class ResturantViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var Map: MKMapView!
     
     let locationManager = CLLocationManager()
-    var multi_lat1 = -33.86
-    var multi_lon1 = 151.20
+    
+    var center: CLLocationCoordinate2D!
+    var annotation: Array<MKPointAnnotation>!
+
     override func viewDidLoad(){
         super.viewDidLoad()
         
-//        locationManager.delegate = self
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
-//        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+//
 //        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
 //        guard let url = URL(string:jsonUrlString) else { return }
 //        URLSession.shared.dataTask(with: url){
