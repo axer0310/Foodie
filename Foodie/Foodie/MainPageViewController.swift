@@ -41,4 +41,14 @@ class MainPageViewController: UIViewController
             }
         }
     }
+    
+    @IBAction func showParty(_ sender: Any) {
+        if let sb = UIStoryboard.init(name: "Party", bundle: nil) as? UIStoryboard
+        {
+            if let vc = sb.instantiateViewController(withIdentifier: "PartyView") as? PartyViewController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }
