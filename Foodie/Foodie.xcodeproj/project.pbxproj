@@ -12,7 +12,6 @@
 		3FF204C02035429800D62EF8 /* testingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF204BF2035429700D62EF8 /* testingAPI.swift */; };
 		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
-		8C76B16E2030F3990080A70D /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C76B16B202BC5D90080A70D /* Party.storyboard */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8E20332E20386C47003B71A7 /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332920386C47003B71A7 /* chat@2x.png */; };
@@ -24,6 +23,7 @@
 		8E20333820386C6D003B71A7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E20333420386C6D003B71A7 /* FBSDKShareKit.framework */; };
 		8E20333920386C6D003B71A7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E20333520386C6D003B71A7 /* Bolts.framework */; };
 		8E20333A20386C6D003B71A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E20333620386C6D003B71A7 /* FBSDKLoginKit.framework */; };
+		8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2DEB7D203E2E5F0067717B /* Party.storyboard */; };
 		8E7FF9D2203CD4CB00370B98 /* ResturantPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */; };
 		8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0681202D3C390046A904 /* MainPageViewController.swift */; };
 		8EAB0684202D3CD60046A904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0683202D3CD60046A904 /* User.swift */; };
@@ -40,7 +40,6 @@
 		3FF204BF2035429700D62EF8 /* testingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingAPI.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
 		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		8C76B16B202BC5D90080A70D /* Party.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Party.storyboard; path = "/Users/Samrat/Desktop/CS307 - Foodie/Foodie/Foodie/Foodie/Party.storyboard"; sourceTree = "<absolute>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		8E20333420386C6D003B71A7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		8E20333520386C6D003B71A7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		8E20333620386C6D003B71A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		8E2DEB7D203E2E5F0067717B /* Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Party.storyboard; sourceTree = "<group>"; };
 		8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
 		8EAB0681202D3C390046A904 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		8EAB0683202D3CD60046A904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -132,7 +132,6 @@
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
 				3F786FC4202CA37500644F96 /* ResturantViewController.swift */,
 				3FF204BF2035429700D62EF8 /* testingAPI.swift */,
-				8C76B16B202BC5D90080A70D /* Party.storyboard */,
 				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
@@ -146,6 +145,7 @@
 				8EB670BF2021004200E9228B /* Assets.xcassets */,
 				8EB670C12021004200E9228B /* LaunchScreen.storyboard */,
 				8C76B16C202BC62C0080A70D /* PartyViewController.swift */,
+				8E2DEB7D203E2E5F0067717B /* Party.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
 			);
@@ -225,13 +225,13 @@
 				8E7FF9D2203CD4CB00370B98 /* ResturantPage.storyboard in Resources */,
 				8E20332E20386C47003B71A7 /* chat@2x.png in Resources */,
 				8E20332F20386C47003B71A7 /* party@2x.png in Resources */,
-				8C76B16E2030F3990080A70D /* Party.storyboard in Resources */,
 				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8E20333120386C47003B71A7 /* restaurant@2x.png in Resources */,
 				8E20333220386C47003B71A7 /* restaurant@3x.png in Resources */,
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
+				8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */,
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
 				8E20333020386C47003B71A7 /* restaurant@1x.png in Resources */,
 				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
@@ -271,6 +271,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -280,6 +281,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

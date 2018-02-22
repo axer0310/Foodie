@@ -27,7 +27,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self as! GIDSignInDelegate
         fbSignInButton.delegate = self
-
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -56,6 +55,44 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 {
                     self.user.name = name
                 }
+                if let url = user?.photoURL as? URL
+                {
+                    do
+                    {
+                        if let data = try? Data(contentsOf: url)
+                        {
+                            self.user.profilePic = UIImage(data: data)!
+                        }
+                    }
+                    catch
+                    {
+                        print(error)
+                    }
+                }
+                
+                self.user.id = self.randomString(length: 16)
+                
+                //Accessing user's friendlist
+//                let jsonUrl = URL(string: "https://foodie-1e106.firebaseio.com/")
+//                do
+//                {
+//                    if let data = try? Data(contentsOf: jsonUrl!)
+//                    {
+//                        let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! [String:Any]
+//                        print(json)
+//                    }
+//                }
+//                catch
+//                {
+//                    print(error)
+//                }
+
+                
+                
+                
+                
+               
+                
                 self.presentMainView()
             }
         }
@@ -108,6 +145,21 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 self.present(nav, animated: true, completion: nil)
             }
         }
+    }
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
     }
     
     override func didReceiveMemoryWarning() {

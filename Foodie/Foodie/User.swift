@@ -7,16 +7,23 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 class User
 {
     var name : String
     var gender : String
-    var id : Int
-    
+    var id : String
+    var profilePic: UIImage
+    var coordinate: CLLocation
+    var friendList: [String]
     init()
     {
         name = ""
         gender=""
-        id = 0
+        id = ""
+        profilePic = UIImage()
+        coordinate = CLLocation()
+        friendList = []
     }
 }
