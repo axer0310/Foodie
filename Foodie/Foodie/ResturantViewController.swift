@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import Firebase
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
-    
+class MapViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var Search: UISearchBar!
+        var businesses: [Business]!
     var locationManager : CLLocationManager!
+    var annot : MKClusterAnnotation!
     override func viewDidLoad() {
         super.viewDidLoad()
         let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
@@ -24,6 +25,24 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
+        let searchBar = UISearchBar()
+        searchBar.delegate = self as! UISearchBarDelegate
+        
+        self.navigationItem.titleView = searchBar
+        mapView.delegate = self
+        self.view.addSubview(mapView)
+        
+        Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+//            self.tableView.reloadData()
+            
+            for business in businesses {
+                print(business.name!)
+                print(business.address!)
+                
+                self.addAnnotationAtAddress(address: business.address!, title: business.name!)
+            }
+            } as! ([Business]?, Error?) -> Void)
             // Do any additional setup after loading the view.
         }
     
@@ -96,7 +115,5 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         
         return annotationView
     }
-    
-    
     
 }

@@ -93,13 +93,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3FB34B58203E2D88000821F7 /* APIs */ = {
+		3FB34B58203E2D88000821F7 /* APIs&Map */ = {
 			isa = PBXGroup;
 			children = (
 				3FB34B5B203E2DA4000821F7 /* YelpClient.swift */,
 				3FB34B5D203E2DD1000821F7 /* Business.swift */,
 			);
-			path = APIs;
+			path = "APIs&Map";
 			sourceTree = "<group>";
 		};
 		8E20332820386C47003B71A7 /* icons */ = {
@@ -136,11 +136,11 @@
 		8EB670B72021004200E9228B /* Foodie */ = {
 			isa = PBXGroup;
 			children = (
-				3FB34B58203E2D88000821F7 /* APIs */,
+				3FB34B58203E2D88000821F7 /* APIs&Map */,
 				8EAB0683202D3CD60046A904 /* User.swift */,
+				3F786FC4202CA37500644F96 /* ResturantViewController.swift */,
 				8EB670B82021004200E9228B /* AppDelegate.swift */,
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
-				3F786FC4202CA37500644F96 /* ResturantViewController.swift */,
 				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
