@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
+class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var Search: UISearchBar!
         var businesses: [Business]!
@@ -39,7 +39,6 @@ class MapViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDele
             for business in businesses {
                 print(business.name!)
                 print(business.address!)
-                
                 self.addAnnotationAtAddress(address: business.address!, title: business.name!)
             }
             } as! ([Business]?, Error?) -> Void)
@@ -114,6 +113,17 @@ class MapViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDele
         annotationView!.image = UIImage(named: "customAnnotationImage")
         
         return annotationView
+    }
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            self.tableView.reloadData()
+            
+            for business in businesses {
+                print(business.name!)
+                print(business.address!)
+            }
+        })
     }
     
 }

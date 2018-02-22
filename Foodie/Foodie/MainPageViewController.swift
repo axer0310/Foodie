@@ -22,7 +22,7 @@ class MainPageViewController: UIViewController
     {
         if let sb = UIStoryboard.init(name: "ResturantPage", bundle: nil) as? UIStoryboard
         {
-            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? MapViewController
+            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
             {
                 self.present(vc, animated: true, completion: nil)
             }
