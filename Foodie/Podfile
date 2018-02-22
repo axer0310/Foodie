@@ -4,16 +4,22 @@
 target 'Foodie' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+
+#Firebase for Database 
+
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'GoogleMaps'
     pod 'YelpAPI', '~> 2.0'
-    pod 'BrightFutures', '~> 5.1'
-    pod 'AFNetworking', '~> 2.4'
+    pod 'AFNetworking', '~> 2.5’
     pod 'BDBOAuth1Manager'
     pod 'SVPullToRefresh'
+
+
+# for chat room database
+pod 'Firebase/RemoteConfig'
 
   # Pods for Foodie
 

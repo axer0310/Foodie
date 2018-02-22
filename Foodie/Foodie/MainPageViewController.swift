@@ -22,7 +22,7 @@ class MainPageViewController: UIViewController
     {
         if let sb = UIStoryboard.init(name: "ResturantPage", bundle: nil) as? UIStoryboard
         {
-            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
+            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? MapViewController
             {
                 self.present(vc, animated: true, completion: nil)
             }
@@ -31,4 +31,24 @@ class MainPageViewController: UIViewController
         
     }
     
+    @IBAction func showChat(_ sender: Any)
+    {
+        if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
+        {
+            if let vc = sb.instantiateViewController(withIdentifier: "ChatView") as? ChatViewController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @IBAction func showParty(_ sender: Any) {
+        if let sb = UIStoryboard.init(name: "Party", bundle: nil) as? UIStoryboard
+        {
+            if let vc = sb.instantiateViewController(withIdentifier: "PartyView") as? PartyViewController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }

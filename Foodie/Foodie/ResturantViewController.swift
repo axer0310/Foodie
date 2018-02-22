@@ -10,63 +10,93 @@ import UIKit
 import Firebase
 import MapKit
 import CoreLocation
-import YelpAPI
 
-class ResturantViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-    @IBOutlet weak var Map: MKMapView!
+class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
-    let locationManager = CLLocationManager()
-    
-    var center: CLLocationCoordinate2D!
-    var annotation: Array<MKPointAnnotation>!
-
-    override func viewDidLoad(){
+    @IBOutlet weak var mapView: MKMapView!
+    var locationManager : CLLocationManager!
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
+        goToLocation(location: centerLocation)
+        locationManager = CLLocationManager()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
-//
-//        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
-//        guard let url = URL(string:jsonUrlString) else { return }
-//        URLSession.shared.dataTask(with: url){
-//            (data, response, err) in
-//
-//            guard let data = data else { return }
-//            let dataString = String(data: data, encoding: .utf8)
-//            print(dataString ?? "")
-//            do {
-//                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {return}
-//
-//                let places = Places(json: json)
-//                print(places.term)
-//            } catch let jsonErr{
-//                print("Error with json ", jsonErr)
-//            }
-//        }.resume()
-//        
-//        //Annotation
-//        let locations : NSMutableArray = []
-//        var location = CLLocationCoordinate2D()
-//        let anno1 = MKPointAnnotation()
-//        
-//        location.latitude = multi_lat1
-//        location.longitude = multi_lon1
-//        anno1.coordinate = CLLocationCoordinate2D(latitude: multi_lat1, longitude: multi_lon1)
-//        locations.add(anno1)
-//        
-//        Map.addAnnotation(locations as! MKAnnotation)
+            // Do any additional setup after loading the view.
+        }
+    
+    func goToLocation(location: CLLocation) {
+        let span = MKCoordinateSpanMake(0.1, 0.1)
+        let region = MKCoordinateRegionMake(location.coordinate, span)
+        mapView.setRegion(region, animated: false)
     }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        let center = location.coordinate
-        let span = MKCoordinateSpanMake(0.02,  0.02)
-        let region = MKCoordinateRegion(center: center, span: span)
-        Map.setRegion(region, animated: true)
-        Map.showsUserLocation = true
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.1, 0.1)
+            let region = MKCoordinateRegionMake(location.coordinate, span)
+            mapView.setRegion(region, animated: false)
+        }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = "An annotation!"
+        mapView.addAnnotation(annotation)
     }
+    
+    // add an annotation with an address: String
+    func addAnnotationAtAddress(address: String, title: String) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            if let placemarks = placemarks {
+                if placemarks.count != 0 {
+                    let coordinate = placemarks.first!.location!
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate.coordinate
+                    annotation.title = title
+                    self.mapView.addAnnotation(annotation)
+                }
+            }
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "customAnnotationView"
+        func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+            let identifier = "customAnnotationView"
+            // custom pin annotation
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+            if (annotationView == nil) {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            }
+            else {
+                annotationView!.annotation = annotation
+            }
+            annotationView!.pinTintColor = UIColor.green
+            
+            return annotationView
+        }
+        // custom image annotation
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if (annotationView == nil) {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        annotationView!.image = UIImage(named: "customAnnotationImage")
+        
+        return annotationView
+    }
+    
+    
+    
 }
