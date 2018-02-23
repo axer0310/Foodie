@@ -7,76 +7,128 @@
 //
 
 import UIKit
-import Firebase
 import MapKit
 import CoreLocation
 
-struct Places {
-    let term: String
-    let latitude: Double
-    let longtitude: Double
-    let rating: Double
-    
-    init (json: [String: Any]){
-    term = json["term"] as? String ?? ""
-        latitude = json["latitude"] as? Double ?? -1
-        longtitude = json["longtitude"] as? Double ?? -1
-        rating = json["rating"] as? Double ?? -1
+class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var Search: UISearchBar!
+    var businesses: [Business]!
+    @IBAction func BackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-}
-
-class ResturantViewController: UIViewController , CLLocationManagerDelegate{
-    @IBOutlet weak var Map: MKMapView!
+    var locationMan : CLLocationManager!
+    //var annot : MKClusterAnnotation!
     
-    let locationManager = CLLocationManager()
-    var multi_lat1 = -33.86
-    var multi_lon1 = 151.20
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
+//        let centerLocation = CLLocation(latitude: 40.4237, longitude: 86.9212)
+        //goToLocation(location: centerLocation)
         
-//        locationManager.delegate = self
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
-//        
-//        let jsonUrlString = "https://api.yelp.com/v3/businesses/search"
-//        guard let url = URL(string:jsonUrlString) else { return }
-//        URLSession.shared.dataTask(with: url){
-//            (data, response, err) in
+        locationMan = CLLocationManager()
+        locationMan.delegate = self
+        locationMan.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationMan.distanceFilter = 200
+        locationMan.requestWhenInUseAuthorization()
+       
+        let Search = UISearchBar()
+        Search.delegate = self as? UISearchBarDelegate
+        
+//        self.navigationItem.titleView = Search
+//        mapView.delegate = self
+//        self.view.addSubview(mapView)
+        
+        Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
+            
+            self.businesses = businesses
+            if let businesses = businesses {
+                for business in businesses {
+                    print(business.name!)
+                    print(business.address!)
+                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
+                }
+            }
+            
+        }
+        )
+//        Business.searchWithTerm(term: "Restaurants", sort: .distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: Error!) -> Void in
+//            self.businesses = businesses
+////            self.tableView.reloadData()
 //
-//            guard let data = data else { return }
-//            let dataString = String(data: data, encoding: .utf8)
-//            print(dataString ?? "")
-//            do {
-//                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {return}
-//
-//                let places = Places(json: json)
-//                print(places.term)
-//            } catch let jsonErr{
-//                print("Error with json ", jsonErr)
+//            for business in businesses {
+//                print(business.name!)
+//                print(business.address!)
+//                self.addAnnotationAtAddress(address: business.address!, title: business.name!)
 //            }
-//        }.resume()
-//        
-//        //Annotation
-//        let locations : NSMutableArray = []
-//        var location = CLLocationCoordinate2D()
-//        let anno1 = MKPointAnnotation()
-//        
-//        location.latitude = multi_lat1
-//        location.longitude = multi_lon1
-//        anno1.coordinate = CLLocationCoordinate2D(latitude: multi_lat1, longitude: multi_lon1)
-//        locations.add(anno1)
-//        
-//        Map.addAnnotation(locations as! MKAnnotation)
+//        };
+        
     }
+    func goToLocation(location: CLLocation) {
+        let span = MKCoordinateSpanMake(0.1, 0.1)
+        let region = MKCoordinateRegionMake(location.coordinate, span)
+        mapView.setRegion(region, animated: false)
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            locationMan.startUpdatingLocation()
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        let center = location.coordinate
-        let span = MKCoordinateSpanMake(0.02,  0.02)
-        let region = MKCoordinateRegion(center: center, span: span)
-        Map.setRegion(region, animated: true)
-        Map.showsUserLocation = true
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.1, 0.1)
+            let region = MKCoordinateRegionMake(location.coordinate, span)
+            self.mapView.setRegion(region, animated: true)
+        }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+//    func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = coordinate
+//        annotation.title = "An annotation!"
+//        mapView.addAnnotation(annotation)
+//    }
+    
+    // add an annotation with an address: String
+    func addAnnotationAtAddress(address: String, title: String, subtitle: String) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            if let placemarks = placemarks {
+                if placemarks.count != 0 {
+                    let coordinate = placemarks.first!.location!
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate.coordinate
+                    annotation.title = title
+                    annotation.subtitle = subtitle
+                    self.mapView.addAnnotation(annotation)
+                }
+            }
+        }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "customAnnotationView"
+        // custom pin annotation
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        if (annotationView == nil) {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        annotationView!.pinTintColor = UIColor.green
+        
+        return annotationView
+    }
+    
+    func searchBar(Search: UISearchBar, textDidChange searchText: String) {
+        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            
+            for business in businesses {
+                print(business.name!)
+                print(business.address!)
+            }
+            } as! ([Business]?, Error?) -> Void)
+    }
+    
 }
