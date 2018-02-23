@@ -13,9 +13,10 @@ import Firebase
 class MainPageViewController: UIViewController
 {
     var user = User()
+    
     override func viewDidLoad()
     {
-            print(user.name)
+        print(user.name)
     }
     
     @IBAction func showRestaurant(_ sender: Any)
@@ -41,12 +42,19 @@ class MainPageViewController: UIViewController
         }
     }
     
+
     @IBAction func showChatView(_ sender: Any) {
         if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
         {
             if let vc = sb.instantiateViewController(withIdentifier: "ChatNavigationController") as? UINavigationController
+
+    @IBAction func showParty(_ sender: Any) {
+        if let storyboard =  UIStoryboard(name: "Party", bundle: nil) as? UIStoryboard
+        {
+            if let nav = storyboard.instantiateViewController(withIdentifier: "PartyNavigation") as? UINavigationController
+
             {
-                self.present(vc, animated: true, completion: nil)
+                self.present(nav, animated: true, completion: nil)
             }
         }
     }

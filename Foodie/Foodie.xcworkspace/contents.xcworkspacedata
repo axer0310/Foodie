@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/Samrat/Desktop/CS307 - Foodie/Foodie/Foodie/Foodie/Party.storyboard">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/Samrat/Desktop/CS307 - Foodie/Foodie/Foodie/Foodie/Party.swift">
-   </FileRef>
-   <FileRef
       location = "group:Foodie.xcodeproj">
    </FileRef>
    <FileRef
