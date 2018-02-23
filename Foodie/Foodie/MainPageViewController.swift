@@ -14,6 +14,8 @@ import MapKit
 class MainPageViewController: UIViewController
 {
     var user = User()
+    var ref = Database.database().reference()
+    
     @IBOutlet var mapView: MKMapView!
     
     override func viewDidLoad()
@@ -25,15 +27,13 @@ class MainPageViewController: UIViewController
     }
     func getPartys()
     {
-        var ref:DatabaseReference
-        ref = Database.database().reference()
         ref.child("/PartyIDs/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            let x = Double( value?["x"] as! String )
-            let y = Double( value?["y"] as! String )
+            let x = Double( value?["x"] as! Double )
+            let y = Double( value?["y"] as! Double )
 
             var pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2D(latitude: x!, longitude: y!)
+            pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
             self.mapView.addAnnotation(pin)
             
         })
