@@ -8,15 +8,26 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseDatabase
+
+
 class PartyViewController: UIViewController
 {
+ 
+    var ref: DatabaseReference!
     var partyName: String = ""
     var location: String = ""
     var info: String = ""
-    var numPeople: Int = 0;
+    var numPeople: String = "";
+    
+    
     
     @IBAction func NextButton(_ sender: Any) {
         
+        let post = ["Party Name": partyName, "Location": location, "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
+        let childUpdates = ["/PartyIDs": post]
+        ref.updateChildValues(childUpdates)
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -31,7 +42,6 @@ class PartyViewController: UIViewController
         partyName = PartyName.text!
     }
     
-    
     @IBOutlet weak var Location: UILabel!
     
     @IBOutlet weak var LocationName: UITextField!
@@ -42,17 +52,16 @@ class PartyViewController: UIViewController
     
     @IBOutlet weak var Description: UILabel!
     
+    @IBOutlet weak var Description2: UITextField!
+    
     @IBAction func Description(_ sender: Any) {
-        info = Description.text!
+
+        info = Description2.text!
     }
     
     @IBOutlet weak var NumPeople: UILabel!
     
     @IBOutlet weak var NumberOfPeople: UILabel!
-    
-    @IBAction func NumberOfPeople(_ sender: Any) {
-        numPeople = NumberOfPeople.numberOfLines
-    }
     
     @IBOutlet weak var CarPool: UILabel!
     
@@ -70,9 +79,18 @@ class PartyViewController: UIViewController
     
     
     
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        ref = Database.database().reference()
+//        var rootRef = Database(url: "https://foodie-1e106.firebaseio.com/")
+//
+//        rootRef.setValue("Doing something!!")
+//        rootRef.observeEventType(.Value, withBlock:{
+//            snapshot in
+//            print("\(snapshot.key)-> \(snapshot.value)")
+//        })
         self.navigationItem.title = "Create Party"
     }
     

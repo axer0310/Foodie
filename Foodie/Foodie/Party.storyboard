@@ -83,9 +83,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="NumberOfPeople:" destination="RUG-sX-OB9" eventType="editingDidEnd" id="VHL-sQ-uJk"/>
-                                </connections>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aq8-d3-8EA">
                                 <rect key="frame" x="275" y="439" width="49" height="31"/>
@@ -121,6 +118,7 @@
                         <outlet property="CarPool" destination="cLJ-K5-1gB" id="dSO-pg-JlI"/>
                         <outlet property="CarPoolButton" destination="aq8-d3-8EA" id="LDQ-9Z-Jnh"/>
                         <outlet property="Description" destination="c9C-s8-aia" id="7Fr-eR-VLB"/>
+                        <outlet property="Description2" destination="FxS-OO-Dfg" id="oym-JO-8VW"/>
                         <outlet property="Location" destination="Vvx-3L-VMB" id="7Ol-gt-gRB"/>
                         <outlet property="LocationName" destination="cxn-UR-Vbd" id="czc-Rw-Crw"/>
                         <outlet property="NumberOfPeople" destination="evS-Sg-uKn" id="t12-33-QW7"/>
