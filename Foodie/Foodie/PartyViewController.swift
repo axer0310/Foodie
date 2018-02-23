@@ -73,8 +73,9 @@ class PartyViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationItem.title = "Create Party"
     }
-        
+    
         
         // Do any additional setup after loading the view, typically from a nib.
     
