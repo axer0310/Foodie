@@ -18,18 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDL-c1-x1v">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDL-c1-x1v">
                                 <rect key="frame" x="0.0" y="667" width="129" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <state key="normal" title="Let's Party"/>
                                 <connections>
                                     <segue destination="pk9-J3-y0a" kind="presentation" id="Pp9-W9-I4N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f51-d8-abf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f51-d8-abf">
                                 <rect key="frame" x="297" y="667" width="117" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <state key="normal" title="QR Code"/>
                             </button>
@@ -50,6 +48,10 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rDL-c1-x1v" firstAttribute="bottom" secondItem="YWX-qT-o1U" secondAttribute="bottom" id="iWR-GU-TXx"/>
+                            <constraint firstItem="f51-d8-abf" firstAttribute="bottom" secondItem="YWX-qT-o1U" secondAttribute="bottom" id="wtm-6L-rjG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YWX-qT-o1U"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat Room" id="uK6-50-EPS">

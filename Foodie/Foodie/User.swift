@@ -7,16 +7,30 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 class User
 {
     var name : String
     var gender : String
-    var id : Int
-    
+    var id : String
+    var profilePic: UIImage
+    var coordinate: [String:Double]
+    var friendList: [String]
     init()
     {
         name = ""
         gender=""
-        id = 0
+        id = ""
+        profilePic = UIImage()
+        coordinate = ["x":Double(),"y":Double()]
+        friendList = []
     }
+}
+struct  firebaseUserInfo{
+    var CoordinateX = Double()
+    var CoordinateY = Double()
+    var FriendList = [""]
+    var UserId = ""
+    
 }

@@ -71,6 +71,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L"/>
+                    <connections>
+                        <outlet property="mapView" destination="brz-EC-nbw" id="TPj-LR-twH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
