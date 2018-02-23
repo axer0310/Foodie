@@ -13,38 +13,53 @@ import CoreLocation
 class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var Search: UISearchBar!
-        var businesses: [Business]!
-    var locationManager : CLLocationManager!
-    var annot : MKClusterAnnotation!
+    var businesses: [Business]!
+    var locationMan : CLLocationManager!
+    //var annot : MKClusterAnnotation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
-        goToLocation(location: centerLocation)
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.distanceFilter = 200
-        locationManager.requestWhenInUseAuthorization()
-        let searchBar = UISearchBar()
-        searchBar.delegate = self as! UISearchBarDelegate
+//        let centerLocation = CLLocation(latitude: 40.4237, longitude: 86.9212)
+        //goToLocation(location: centerLocation)
         
-        self.navigationItem.titleView = searchBar
-        mapView.delegate = self
-        self.view.addSubview(mapView)
+        locationMan = CLLocationManager()
+        locationMan.delegate = self
+        locationMan.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationMan.distanceFilter = 200
+        locationMan.requestWhenInUseAuthorization()
+       
+        let Search = UISearchBar()
+        Search.delegate = self as? UISearchBarDelegate
         
-        Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
-            self.businesses = businesses
-//            self.tableView.reloadData()
+//        self.navigationItem.titleView = Search
+//        mapView.delegate = self
+//        self.view.addSubview(mapView)
+        
+        Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-                self.addAnnotationAtAddress(address: business.address!, title: business.name!)
+            self.businesses = businesses
+            if let businesses = businesses {
+                for business in businesses {
+                    print(business.name!)
+                    print(business.address!)
+                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
+                }
             }
-            } as! ([Business]?, Error?) -> Void)
-            // Do any additional setup after loading the view.
+            
         }
-    
+        )
+//        Business.searchWithTerm(term: "Restaurants", sort: .distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: Error!) -> Void in
+//            self.businesses = businesses
+////            self.tableView.reloadData()
+//
+//            for business in businesses {
+//                print(business.name!)
+//                print(business.address!)
+//                self.addAnnotationAtAddress(address: business.address!, title: business.name!)
+//            }
+//        };
+        
+    }
     func goToLocation(location: CLLocation) {
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region = MKCoordinateRegionMake(location.coordinate, span)
@@ -52,7 +67,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.authorizedWhenInUse {
-            locationManager.startUpdatingLocation()
+            locationMan.startUpdatingLocation()
         }
     }
     
@@ -60,18 +75,18 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         if let location = locations.first {
             let span = MKCoordinateSpanMake(0.1, 0.1)
             let region = MKCoordinateRegionMake(location.coordinate, span)
-            mapView.setRegion(region, animated: false)
+            self.mapView.setRegion(region, animated: true)
         }
     }
-    func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        annotation.title = "An annotation!"
-        mapView.addAnnotation(annotation)
-    }
+//    func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = coordinate
+//        annotation.title = "An annotation!"
+//        mapView.addAnnotation(annotation)
+//    }
     
     // add an annotation with an address: String
-    func addAnnotationAtAddress(address: String, title: String) {
+    func addAnnotationAtAddress(address: String, title: String, subtitle: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let placemarks = placemarks {
@@ -80,6 +95,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = coordinate.coordinate
                     annotation.title = title
+                    annotation.subtitle = subtitle
                     self.mapView.addAnnotation(annotation)
                 }
             }
@@ -88,42 +104,28 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "customAnnotationView"
-        func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-            let identifier = "customAnnotationView"
-            // custom pin annotation
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-            if (annotationView == nil) {
-                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            }
-            else {
-                annotationView!.annotation = annotation
-            }
-            annotationView!.pinTintColor = UIColor.green
-            
-            return annotationView
-        }
-        // custom image annotation
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        // custom pin annotation
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         if (annotationView == nil) {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         }
         else {
             annotationView!.annotation = annotation
         }
-        annotationView!.image = UIImage(named: "customAnnotationImage")
+        annotationView!.pinTintColor = UIColor.green
         
         return annotationView
     }
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    
+    func searchBar(Search: UISearchBar, textDidChange searchText: String) {
         Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
-            self.tableView.reloadData()
             
             for business in businesses {
                 print(business.name!)
                 print(business.address!)
             }
-        })
+            } as! ([Business]?, Error?) -> Void)
     }
     
 }
