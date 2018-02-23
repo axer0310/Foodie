@@ -20,12 +20,14 @@ class PartyViewController: UIViewController
     var location: String = ""
     var info: String = ""
     var numPeople: String = "";
+    var x: Double = 40.4278709
+    var y: Double = -86.9169629
     
     
     
     @IBAction func NextButton(_ sender: Any) {
         
-        let post = ["Party Name": partyName, "Location": location, "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
+        let post = ["Party Name": partyName, "Coordinate": ["x" : x, "y": y], "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
         let childUpdates = ["/PartyIDs": post]
         ref.updateChildValues(childUpdates)
     }
