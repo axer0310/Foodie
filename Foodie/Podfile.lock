@@ -1,6 +1,4 @@
 PODS:
-<<<<<<< HEAD
-=======
   - AFNetworking (2.6.3):
     - AFNetworking/NSURLConnection (= 2.6.3)
     - AFNetworking/NSURLSession (= 2.6.3)
@@ -25,23 +23,17 @@ PODS:
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
->>>>>>> seohyun
   - Firebase/Auth (4.8.2):
     - Firebase/Core
     - FirebaseAuth (= 4.4.2)
   - Firebase/Core (4.8.2):
     - FirebaseAnalytics (= 4.0.9)
     - FirebaseCore (= 4.0.14)
-<<<<<<< HEAD
   - Firebase/Database (4.8.2):
     - Firebase/Core
     - FirebaseDatabase (= 4.1.4)
   - Firebase/RemoteConfig (4.8.2):
     - Firebase/Core
-=======
-  - Firebase/RemoteConfig (4.8.2):
-    - Firebase/Core
->>>>>>> seohyun
     - FirebaseRemoteConfig (= 2.1.1)
   - Firebase/Storage (4.8.2):
     - Firebase/Core
@@ -60,13 +52,10 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.14):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-<<<<<<< HEAD
   - FirebaseDatabase (4.1.4):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-=======
->>>>>>> seohyun
   - FirebaseInstanceID (2.0.8):
     - FirebaseCore (~> 4.0)
   - FirebaseRemoteConfig (2.1.1):
@@ -131,20 +120,14 @@ DEPENDENCIES:
   - YelpAPI (~> 2.0)
 
 SPEC CHECKSUMS:
-<<<<<<< HEAD
-=======
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
->>>>>>> seohyun
   Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseAuth: bd2738c5c1e92b108ba5f7f7335908097a4e50bb
   FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
-<<<<<<< HEAD
   FirebaseDatabase: de4446507ccd3257fca37d16f40e1540324571fd
-=======
->>>>>>> seohyun
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   FirebaseRemoteConfig: 3310f264fff78b6c2e78b24dcfc4c1b3d6766209
   FirebaseStorage: 181bb543d39ee3c53e0558de7ba86b1286a0427f
@@ -159,10 +142,6 @@ SPEC CHECKSUMS:
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-<<<<<<< HEAD
-PODFILE CHECKSUM: 32312d904d9a771f42f9d0367c577cb9d42c9012
-=======
-PODFILE CHECKSUM: 542b181daca731f12a68d731d7ce54c2abaa701e
->>>>>>> seohyun
+PODFILE CHECKSUM: 67fcf4e5fe6effdb5618a3720ee82e2e90f42091
 
 COCOAPODS: 1.4.0

@@ -9,11 +9,7 @@ target 'Foodie' do
 
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
-<<<<<<< HEAD
     pod 'Firebase/Database'
-
-=======
->>>>>>> seohyun
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'GoogleMaps'

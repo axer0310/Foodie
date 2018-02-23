@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
 {
    
 
+    @IBOutlet var logoImage: UIImageView!
     var user = User()
     var ref: DatabaseReference!
     var userLocalInfo = UserDefaults.standard // use to store user id to local
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        logoImage.image = UIImage(named:"FoodieImage.png" )
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self as! GIDSignInDelegate
         fbSignInButton.delegate = self
