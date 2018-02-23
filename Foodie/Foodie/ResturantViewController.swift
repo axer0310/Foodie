@@ -14,6 +14,9 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var Search: UISearchBar!
     var businesses: [Business]!
+    @IBAction func BackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     var locationMan : CLLocationManager!
     //var annot : MKClusterAnnotation!
     
