@@ -28,6 +28,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.62594968671139384" green="1" blue="0.5614865661225712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FoodieImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-ge-BpY">
+                                <rect key="frame" x="0.0" y="66" width="375" height="304"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Gwd-4y-zTx"/>
@@ -42,4 +46,7 @@
             <point key="canvasLocation" x="586.39999999999998" y="15.742128935532236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FoodieImage.png" width="504" height="415"/>
+    </resources>
 </document>

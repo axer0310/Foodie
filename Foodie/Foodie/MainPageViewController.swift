@@ -31,17 +31,6 @@ class MainPageViewController: UIViewController
         
     }
     
-    @IBAction func showChat(_ sender: Any)
-    {
-        if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
-        {
-            if let vc = sb.instantiateViewController(withIdentifier: "ChatView") as? ChatViewController
-            {
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
-    }
-    
     @IBAction func showParty(_ sender: Any) {
         if let sb = UIStoryboard.init(name: "Party", bundle: nil) as? UIStoryboard
         {
@@ -51,4 +40,15 @@ class MainPageViewController: UIViewController
             }
         }
     }
+    
+    @IBAction func showChatView(_ sender: Any) {
+        if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
+        {
+            if let vc = sb.instantiateViewController(withIdentifier: "ChatNavigationController") as? UINavigationController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }
