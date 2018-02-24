@@ -18,7 +18,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //database = firebase.database()
-        
+        //chat reference
         
         
     }
