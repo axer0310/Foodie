@@ -22,8 +22,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     var ref: DatabaseReference!
     var userLocalInfo = UserDefaults.standard // use to store user id to local
     
-//    let locationManager = CLLocationManager()
-    
+    let locationManager = CLLocationManager()
+    typealias CompletionHandler = () -> Void
     @IBOutlet var googleSignButton: GIDSignInButton!
     
     @IBOutlet var fbSignInButton: FBSDKLoginButton!
@@ -36,24 +36,37 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         fbSignInButton.delegate = self
         self.ref = Database.database().reference()
         
+      
 
         if let id = self.userLocalInfo.object(forKey: "id") as? String
         {
             self.user.id = id
 //            self.updateSetUserInfo(newUser: false, id: id)
         }
-//        else
-//        {
-//            self.userLocalInfo.set(self.user.id, forKey: "id")
-//            self.updateSetUserInfo(newUser: true, id: "")
-//        }
         
+        if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined)
+        {
+            locationManager.requestWhenInUseAuthorization()
+        }
         
-//        self.locationManager.requestAlwaysAuthorization()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
+    }
+    func authLocation(completion: CompletionHandler)
+    {
+       if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways)
+        {
+            self.user.coordinate = ["x":(locationManager.location?.coordinate.latitude)!, "y": (locationManager.location?.coordinate.longitude)!]
+            completion()
+        }
+        else
+        {
+            var alert = UIAlertView()
+            alert.title = "Unable to Locate"
+            alert.message = "Please enable location service in privacy settings."
+            alert.addButton(withTitle: "OK")
+            alert.show()
+        }
+    }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?)
     {
         print("In google sign in")
@@ -66,44 +79,18 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
             guard let authentication = user.authentication else { return }
             
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,accessToken: authentication.accessToken)
-            Auth.auth().signIn(with: credential){(user, error) in
-                if let error = error
-                {
-                    print("Error: \(error)")
-                    return
-                }
+            if let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,accessToken: authentication.accessToken) as? AuthCredential
+            {
+                self.authLocation(completion: {
+                    self.createUserInfo(credential: credential)
+                    self.presentMainView()
+                    
+                })
                 
-                if let name = user?.displayName
-                {
-                    self.user.name = name
-                }
-                if self.user.id == ""
-                {
-                    self.user.id = self.randomString(length: 16)
-                    self.userLocalInfo.set(self.user.id, forKey: "id")
-                }
-                if let url = user?.photoURL as? URL
-                {
-                    do
-                    {
-                        if let data = try? Data(contentsOf: url)
-                        {
-                            self.user.profilePic = UIImage(data: data)!
-                        }
-                    }
-                    catch
-                    {
-                        print(error)
-                    }
-                }
-                self.user.coordinate = ["x": 43.09, "y": 38.72] // testing data
-                self.user.friendList = ["oidfw77ehda332r", "uyrdufaw324ewf"]   // testing data
-                
-                self.updateSetUserInfo()
-                
-                self.presentMainView()
             }
+                
+            
+            
         }
     }
 
@@ -116,24 +103,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         }
         else
         {
-            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-            
-            Auth.auth().signIn(with: credential) { (user, error) in
-                
-                if let error = error
-                {
-                    print(error)
-                    return
-                }
-                if let name = user?.displayName
-                {
-                    self.user.name = name
-                }
-
-                self.presentMainView()
+            if let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString) as? AuthCredential
+            {
+                self.authLocation(completion: {
+                    self.createUserInfo(credential: credential)
+                    self.presentMainView()
+                    
+                })
             }
+            
         }
-        // ...
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -156,7 +135,43 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             }
         }
     }
-    
+    func createUserInfo(credential: AuthCredential)
+    {
+        Auth.auth().signIn(with: credential){(user, error) in
+            if let error = error
+            {
+                print("Error: \(error)")
+                return
+            }
+            
+            if let name = user?.displayName
+            {
+                self.user.name = name
+            }
+            if self.user.id == ""
+            {
+                self.user.id = Helper.randomString(length: 16)
+                self.userLocalInfo.set(self.user.id, forKey: "id")
+            }
+            if let url = user?.photoURL as? URL
+            {
+                do
+                {
+                    if let data = try? Data(contentsOf: url)
+                    {
+                        self.user.profilePic = UIImage(data: data)!
+                    }
+                }
+                catch
+                {
+                    print(error)
+                }
+            }
+            //                self.user.coordinate = ["x": 43.09, "y": 38.72] // testing data
+            self.user.friendList = ["oidfw77ehda332r", "uyrdufaw324ewf"]   // testing data
+            self.updateSetUserInfo()
+        }
+    }
     func updateSetUserInfo()
     {
         var userInfo = firebaseUserInfo()
@@ -164,6 +179,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         userInfo.CoordinateY = self.user.coordinate["y"]!
         userInfo.FriendList = self.user.friendList
         userInfo.UserId = self.user.id
+        
         
         
         let post = ["Coordinate": ["x" : userInfo.CoordinateX, "y" : userInfo.CoordinateY],
@@ -174,21 +190,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
     }
     
-    func randomString(length: Int) -> String {
-        
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let len = UInt32(letters.length)
-        
-        var randomString = ""
-        
-        for _ in 0 ..< length {
-            let rand = arc4random_uniform(len)
-            var nextChar = letters.character(at: Int(rand))
-            randomString += NSString(characters: &nextChar, length: 1) as String
-        }
-        
-        return randomString
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
