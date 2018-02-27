@@ -70,7 +70,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L"/>
+                    <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="7oT-Wj-pxE">
+                            <connections>
+                                <action selector="logOut:" destination="BYZ-38-t0r" id="Fyy-jp-ee7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="brz-EC-nbw" id="TPj-LR-twH"/>
                     </connections>

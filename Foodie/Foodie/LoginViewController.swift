@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 import CoreLocation
-
+import Firebase
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, FBSDKLoginButtonDelegate
 {
+    
+    
    
 
     @IBOutlet var logoImage: UIImageView!
@@ -114,9 +115,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             
         }
     }
-    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
+    }
+    
+    func logOut()
+    {
+        self.userLocalInfo.removeObject(forKey: "id")
+        let childUpdates = ["/Users/\(user.id)": nil] as [String : Any?]
+        ref.updateChildValues(childUpdates)
     }
     
     func presentMainView()
@@ -130,6 +136,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 if let vc = vc
                 {
                     vc.user = self.user
+                    vc.loginEntry = self
                 }
                 self.present(nav, animated: true, completion: nil)
             }
@@ -153,19 +160,20 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 self.user.id = Helper.randomString(length: 16)
                 self.userLocalInfo.set(self.user.id, forKey: "id")
             }
-            if let url = user?.photoURL as? URL
+            if let url = user?.photoURL as? String
             {
-                do
-                {
-                    if let data = try? Data(contentsOf: url)
-                    {
-                        self.user.profilePic = UIImage(data: data)!
-                    }
-                }
-                catch
-                {
-                    print(error)
-                }
+                self.user.profilePicUrlStr = url
+//                do
+//                {
+//                    if let data = try? Data(contentsOf: url)
+//                    {
+//                        self.user.profilePic = UIImage(data: data)!
+//                    }
+//                }
+//                catch
+//                {
+//                    print(error)
+//                }
             }
             //                self.user.coordinate = ["x": 43.09, "y": 38.72] // testing data
             self.user.friendList = ["oidfw77ehda332r", "uyrdufaw324ewf"]   // testing data

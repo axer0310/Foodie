@@ -14,7 +14,7 @@ import MapKit
 class MainPageViewController: UIViewController
 {
     var user = User()
-
+    var loginEntry = LoginViewController()
     var ref = Database.database().reference()
     
     @IBOutlet var mapView: MKMapView!
@@ -79,5 +79,10 @@ class MainPageViewController: UIViewController
                 self.present(nav, animated: true, completion: nil)
             }
         }
+    }
+    @IBAction func logOut(_ sender: Any)
+    {
+        self.loginEntry.logOut()
+        self.dismiss(animated: true, completion: nil)
     }
 }
