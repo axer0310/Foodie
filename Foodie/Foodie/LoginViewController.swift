@@ -160,9 +160,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 self.user.id = Helper.randomString(length: 16)
                 self.userLocalInfo.set(self.user.id, forKey: "id")
             }
-            if let url = user?.photoURL as? String
+            if let url = user?.photoURL as? URL
             {
-                self.user.profilePicUrlStr = url
+                self.user.profilePicUrlStr = url.absoluteString
 //                do
 //                {
 //                    if let data = try? Data(contentsOf: url)
@@ -187,11 +187,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         userInfo.CoordinateY = self.user.coordinate["y"]!
         userInfo.FriendList = self.user.friendList
         userInfo.UserId = self.user.id
+        userInfo.profilePicURL = self.user.profilePicUrlStr
         
         
         
         let post = ["Coordinate": ["x" : userInfo.CoordinateX, "y" : userInfo.CoordinateY],
                     "FriendIDs": userInfo.FriendList,
+                    "ProfilePic": userInfo.profilePicURL
                     ] as [String : Any]
         let childUpdates = ["/Users/\(userInfo.UserId)": post]
         ref.updateChildValues(childUpdates)

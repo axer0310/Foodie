@@ -9,10 +9,12 @@
 import Foundation
 struct  firebasePartyInfo{
     var PartyID = Helper.randomString(length: 30)
+    var PartyName = ""
+    var Description = ""
     var CoordinateX = Double()
     var CoordinateY = Double()
-    var MemberList = [""]
-    var CarpoolOption = false
+    var Members = [""]
+    var Carpool = false
     var memberLimit = 40    // Default set max limit to 40 ppl
     
 }
