@@ -19,6 +19,8 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     }
     var locationMan : CLLocationManager!
     //var annot : MKClusterAnnotation!
+    var loclong = 0.0
+    var loclat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         locationMan.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationMan.distanceFilter = 200
         locationMan.requestWhenInUseAuthorization()
+        locationMan.startUpdatingLocation()
        
         let Search = UISearchBar()
         Search.delegate = self as? UISearchBarDelegate
@@ -38,7 +41,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
 //        mapView.delegate = self
 //        self.view.addSubview(mapView)
         
-        Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
+        Business.searchWithTerm(term: "Thai", long: loclong, lat: loclat, completion: { (businesses: [Business]?, error: Error?) -> Void in
             
             self.businesses = businesses
             if let businesses = businesses {
@@ -51,16 +54,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             
         }
         )
-//        Business.searchWithTerm(term: "Restaurants", sort: .distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: Error!) -> Void in
-//            self.businesses = businesses
-////            self.tableView.reloadData()
-//
-//            for business in businesses {
-//                print(business.name!)
-//                print(business.address!)
-//                self.addAnnotationAtAddress(address: business.address!, title: business.name!)
-//            }
-//        };
         
     }
     func goToLocation(location: CLLocation) {
@@ -80,13 +73,12 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             let region = MKCoordinateRegionMake(location.coordinate, span)
             self.mapView.setRegion(region, animated: true)
         }
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        loclat=locValue.latitude
+        loclong = locValue.longitude
+        
     }
-//    func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = coordinate
-//        annotation.title = "An annotation!"
-//        mapView.addAnnotation(annotation)
-//    }
     
     // add an annotation with an address: String
     func addAnnotationAtAddress(address: String, title: String, subtitle: String) {
@@ -121,7 +113,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     }
     
     func searchBar(Search: UISearchBar, textDidChange searchText: String) {
-        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm(term: searchText, long: loclong, lat: loclat, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             
             for business in businesses {
