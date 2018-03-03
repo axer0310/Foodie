@@ -9,11 +9,20 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
 import GoogleSignIn
 
 class ChatViewController: UIViewController {
+    
     @IBOutlet weak var chatTitle: UILabel!
     
+    var ref: DatabaseReference!
+    var partyName: String = ""
+    var location: String = ""
+    var info: String = ""
+    var numPeople: String = "";
+    var x: Double = 40.4278709
+    var y: Double = -86.9169629
     
     override func viewDidLoad() {
         super.viewDidLoad()
