@@ -24,42 +24,7 @@ class PartyViewController: UIViewController
     var y: Double = -86.9169629
     
     
-    @IBAction func NextButton(_ sender: Any) {
-        
-                let post = ["Party Name": partyName, "Coordinate": ["x" : x, "y": y], "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
-                let childUpdates = ["/PartyIDs": post]
-                ref.updateChildValues(childUpdates)
-            }
-    
-        @IBAction func BackButton(_ sender: Any) {
-                self.dismiss(animated: true, completion: nil)
-            }
-    
-        @IBOutlet weak var PartyNameLabel: UILabel!
-    
-        @IBOutlet weak var PartyName: UITextField!
-    
-        @IBAction func PartyName(_ sender: Any) {
-                partyName = PartyName.text!
-            }
-    
-        @IBOutlet weak var Location: UILabel!
-    
-        @IBOutlet weak var LocationName: UITextField!
-    
-        @IBAction func LocationName(_ sender: Any) {
-                location = LocationName.text!
-            }
 
-    
-    @IBOutlet weak var Description: UILabel!
-    
-    @IBOutlet weak var Description2: UITextField!
-    
-    @IBAction func Description(_ sender: Any) {
-
-        info = Description2.text!
-    }
     
     @IBOutlet weak var NumPeople: UILabel!
     
