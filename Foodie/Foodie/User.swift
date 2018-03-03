@@ -14,7 +14,7 @@ class User
     var name : String
     var gender : String
     var id : String
-    var profilePic: UIImage
+    var profilePicUrlStr: String
     var coordinate: [String:Double]
     var friendList: [String]
     init()
@@ -22,7 +22,7 @@ class User
         name = ""
         gender=""
         id = ""
-        profilePic = UIImage()
+        profilePicUrlStr = ""
         coordinate = ["x":Double(),"y":Double()]
         friendList = []
     }
@@ -32,5 +32,5 @@ struct  firebaseUserInfo{
     var CoordinateY = Double()
     var FriendList = [""]
     var UserId = ""
-    
+    var profilePicURL=""
 }
