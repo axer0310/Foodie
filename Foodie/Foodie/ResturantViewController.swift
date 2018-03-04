@@ -17,10 +17,11 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    var locationMan : CLLocationManager!
-    //var annot : MKClusterAnnotation!
     var loclong = 0.0
     var loclat = 0.0
+    var locationMan : CLLocationManager!
+    //var annot : MKClusterAnnotation!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +31,14 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         locationMan = CLLocationManager()
         locationMan.delegate = self
         locationMan.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationMan.distanceFilter = 200
+        locationMan.distanceFilter = 300
         locationMan.requestWhenInUseAuthorization()
         locationMan.startUpdatingLocation()
        
         let Search = UISearchBar()
         Search.delegate = self as? UISearchBarDelegate
         
-//        self.navigationItem.titleView = Search
-//        mapView.delegate = self
-//        self.view.addSubview(mapView)
-        
-        Business.searchWithTerm(term: "Thai", long: loclong, lat: loclat, completion: { (businesses: [Business]?, error: Error?) -> Void in
-            
+        Business.searchWithTerm(term: "Asian", long: loclong, lat: loclat, completion: { (businesses: [Business]?, error: Error?) -> Void in
             self.businesses = businesses
             if let businesses = businesses {
                 for business in businesses {
@@ -51,7 +47,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
                 }
             }
-            
         }
         )
         
@@ -75,7 +70,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-        loclat=locValue.latitude
+        loclat = locValue.latitude
         loclong = locValue.longitude
         
     }
@@ -99,7 +94,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "customAnnotationView"
-        // custom pin annotation
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         if (annotationView == nil) {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -119,6 +113,8 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             for business in businesses {
                 print(business.name!)
                 print(business.address!)
+                
+                self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
             }
             } as! ([Business]?, Error?) -> Void)
     }

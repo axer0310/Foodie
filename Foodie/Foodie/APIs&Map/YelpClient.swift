@@ -52,12 +52,12 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         
         // Default the location to Purdue
         var parameters: [String : AnyObject] = ["term": term as AnyObject, "ll": "40.4237,86.9212" as AnyObject]
-        if (long != nil) && (lat != nil) {
-            let b:String = String(format:"%f", long!)
-            let c:String = String(format:"%f", lat!)
-            let line:String = b+","+c
-            parameters = ["term": term as AnyObject, "ll": line as AnyObject]
-        }
+//        if (long != 0.0) && (lat != 0.0) {
+//            let b:String = String(format:"%f", long!)
+//            let c:String = String(format:"%f", lat!)
+//            let line:String = b+","+c
+//            parameters = ["term": term as AnyObject, "ll": line as AnyObject]
+//        }
         if sort != nil {
             parameters["sort"] = sort!.rawValue as AnyObject?
         }
