@@ -29,6 +29,7 @@ class PartyViewController: UIViewController
         let post = ["Party Name": partyName, "Coordinate": ["x" : x, "y": y], "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
         let childUpdates = ["/PartyIDs": post]
         ref.updateChildValues(childUpdates)
+        ref.updateChildValues(childUpdates)
     }
     
     @IBAction func BackButton(_ sender: Any) {

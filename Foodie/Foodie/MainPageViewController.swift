@@ -28,8 +28,6 @@ class MainPageViewController: UIViewController
                 self.present(vc, animated: true, completion: nil)
             }
         }
-        
-        
     }
     
     @IBAction func showChat(_ sender: Any)
