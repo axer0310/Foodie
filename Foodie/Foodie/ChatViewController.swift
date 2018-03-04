@@ -28,7 +28,8 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         //database = firebase.database()
         //chat reference
-        
+        //let childUpdates = ["/PartyIDs": post]
+        //ref.updateChildValues(childUpdates)
         
     }
     
@@ -39,7 +40,7 @@ class ChatViewController: UIViewController {
     @IBAction func letsParty(sender: AnyObject) {
         // after touching this button
         // it has to work which relates the party server
-        
+        //let post = ["Party Name": partyName, "Coordinate": ["x" : x, "y": y], "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
         
     }
     
