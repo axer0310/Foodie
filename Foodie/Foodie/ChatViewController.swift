@@ -12,9 +12,12 @@ import Firebase
 import FirebaseDatabase
 import GoogleSignIn
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var chatTitle: UILabel!
+    
+
+    @IBOutlet weak var tableView: UITableView!
     
     var ref: DatabaseReference!
     var partyName: String = ""
@@ -27,9 +30,13 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //database = firebase.database()
-        //chat reference
-        //let childUpdates = ["/PartyIDs": post]
-        //ref.updateChildValues(childUpdates)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
     
