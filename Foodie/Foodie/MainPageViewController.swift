@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import MapKit
+import QRCode
 
 class MainPageViewController: UIViewController
 {
@@ -31,7 +32,7 @@ class MainPageViewController: UIViewController
     func getPartys()
     {
         ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
-            
+
             let value = snapshot.value as? [String:AnyObject]
             if let parties = value
             {
@@ -42,11 +43,11 @@ class MainPageViewController: UIViewController
                         let coordinate = partyDic["Coordinate"] as? NSDictionary
                         let x = Double( coordinate?["x"] as! Double )
                         let y = Double( coordinate?["y"] as! Double )
-                        
+
                         var pin = MKPointAnnotation()
                         pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
                         self.mapView.addAnnotation(pin)
-                        
+
                     }
                 }
             }
@@ -90,6 +91,35 @@ class MainPageViewController: UIViewController
                 self.present(nav, animated: true, completion: nil)
             }
         }
+    }
+    @IBAction func showQR(_ sender: Any)
+    {
+        var qrCode = QRCode(user.id)
+        qrCode?.size = CGSize(width: 30, height: 30)
+        
+        if let story = UIStoryboard.init(name: "QR", bundle: nil) as? UIStoryboard
+        {
+            if let vc = story.instantiateViewController(withIdentifier: "QRView") as? QRViewController
+            {
+                vc.qrImage = (qrCode?.image)!
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+       
+       
+    
+       
+//        var vc = UIView()
+//        var qrView = UIImageView()
+//        qrView.image = qrCode?.image
+//        qrView.frame = CGRect(x: 0, y: 0, width: 0.5 * self.mapView.bounds.width, height: self.mapView.bounds.height )
+//        vc.frame = CGRect(x: 0, y: 0, width: 0.5 * self.mapView.bounds.width, height: self.mapView.bounds.height )
+//        vc.backgroundColor = UIColor.blue
+//        self.mapView.isHidden = true
+//        self.view.addSubview(vc)
+
+        
     }
     @IBAction func logOut(_ sender: Any)
     {

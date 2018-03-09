@@ -71,6 +71,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L">
+                        <barButtonItem key="leftBarButtonItem" image="QR.png" id="6Fw-8C-cvc">
+                            <connections>
+                                <action selector="showQR:" destination="BYZ-38-t0r" id="QBn-Kt-07D"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="7oT-Wj-pxE">
                             <connections>
                                 <action selector="logOut:" destination="BYZ-38-t0r" id="Fyy-jp-ee7"/>
@@ -105,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="QR.png" width="20" height="20"/>
         <image name="chat.png" width="45" height="45"/>
         <image name="party.png" width="45" height="45"/>
         <image name="restaurant.png" width="45" height="45"/>
