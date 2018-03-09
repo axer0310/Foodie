@@ -26,8 +26,10 @@ class PartyViewController: UIViewController
     
     @IBAction func NextButton(_ sender: Any) {
         
-        let post = ["Party Name": partyName, "Coordinate": ["x" : x, "y": y], "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
-        let childUpdates = ["/PartyIDs": post]
+        let post = ["Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
+        
+        let childUpdates = ["PartyIDs": post]
+        
         ref.updateChildValues(childUpdates)
         ref.updateChildValues(childUpdates)
     }
