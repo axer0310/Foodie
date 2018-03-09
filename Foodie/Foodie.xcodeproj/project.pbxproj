@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
-		3F9B47412051B12300718C2A /* RestableviewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B47402051B12300718C2A /* RestableviewControl.swift */; };
-		3F9B47432051B47D00718C2A /* locationSearchT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B47422051B47D00718C2A /* locationSearchT.swift */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
 		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
@@ -44,8 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F9B47402051B12300718C2A /* RestableviewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestableviewControl.swift; sourceTree = "<group>"; };
-		3F9B47422051B47D00718C2A /* locationSearchT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationSearchT.swift; sourceTree = "<group>"; };
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		3FB34B5D203E2DD1000821F7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,8 +172,6 @@
 				83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */,
 				837C2343202FA7D00050F05E /* ChatViewController.swift */,
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
-				3F9B47402051B12300718C2A /* RestableviewControl.swift */,
-				3F9B47422051B47D00718C2A /* locationSearchT.swift */,
 				8E48D844203FD28C003E9958 /* ResturantViewController.swift */,
 				8E48D847203FD38E003E9958 /* FoodieImage.png */,
 				8E20333520386C6D003B71A7 /* Bolts.framework */,
@@ -375,11 +369,9 @@
 				3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */,
 				8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */,
 				83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */,
-				3F9B47412051B12300718C2A /* RestableviewControl.swift in Sources */,
 				8E5502A22046001600F11825 /* Helper.swift in Sources */,
 				8E5502A02045FF3800F11825 /* Party.swift in Sources */,
 				8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */,
-				3F9B47432051B47D00718C2A /* locationSearchT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
