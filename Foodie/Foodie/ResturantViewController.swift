@@ -12,25 +12,14 @@ import CoreLocation
 
 class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
-//    @IBOutlet weak var Search: UISearchBar!
+    @IBOutlet weak var searchBar: UIBarButtonItem!
     var businesses: [Business]!
-    @IBAction func BackButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    var loclong = 0.0
-    var loclat = 0.0
+//    @IBAction func BackButton(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     var locationMan : CLLocationManager!
     //var annot : MKClusterAnnotation!
-    fileprivate var searchController: UISearchController!
-    fileprivate var localSearchRequest: MKLocalSearchRequest!
-    fileprivate var localSearch: MKLocalSearch!
-    fileprivate var localSearchResponse: MKLocalSearchResponse!
-    
-    fileprivate var annotation: MKAnnotation!
-//    fileprivate var locationManager: CLLocationManager!
-//    fileprivate var isCurrentLocation: Bool = false
 
-    fileprivate var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +33,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         locationMan.requestWhenInUseAuthorization()
         locationMan.startUpdatingLocation()
        
-        let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(ResturantViewController.searchButtonAction(_:)))
-        self.navigationItem.rightBarButtonItem = searchButton
-        mapView.delegate = self
-//        mapView.mapType = .hybrid
-        
-        Business.searchWithTerm(term: "Asian", long: loclong, lat: loclat, completion: { (businesses: [Business]?, error: Error?) -> Void in
+        Business.searchWithTerm(term: "Asian", completion: { (businesses: [Business]?, error: Error?) -> Void in
             self.businesses = businesses
             if let businesses = businesses {
                 for business in businesses {
@@ -61,11 +45,8 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
         )
         
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        activityIndicator.hidesWhenStopped = true
-        self.view.addSubview(activityIndicator)
-        
     }
+    
     func goToLocation(location: CLLocation) {
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region = MKCoordinateRegionMake(location.coordinate, span)
@@ -84,16 +65,11 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             self.mapView.setRegion(region, animated: true)
         }
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        loclat = locValue.latitude
-        loclong = locValue.longitude
         
     }
     
     // add an annotation with an address: String
     func addAnnotationAtAddress(address: String, title: String, subtitle: String) {
-        let allAnnotations = self.mapView.annotations
-        self.mapView.removeAnnotations(allAnnotations)
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let placemarks = placemarks {
@@ -123,61 +99,17 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         return annotationView
     }
     
-//    func searchBar(Search: UISearchBar, textDidChange searchText: String) {
-//        Business.searchWithTerm(term: searchText, long: loclong, lat: loclat, completion: { (businesses: [Business]!, error: NSError!) -> Void in
-//            self.businesses = businesses
-//
-//            for business in businesses {
-//                print(business.name!)
-//                print(business.address!)
-//                self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
-//            }
-//            } as! ([Business]?, Error?) -> Void)
-//    }
-    
-    
-    // MARK: - Search
-    
-    @objc func searchButtonAction(_ button: UIBarButtonItem) {
-        if searchController == nil {
-            searchController = UISearchController(searchResultsController: nil)
-        }
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.delegate = self as! UISearchBarDelegate
-        present(searchController, animated: true, completion: nil)
-    }
-    
-    // MARK: - UISearchBarDelegate
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-        
-        if self.mapView.annotations.count != 0 {
-            annotation = self.mapView.annotations[0]
-            self.mapView.removeAnnotation(annotation)
-        }
-        
-        localSearchRequest = MKLocalSearchRequest()
-        localSearchRequest.naturalLanguageQuery = searchBar.text
-        localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.start { [weak self] (localSearchResponse, error) -> Void in
+    func searchBar(Search: UISearchBar, textDidChange searchText: String) {
+        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
             
-            if localSearchResponse == nil {
-                let alert = UIAlertView(title: nil, message: "Place not found", delegate: self, cancelButtonTitle: "Try again")
-                alert.show()
-                return
+            for business in businesses {
+                print(business.name!)
+                print(business.address!)
+            
+                self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
             }
-            
-            let pointAnnotation = MKPointAnnotation()
-            pointAnnotation.title = searchBar.text
-            pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
-            
-            let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
-            self!.mapView.centerCoordinate = pointAnnotation.coordinate
-            self!.mapView.addAnnotation(pinAnnotationView.annotation!)
-        }
+            } as! ([Business]?, Error?) -> Void)
     }
-    
     
 }
