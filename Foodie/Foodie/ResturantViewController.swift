@@ -52,6 +52,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         let region = MKCoordinateRegionMake(location.coordinate, span)
         mapView.setRegion(region, animated: false)
     }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.authorizedWhenInUse {
             locationMan.startUpdatingLocation()
@@ -64,8 +65,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             let region = MKCoordinateRegionMake(location.coordinate, span)
             self.mapView.setRegion(region, animated: true)
         }
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        
+        let _:CLLocationCoordinate2D = manager.location!.coordinate
     }
     
     // add an annotation with an address: String
@@ -88,6 +88,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "customAnnotationView"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
         if (annotationView == nil) {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         }
@@ -95,7 +96,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             annotationView!.annotation = annotation
         }
         annotationView!.pinTintColor = UIColor.green
-        
         return annotationView
     }
     
@@ -107,7 +107,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 print(business.name!)
                 print(business.address!)
             
-                self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
+               self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
             }
             } as! ([Business]?, Error?) -> Void)
     }
