@@ -12,6 +12,7 @@ import Firebase
 import MapKit
 import QRCode
 
+
 class MainPageViewController: UIViewController
 {
     var user = User()
@@ -105,20 +106,9 @@ class MainPageViewController: UIViewController
                 self.present(vc, animated: true, completion: nil)
             }
         }
-        
-       
-       
-    
-       
-//        var vc = UIView()
-//        var qrView = UIImageView()
-//        qrView.image = qrCode?.image
-//        qrView.frame = CGRect(x: 0, y: 0, width: 0.5 * self.mapView.bounds.width, height: self.mapView.bounds.height )
-//        vc.frame = CGRect(x: 0, y: 0, width: 0.5 * self.mapView.bounds.width, height: self.mapView.bounds.height )
-//        vc.backgroundColor = UIColor.blue
-//        self.mapView.isHidden = true
-//        self.view.addSubview(vc)
-
+    }
+    @IBAction func scanQR(_ sender: Any)
+    {
         
     }
     @IBAction func logOut(_ sender: Any)
