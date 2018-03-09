@@ -14,7 +14,7 @@ import MapKit
 class MainPageViewController: UIViewController
 {
     var user = User()
-
+    var loginEntry = LoginViewController()
     var ref = Database.database().reference()
     
     @IBOutlet var mapView: MKMapView!
@@ -30,15 +30,26 @@ class MainPageViewController: UIViewController
     }
     func getPartys()
     {
-        ref.child("/PartyIDs/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let x = Double( value?["x"] as! Double )
-            let y = Double( value?["y"] as! Double )
-
-            var pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
-            self.mapView.addAnnotation(pin)
+        ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
             
+            let value = snapshot.value as? [String:AnyObject]
+            if let parties = value
+            {
+                for party in parties.values
+                {
+                    if let partyDic = party as? [String:AnyObject]
+                    {
+                        let coordinate = partyDic["Coordinate"] as? NSDictionary
+                        let x = Double( coordinate?["x"] as! Double )
+                        let y = Double( coordinate?["y"] as! Double )
+                        
+                        var pin = MKPointAnnotation()
+                        pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
+                        self.mapView.addAnnotation(pin)
+                        
+                    }
+                }
+            }
         })
 
     }
@@ -79,5 +90,10 @@ class MainPageViewController: UIViewController
                 self.present(nav, animated: true, completion: nil)
             }
         }
+    }
+    @IBAction func logOut(_ sender: Any)
+    {
+        self.loginEntry.logOut()
+        self.dismiss(animated: true, completion: nil)
     }
 }
