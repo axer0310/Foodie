@@ -54,7 +54,15 @@ class ChatViewController: UIViewController, UITableViewDelegate {
     @IBAction func qrcode(sender: AnyObject) {
         // after touching this button
         // it has to work which relates the qrcode
+        //
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)->Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
 }
 

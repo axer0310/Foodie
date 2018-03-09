@@ -26,6 +26,10 @@
 		8E20333920386C6D003B71A7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E20333520386C6D003B71A7 /* Bolts.framework */; };
 		8E20333A20386C6D003B71A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E20333620386C6D003B71A7 /* FBSDKLoginKit.framework */; };
 		8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2DEB7D203E2E5F0067717B /* Party.storyboard */; };
+		8E2E8FE920520EE0000F67EE /* QR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E8FE820520EE0000F67EE /* QR@2x.png */; };
+		8E2E8FED20521A5B000F67EE /* QR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E8FEC20521A5B000F67EE /* QR.storyboard */; };
+		8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E8FEE20521ACD000F67EE /* QRViewController.swift */; };
+		8E2E8FF12052249F000F67EE /* scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E8FF02052249E000F67EE /* scan@2x.png */; };
 		8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D843203FD28C003E9958 /* ResturantPage.storyboard */; };
 		8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48D844203FD28C003E9958 /* ResturantViewController.swift */; };
 		8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D847203FD38E003E9958 /* FoodieImage.png */; };
@@ -61,6 +65,10 @@
 		8E20333520386C6D003B71A7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		8E20333620386C6D003B71A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8E2DEB7D203E2E5F0067717B /* Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Party.storyboard; sourceTree = "<group>"; };
+		8E2E8FE820520EE0000F67EE /* QR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QR@2x.png"; sourceTree = "<group>"; };
+		8E2E8FEC20521A5B000F67EE /* QR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QR.storyboard; sourceTree = "<group>"; };
+		8E2E8FEE20521ACD000F67EE /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		8E2E8FF02052249E000F67EE /* scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan@2x.png"; sourceTree = "<group>"; };
 		8E48D843203FD28C003E9958 /* ResturantPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
 		8E48D844203FD28C003E9958 /* ResturantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
 		8E48D847203FD38E003E9958 /* FoodieImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodieImage.png; sourceTree = "<group>"; };
@@ -118,6 +126,8 @@
 		8E20332820386C47003B71A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				8E2E8FF02052249E000F67EE /* scan@2x.png */,
+				8E2E8FE820520EE0000F67EE /* QR@2x.png */,
 				8E20332920386C47003B71A7 /* chat@2x.png */,
 				8E20332A20386C47003B71A7 /* party@2x.png */,
 				8E20332B20386C47003B71A7 /* restaurant@1x.png */,
@@ -167,6 +177,8 @@
 				8EB670BA2021004200E9228B /* LoginViewController.swift */,
 				8EB670BC2021004200E9228B /* MainPage.storyboard */,
 				8EAB0681202D3C390046A904 /* MainPageViewController.swift */,
+				8E2E8FEC20521A5B000F67EE /* QR.storyboard */,
+				8E2E8FEE20521ACD000F67EE /* QRViewController.swift */,
 				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
 				83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */,
 				83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */,
@@ -261,16 +273,19 @@
 				8E20332E20386C47003B71A7 /* chat@2x.png in Resources */,
 				8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */,
 				8E20332F20386C47003B71A7 /* party@2x.png in Resources */,
+				8E2E8FF12052249F000F67EE /* scan@2x.png in Resources */,
 				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8E20333120386C47003B71A7 /* restaurant@2x.png in Resources */,
 				8E20333220386C47003B71A7 /* restaurant@3x.png in Resources */,
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
+				8E2E8FED20521A5B000F67EE /* QR.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
 				8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */,
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
 				8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */,
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
 				8E20333020386C47003B71A7 /* restaurant@1x.png in Resources */,
+				8E2E8FE920520EE0000F67EE /* QR@2x.png in Resources */,
 				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +324,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -322,6 +338,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -362,6 +379,7 @@
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
+				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
 				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
 				83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */,
 				8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */,
