@@ -24,10 +24,14 @@
                                 <color key="backgroundColor" red="0.34620164775596785" green="0.74155175751152569" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8N-nB-3lv" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="225" y="460" width="104" height="36"/>
+                                <rect key="frame" x="215" y="464" width="104" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.62594968671139384" green="1" blue="0.5614865661225712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-j3-YDO">
+                                <rect key="frame" x="0.0" y="36" width="375" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Gwd-4y-zTx"/>
@@ -35,6 +39,7 @@
                     <connections>
                         <outlet property="fbSignInButton" destination="T8N-nB-3lv" id="cgi-gb-1Np"/>
                         <outlet property="googleSignButton" destination="a7i-0i-Wdq" id="0ZO-xO-JjJ"/>
+                        <outlet property="logoImage" destination="G9Y-j3-YDO" id="knA-Ve-wa1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uy-BE-ilF" userLabel="First Responder" sceneMemberID="firstResponder"/>

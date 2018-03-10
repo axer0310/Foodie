@@ -40,7 +40,7 @@
                                 </constraints>
                                 <state key="normal" image="chat.png"/>
                                 <connections>
-                                    <action selector="showChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLx-mn-537"/>
+                                    <action selector="showChatView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TN1-cg-Amb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-TD-pZz">
@@ -70,7 +70,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L"/>
+                    <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="7oT-Wj-pxE">
+                            <connections>
+                                <action selector="logOut:" destination="BYZ-38-t0r" id="Fyy-jp-ee7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="brz-EC-nbw" id="TPj-LR-twH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

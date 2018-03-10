@@ -25,13 +25,15 @@ class PartyViewController: UIViewController
     
     
     @IBAction func NextButton(_ sender: Any) {
+
+        var randomString = Helper.randomString(length: 16)
         
         let post = ["Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
         
-        let childUpdates = ["PartyIDs": post]
+        let childUpdates = ["PartyIDs/\(randomString)": post ]
         
         ref.updateChildValues(childUpdates)
-        ref.updateChildValues(childUpdates)
+        //ref.updateChildValues(childUpdates)
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -80,21 +82,11 @@ class PartyViewController: UIViewController
         }
     }
     
-    
-    
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         ref = Database.database().reference()
-//        var rootRef = Database(url: "https://foodie-1e106.firebaseio.com/")
-//
-//        rootRef.setValue("Doing something!!")
-//        rootRef.observeEventType(.Value, withBlock:{
-//            snapshot in
-//            print("\(snapshot.key)-> \(snapshot.value)")
-//        })
+
         self.navigationItem.title = "Create Party"
     }
     

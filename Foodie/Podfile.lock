@@ -1,4 +1,28 @@
 PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - BDBOAuth1Manager (1.6.0):
+    - AFNetworking/NSURLConnection (~> 2.6.0)
+    - AFNetworking/NSURLSession (~> 2.6.0)
   - Firebase/Auth (4.9.0):
     - Firebase/Core
     - FirebaseAuth (= 4.4.3)
@@ -79,9 +103,12 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
-  - YelpAPI (3.0.0)
+  - SVPullToRefresh (0.4.1)
+  - YelpAPI (2.0.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.5)
+  - BDBOAuth1Manager
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -89,9 +116,12 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleMaps
   - GoogleSignIn
-  - YelpAPI
+  - SVPullToRefresh
+  - YelpAPI (~> 2.0)
 
 SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
@@ -109,8 +139,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: 32312d904d9a771f42f9d0367c577cb9d42c9012
+PODFILE CHECKSUM: 67fcf4e5fe6effdb5618a3720ee82e2e90f42091
 
 COCOAPODS: 1.4.0

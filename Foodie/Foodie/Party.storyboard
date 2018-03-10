@@ -111,6 +111,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Lg6-Lx-yaq">
                             <connections>
                                 <action selector="NextButton:" destination="RUG-sX-OB9" id="rSR-20-4yP"/>
+                                <segue destination="dXk-Hx-lLM" kind="show" id="7ho-Ik-9Rg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -129,6 +130,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5T-f1-p02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1364" y="-347.67616191904051"/>
+        </scene>
+        <!--Main Party View Controller-->
+        <scene sceneID="Ii2-A4-UxN">
+            <objects>
+                <viewController id="dXk-Hx-lLM" customClass="MainPartyViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cur-u4-H3t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UKU-m0-Sci"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wH7-H6-eE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="-349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YYW-aF-5YI">
