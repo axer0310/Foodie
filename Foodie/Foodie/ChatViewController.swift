@@ -64,5 +64,21 @@ class ChatViewController: UIViewController, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         <#code#>
     }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        //performSegue(withIdentifier: "userList", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "userList" {
+//            let userListVC = segue.destination as! UserListViewController
+//            let chatGroupVC = sender as! ChatGroupViewController
+//            userListVC.chatGroupVC = chatGroupVC
+//        } else if segue.identifier == "chatting" {
+//            let chatVC = segue.destination as! ViewController
+//            chatVC.groupKey = sender as? String
+//        }
+    }
+    
 }
 
