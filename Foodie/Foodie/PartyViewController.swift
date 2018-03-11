@@ -24,17 +24,7 @@ class PartyViewController: UIViewController
     var y: Double = -86.9169629
     
     
-    @IBAction func NextButton(_ sender: Any) {
 
-        var randomString = Helper.randomString(length: 16)
-        
-        let post = ["Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
-        
-        let childUpdates = ["PartyIDs/\(randomString)": post ]
-        
-        ref.updateChildValues(childUpdates)
-        //ref.updateChildValues(childUpdates)
-    }
     
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
