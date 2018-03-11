@@ -80,5 +80,13 @@ class ChatViewController: UIViewController, UITableViewDelegate {
 //        }
     }
     
+    func fetchChatGroupList() {
+//        if let uid = FirebaseDataService.instance.currentUserUid {
+//            FirebaseDataService.instance.userRef.child(uid).child("groupList").observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            }
+//        }
+    }
+    
 }
 
