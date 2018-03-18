@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import MapKit
-import QRCode
+import SwiftQRCode
 
 
 class MainPageViewController: UIViewController
@@ -95,22 +95,21 @@ class MainPageViewController: UIViewController
     }
     @IBAction func showQR(_ sender: Any)
     {
-        var qrCode = QRCode(user.id)
-        qrCode?.size = CGSize(width: 30, height: 30)
+        
         
         if let story = UIStoryboard.init(name: "QR", bundle: nil) as? UIStoryboard
         {
-            if let vc = story.instantiateViewController(withIdentifier: "QRView") as? QRViewController
+            if let nav = story.instantiateViewController(withIdentifier: "QRNav") as? UINavigationController
             {
-                vc.qrImage = (qrCode?.image)!
-                self.present(vc, animated: true, completion: nil)
+                if let vc = nav.childViewControllers[0] as? QRViewController
+                {
+                    vc.qrImage = QRCode.generateImage(user.id, avatarImage: UIImage(named: "avatar"))!
+                    self.present(nav, animated: true, completion: nil)
+                }
             }
         }
     }
-    @IBAction func scanQR(_ sender: Any)
-    {
-        
-    }
+    
     @IBAction func logOut(_ sender: Any)
     {
         self.loginEntry.logOut()
