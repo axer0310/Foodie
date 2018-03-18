@@ -16,6 +16,10 @@
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
+		8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0725205E2115001B2724 /* FriendListViewController.swift */; };
+		8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A0727205E2125001B2724 /* FriendList.storyboard */; };
+		8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0729205E2336001B2724 /* FriendListCell.swift */; };
+		8E1A072C205E285F001B2724 /* friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A072B205E285E001B2724 /* friend@2x.png */; };
 		8E20332E20386C47003B71A7 /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332920386C47003B71A7 /* chat@2x.png */; };
 		8E20332F20386C47003B71A7 /* party@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332A20386C47003B71A7 /* party@2x.png */; };
 		8E20333020386C47003B71A7 /* restaurant@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332B20386C47003B71A7 /* restaurant@1x.png */; };
@@ -57,6 +61,10 @@
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8E1A0722205E1106001B2724 /* SwiftQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1A0723205E1172001B2724 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/QRCodeDemo-chdzbrqcunfoomakbbrwdotaatpl/Build/Products/Debug-iphoneos/QRCode.framework"; sourceTree = "<group>"; };
+		8E1A0725205E2115001B2724 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		8E1A0727205E2125001B2724 /* FriendList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendList.storyboard; sourceTree = "<group>"; };
+		8E1A0729205E2336001B2724 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
+		8E1A072B205E285E001B2724 /* friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friend@2x.png"; path = "../../../../../../../Downloads/friend@2x.png"; sourceTree = "<group>"; };
 		8E20332920386C47003B71A7 /* chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat@2x.png"; sourceTree = "<group>"; };
 		8E20332A20386C47003B71A7 /* party@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "party@2x.png"; sourceTree = "<group>"; };
 		8E20332B20386C47003B71A7 /* restaurant@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant@1x.png"; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 		8E20332820386C47003B71A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				8E1A072B205E285E001B2724 /* friend@2x.png */,
 				8E2E8FF02052249E000F67EE /* scan@2x.png */,
 				8E2E8FE820520EE0000F67EE /* QR@2x.png */,
 				8E20332920386C47003B71A7 /* chat@2x.png */,
@@ -198,6 +207,9 @@
 				8E2DEB7D203E2E5F0067717B /* Party.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
+				8E1A0725205E2115001B2724 /* FriendListViewController.swift */,
+				8E1A0727205E2125001B2724 /* FriendList.storyboard */,
+				8E1A0729205E2336001B2724 /* FriendListCell.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -274,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1A072C205E285F001B2724 /* friend@2x.png in Resources */,
 				8E20332E20386C47003B71A7 /* chat@2x.png in Resources */,
 				8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */,
 				8E20332F20386C47003B71A7 /* party@2x.png in Resources */,
@@ -284,6 +297,7 @@
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
 				8E2E8FED20521A5B000F67EE /* QR.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
+				8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */,
 				8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */,
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
 				8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */,
@@ -385,8 +399,10 @@
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
+				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
 				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
+				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,
 				83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */,
 				8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */,
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,

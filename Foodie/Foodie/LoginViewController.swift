@@ -155,6 +155,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             {
                 self.user.name = name
             }
+            else
+            {
+                self.user.name = "This Usser did not set name."
+            }
             if self.user.id == ""
             {
                 self.user.id = Helper.randomString(length: 16)

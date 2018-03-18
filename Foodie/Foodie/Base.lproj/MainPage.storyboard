@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,11 +72,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Parties Near Me" id="CE3-4K-n4L">
-                        <barButtonItem key="leftBarButtonItem" image="QR.png" id="6Fw-8C-cvc">
-                            <connections>
-                                <action selector="showQR:" destination="BYZ-38-t0r" id="QBn-Kt-07D"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem image="QR.png" id="6Fw-8C-cvc">
+                                <connections>
+                                    <action selector="showQR:" destination="BYZ-38-t0r" id="QBn-Kt-07D"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="friend.png" id="zPm-Mu-3I1">
+                                <connections>
+                                    <action selector="showFriendList:" destination="BYZ-38-t0r" id="WHH-1U-dhF"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="7oT-Wj-pxE">
                             <connections>
                                 <action selector="logOut:" destination="BYZ-38-t0r" id="Fyy-jp-ee7"/>
@@ -112,6 +120,7 @@
     <resources>
         <image name="QR.png" width="20" height="20"/>
         <image name="chat.png" width="45" height="45"/>
+        <image name="friend.png" width="32" height="32"/>
         <image name="party.png" width="45" height="45"/>
         <image name="restaurant.png" width="45" height="45"/>
     </resources>

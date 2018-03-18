@@ -111,6 +111,20 @@ class MainPageViewController: UIViewController
         }
     }
     
+    @IBAction func showFriendList(_ sender: Any)
+    {
+        if let story = UIStoryboard.init(name: "FriendList", bundle: nil) as? UIStoryboard
+        {
+            if let nav = story.instantiateViewController(withIdentifier: "FriendListNav") as? UINavigationController
+            {
+                if let vc = nav.childViewControllers[0] as? FriendListViewController
+                {
+                    vc.user = self.user
+                    self.present(nav, animated: true, completion: nil)
+                }
+            }
+        }
+    }
     @IBAction func logOut(_ sender: Any)
     {
         self.loginEntry.logOut()
