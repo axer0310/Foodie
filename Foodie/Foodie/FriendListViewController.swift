@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import Firebase
 
-class FriendListViewController: UITableViewController
+class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     var friendList = [String]()
+    var dataList = [[String:AnyObject]]()
     var user = User()
     var ref = Database.database().reference()
 
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad()
     {
@@ -34,30 +36,56 @@ class FriendListViewController: UITableViewController
             {
                 print(friend)
             }
+            self.getData()
         })
+        
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func getData()
+    {
+        for id in friendList
+        {
+            ref.child("/Users/\(id)").observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let value = snapshot.value as? [String:AnyObject]
+                if let data = value
+                {
+                    self.dataList.append(data)
+                }
+                self.tableView.reloadData()
+            })
+        }
+        
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendListCell
-        cell.Name.text = user.name
-        var url = URL.init(string: user.profilePicUrlStr)!
-        do
+        
+        let data = dataList[indexPath.row]
+        
+        if let name = data["Name"] as? String
         {
-            if let data = try? Data(contentsOf: url)
+            cell.Name.text = name
+        }
+        if let urlStr = data["ProfilePic"] as? String
+        {
+            let url = URL.init(string: urlStr)
+            if let data = try? Data(contentsOf: url!)
             {
                 cell.ProfilePic.image = UIImage(data: data)!
             }
+            else
+            {
+                print("Cant get profile pic")
+            }
         }
-        catch
-        {
-            print(error)
-        }
-        
-        
         return cell
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return friendList.count;
+        return dataList.count;
+    }
+    @IBAction func dismiss(_ sender: Any)
+    {
+         self.dismiss(animated: true, completion: nil)
     }
 }

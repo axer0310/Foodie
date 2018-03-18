@@ -33,7 +33,7 @@
                                                 <constraint firstAttribute="width" constant="70" id="uUa-eq-uty"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-kf-lRu">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-kf-lRu">
                                             <rect key="frame" x="106" y="38" width="233" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -61,7 +61,16 @@
                             <outlet property="delegate" destination="OhQ-u8-4Mb" id="tgE-U1-Gd8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jAw-O6-uWM"/>
+                    <navigationItem key="navigationItem" id="jAw-O6-uWM">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="FpF-Y6-lZp">
+                            <connections>
+                                <action selector="dismiss:" destination="OhQ-u8-4Mb" id="WmX-Gc-p3t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="A1e-II-sJl" id="VDi-So-KUo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2o-PY-G90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +92,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZn-tz-AEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194" y="135"/>
+            <point key="canvasLocation" x="-343" y="135"/>
         </scene>
     </scenes>
 </document>

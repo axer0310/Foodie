@@ -192,12 +192,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         userInfo.FriendList = self.user.friendList
         userInfo.UserId = self.user.id
         userInfo.profilePicURL = self.user.profilePicUrlStr
-        
+        userInfo.name = self.user.name
         
         
         let post = ["Coordinate": ["x" : userInfo.CoordinateX, "y" : userInfo.CoordinateY],
                     "FriendIDs": userInfo.FriendList,
-                    "ProfilePic": userInfo.profilePicURL
+                    "ProfilePic": userInfo.profilePicURL,
+                    "Name": userInfo.name
                     ] as [String : Any]
         let childUpdates = ["/Users/\(userInfo.UserId)": post]
         ref.updateChildValues(childUpdates)
