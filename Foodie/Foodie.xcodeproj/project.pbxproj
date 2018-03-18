@@ -55,6 +55,8 @@
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		8E1A0722205E1106001B2724 /* SwiftQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1A0723205E1172001B2724 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/QRCodeDemo-chdzbrqcunfoomakbbrwdotaatpl/Build/Products/Debug-iphoneos/QRCode.framework"; sourceTree = "<group>"; };
 		8E20332920386C47003B71A7 /* chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat@2x.png"; sourceTree = "<group>"; };
 		8E20332A20386C47003B71A7 /* party@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "party@2x.png"; sourceTree = "<group>"; };
 		8E20332B20386C47003B71A7 /* restaurant@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant@1x.png"; sourceTree = "<group>"; };
@@ -203,6 +205,8 @@
 		F531CD4A30E51812C7FD1F2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E1A0723205E1172001B2724 /* QRCode.framework */,
+				8E1A0722205E1106001B2724 /* SwiftQRCode.framework */,
 				92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */,
 			);
 			name = Frameworks;

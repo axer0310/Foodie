@@ -104,6 +104,7 @@ class MainPageViewController: UIViewController
                 if let vc = nav.childViewControllers[0] as? QRViewController
                 {
                     vc.qrImage = QRCode.generateImage(user.id, avatarImage: UIImage(named: "avatar"))!
+                    vc.user = self.user
                     self.present(nav, animated: true, completion: nil)
                 }
             }
