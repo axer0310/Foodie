@@ -12,28 +12,34 @@ import CoreLocation
 
 class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var searchBar: UIBarButtonItem!
+    @IBOutlet weak var Search: UISearchBar!
     var businesses: [Business]!
 //    @IBAction func BackButton(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
 //    }
     var locationMan : CLLocationManager!
     //var annot : MKClusterAnnotation!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let centerLocation = CLLocation(latitude: 40.4237, longitude: 86.9212)
+        //        let centerLocation = CLLocation(latitude: 40.4237, longitude: 86.9212)
         //goToLocation(location: centerLocation)
         
         locationMan = CLLocationManager()
         locationMan.delegate = self
         locationMan.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationMan.distanceFilter = 300
+        locationMan.distanceFilter = 200
         locationMan.requestWhenInUseAuthorization()
-        locationMan.startUpdatingLocation()
-       
+        
+        let Search = UISearchBar()
+        Search.delegate = self as? UISearchBarDelegate
+        
+        //        self.navigationItem.titleView = Search
+        //        mapView.delegate = self
+        //        self.view.addSubview(mapView)
+        
         Business.searchWithTerm(term: "Asian", completion: { (businesses: [Business]?, error: Error?) -> Void in
+            
             self.businesses = businesses
             if let businesses = businesses {
                 for business in businesses {
@@ -42,17 +48,15 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
                 }
             }
+            
         }
         )
-        
     }
-    
     func goToLocation(location: CLLocation) {
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region = MKCoordinateRegionMake(location.coordinate, span)
         mapView.setRegion(region, animated: false)
     }
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.authorizedWhenInUse {
             locationMan.startUpdatingLocation()
@@ -65,9 +69,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             let region = MKCoordinateRegionMake(location.coordinate, span)
             self.mapView.setRegion(region, animated: true)
         }
-        let _:CLLocationCoordinate2D = manager.location!.coordinate
     }
-    
     // add an annotation with an address: String
     func addAnnotationAtAddress(address: String, title: String, subtitle: String) {
         let geocoder = CLGeocoder()
@@ -86,17 +88,36 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "customAnnotationView"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         
-        if (annotationView == nil) {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        }
-        else {
-            annotationView!.annotation = annotation
-        }
-        annotationView!.pinTintColor = UIColor.green
-        return annotationView
+        pin.canShowCallout = true
+        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        return pin
+        
+        
+//        let identifier = "customAnnotationView"
+//        // custom pin annotation
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+//        if (annotationView == nil) {
+//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//        }
+//        else {
+//            annotationView!.annotation = annotation
+//        }
+//        annotationView!.pinTintColor = UIColor.green
+//
+//        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let annView = view.annotation
+        let storyboard = UIStoryboard(name: "ResturantViewController", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailView") as! DetailviewController
+        
+        detailVC.storename = ((annView?.title!)!)
+        detailVC.sub = ((annView?.subtitle!)!)
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func searchBar(Search: UISearchBar, textDidChange searchText: String) {
@@ -106,8 +127,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             for business in businesses {
                 print(business.name!)
                 print(business.address!)
-            
-               self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
             }
             } as! ([Business]?, Error?) -> Void)
     }
