@@ -19,7 +19,6 @@
 		8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0725205E2115001B2724 /* FriendListViewController.swift */; };
 		8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A0727205E2125001B2724 /* FriendList.storyboard */; };
 		8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0729205E2336001B2724 /* FriendListCell.swift */; };
-		8E1A072C205E285F001B2724 /* friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A072B205E285E001B2724 /* friend@2x.png */; };
 		8E20332E20386C47003B71A7 /* chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332920386C47003B71A7 /* chat@2x.png */; };
 		8E20332F20386C47003B71A7 /* party@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332A20386C47003B71A7 /* party@2x.png */; };
 		8E20333020386C47003B71A7 /* restaurant@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E20332B20386C47003B71A7 /* restaurant@1x.png */; };
@@ -39,6 +38,8 @@
 		8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D847203FD38E003E9958 /* FoodieImage.png */; };
 		8E5502A02045FF3800F11825 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55029F2045FF3800F11825 /* Party.swift */; };
 		8E5502A22046001600F11825 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5502A12046001600F11825 /* Helper.swift */; };
+		8E89FB56205F7DF5007A5F96 /* friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E89FB55205F7DF5007A5F96 /* friend@2x.png */; };
+		8E89FB58205F7E2B007A5F96 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E89FB57205F7E2B007A5F96 /* reload@2x.png */; };
 		8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0681202D3C390046A904 /* MainPageViewController.swift */; };
 		8EAB0684202D3CD60046A904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0683202D3CD60046A904 /* User.swift */; };
 		8EB670B92021004200E9228B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670B82021004200E9228B /* AppDelegate.swift */; };
@@ -64,7 +65,6 @@
 		8E1A0725205E2115001B2724 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		8E1A0727205E2125001B2724 /* FriendList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendList.storyboard; sourceTree = "<group>"; };
 		8E1A0729205E2336001B2724 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
-		8E1A072B205E285E001B2724 /* friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friend@2x.png"; path = "../../../../../../../Downloads/friend@2x.png"; sourceTree = "<group>"; };
 		8E20332920386C47003B71A7 /* chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat@2x.png"; sourceTree = "<group>"; };
 		8E20332A20386C47003B71A7 /* party@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "party@2x.png"; sourceTree = "<group>"; };
 		8E20332B20386C47003B71A7 /* restaurant@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant@1x.png"; sourceTree = "<group>"; };
@@ -85,6 +85,8 @@
 		8E55029F2045FF3800F11825 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		8E5502A12046001600F11825 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
+		8E89FB55205F7DF5007A5F96 /* friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friend@2x.png"; sourceTree = "<group>"; };
+		8E89FB57205F7E2B007A5F96 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
 		8EAB0681202D3C390046A904 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		8EAB0683202D3CD60046A904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8EB670B52021004200E9228B /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +138,8 @@
 		8E20332820386C47003B71A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				8E1A072B205E285E001B2724 /* friend@2x.png */,
+				8E89FB57205F7E2B007A5F96 /* reload@2x.png */,
+				8E89FB55205F7DF5007A5F96 /* friend@2x.png */,
 				8E2E8FF02052249E000F67EE /* scan@2x.png */,
 				8E2E8FE820520EE0000F67EE /* QR@2x.png */,
 				8E20332920386C47003B71A7 /* chat@2x.png */,
@@ -286,10 +289,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E1A072C205E285F001B2724 /* friend@2x.png in Resources */,
+				8E89FB56205F7DF5007A5F96 /* friend@2x.png in Resources */,
 				8E20332E20386C47003B71A7 /* chat@2x.png in Resources */,
 				8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */,
 				8E20332F20386C47003B71A7 /* party@2x.png in Resources */,
+				8E89FB58205F7E2B007A5F96 /* reload@2x.png in Resources */,
 				8E2E8FF12052249F000F67EE /* scan@2x.png in Resources */,
 				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8E20333120386C47003B71A7 /* restaurant@2x.png in Resources */,
