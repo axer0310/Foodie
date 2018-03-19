@@ -17,7 +17,9 @@ target 'Foodie' do
     pod 'AFNetworking', '~> 2.5’
     pod 'BDBOAuth1Manager'
     pod 'SVPullToRefresh'
-    pod 'QRCode'
+#    pod 'QRCode'
+    pod 'SSQRScanner'
+    pod 'SwiftQRCode'
 # for chat room database
 pod 'Firebase/RemoteConfig'
 
