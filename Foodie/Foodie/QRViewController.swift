@@ -76,8 +76,14 @@ class QRViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegat
                 print(code.stringValue)
                 if(code.stringValue != friendID)
                 {
+                    
                     friendID = code.stringValue!
                     updateFriendsList(friendID: friendID)
+                    captureSession?.stopRunning()
+                    
+                    
+                    
+                   
                 }
             }
         }
@@ -89,12 +95,14 @@ class QRViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegat
     func updateFriendsList(friendID: String)
     {
         var friendList = [String]()
+        var count = 0;
         print("/Users/\(user.id)/")
         ref.child("/Users/\(user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? [String]
             if let friends = value
             {
+                count = friends.count
                 for friend in friends
                 {
                     friendList.append(friend as! String)
@@ -108,7 +116,31 @@ class QRViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegat
             
             let childUpdates = ["/Users/\(self.user.id)/FriendIDs": friendList]
             self.ref.updateChildValues(childUpdates)
+            
+            
+            //Verifying if add sucuess
+            self.ref.child("/Users/\(self.user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let value = snapshot.value as? [String]
+                if let friends = value
+                {
+                    if(count < friends.count && friends[count] == friendID)
+                    {
+                        var alert = UIAlertView()
+                        alert.title = "Success"
+                        alert.message = "You have successfully added 1 friend"
+                        alert.addButton(withTitle: "OK")
+                        alert.show()
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                }
+                
+            })
+            
+            
         })
+        
         
     }
     @IBAction func dismiss(_ sender: Any)
