@@ -78,21 +78,11 @@ class PartyViewController: UIViewController
         }
     }
     
-    
-    
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         ref = Database.database().reference()
-//        var rootRef = Database(url: "https://foodie-1e106.firebaseio.com/")
-//
-//        rootRef.setValue("Doing something!!")
-//        rootRef.observeEventType(.Value, withBlock:{
-//            snapshot in
-//            print("\(snapshot.key)-> \(snapshot.value)")
-//        })
+
         self.navigationItem.title = "Create Party"
     }
     
