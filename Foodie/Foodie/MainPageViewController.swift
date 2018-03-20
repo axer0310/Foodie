@@ -10,12 +10,20 @@ import Foundation
 import UIKit
 import Firebase
 import MapKit
+import SwiftQRCode
 
-class MainPageViewController: UIViewController
+
+class MainPageViewController: UIViewController, MKMapViewDelegate
 {
     var user = User()
     var loginEntry = LoginViewController()
     var ref = Database.database().reference()
+    
+    @IBOutlet var partyInfoView: UIView!
+    @IBOutlet var partyNameLabel: UILabel!
+    @IBOutlet var partyMemberLimitsLabel: UILabel!
+    @IBOutlet var partyCarPoolOption: UILabel!
+    @IBOutlet var partyDescriptionLabel: UILabel!
     
     @IBOutlet var mapView: MKMapView!
 
@@ -24,14 +32,14 @@ class MainPageViewController: UIViewController
     {
         print(user.name)
 
-//        self.mapView.delegate = self
+        self.mapView.delegate = self
         getPartys()
         
     }
     func getPartys()
     {
         ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
-            
+
             let value = snapshot.value as? [String:AnyObject]
             if let parties = value
             {
@@ -42,16 +50,34 @@ class MainPageViewController: UIViewController
                         let coordinate = partyDic["Coordinate"] as? NSDictionary
                         let x = Double( coordinate?["x"] as! Double )
                         let y = Double( coordinate?["y"] as! Double )
-                        
-                        var pin = MKPointAnnotation()
+                        let title = partyDic["Name"] as? String
+                        let pin = MKPointAnnotation()
                         pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
-                        self.mapView.addAnnotation(pin)
+                        pin.title = title
                         
+                        self.mapView.addAnnotation(pin)
+
                     }
                 }
             }
         })
 
+    }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
+    {
+        partyInfoView.isHidden = true
+        
+//        if let annotationTitle = view.annotation?.title
+//        {
+//            print("User tapped on annotation with title: \(annotationTitle!)")
+//        }
+    }
+    @IBAction func joinParty(_ sender: Any)
+    {
+    }
+    @IBAction func reload(_ sender: Any)
+    {
+        getPartys()
     }
     @IBAction func showRestaurant(_ sender: Any)
     {
@@ -62,9 +88,6 @@ class MainPageViewController: UIViewController
                 self.present(vc, animated: true, completion: nil)
             }
         }
-        
-        
-        
     }
    
 
@@ -88,6 +111,38 @@ class MainPageViewController: UIViewController
                 
             {
                 self.present(nav, animated: true, completion: nil)
+            }
+        }
+    }
+    @IBAction func showQR(_ sender: Any)
+    {
+        
+        
+        if let story = UIStoryboard.init(name: "QR", bundle: nil) as? UIStoryboard
+        {
+            if let nav = story.instantiateViewController(withIdentifier: "QRNav") as? UINavigationController
+            {
+                if let vc = nav.childViewControllers[0] as? QRViewController
+                {
+                    vc.qrImage = QRCode.generateImage(user.id, avatarImage: UIImage(named: "avatar"))!
+                    vc.user = self.user
+                    self.present(nav, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    @IBAction func showFriendList(_ sender: Any)
+    {
+        if let story = UIStoryboard.init(name: "FriendList", bundle: nil) as? UIStoryboard
+        {
+            if let nav = story.instantiateViewController(withIdentifier: "FriendListNav") as? UINavigationController
+            {
+                if let vc = nav.childViewControllers[0] as? FriendListViewController
+                {
+                    vc.user = self.user
+                    self.present(nav, animated: true, completion: nil)
+                }
             }
         }
     }
