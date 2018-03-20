@@ -103,7 +103,6 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
-  - SSQRScanner (1.0.1)
   - SVPullToRefresh (0.4.1)
   - SwiftQRCode (3.0.2)
   - YelpAPI (2.0.0)
@@ -118,7 +117,6 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleMaps
   - GoogleSignIn
-  - SSQRScanner
   - SVPullToRefresh
   - SwiftQRCode
   - YelpAPI (~> 2.0)
@@ -143,11 +141,10 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  SSQRScanner: 7b5ac3dd17e094182f88c0aaedab4cd208bd888c
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: f6ebe390f91174aac920ba562e3014bd8609a971
+PODFILE CHECKSUM: fb4cd62a85425d88fbac142ddc842d45686826fb
 
 COCOAPODS: 1.4.0

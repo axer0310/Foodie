@@ -110,8 +110,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Lg6-Lx-yaq">
                             <connections>
-                                <action selector="NextButton:" destination="RUG-sX-OB9" id="rSR-20-4yP"/>
-                                <segue destination="dXk-Hx-lLM" kind="show" id="7ho-Ik-9Rg"/>
+                                <segue destination="dXk-Hx-lLM" kind="presentation" identifier="presentPartyDisplay" id="WDc-Qn-SQI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

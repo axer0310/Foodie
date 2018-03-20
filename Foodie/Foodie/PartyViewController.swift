@@ -25,9 +25,9 @@ class PartyViewController: UIViewController
     var carpool_status: Bool = false;
     
     
-    @IBAction func NextButton(_ sender: Any) {
+    func NextButton() {
         
-        var randomString = Helper.randomString(length: 16)
+        let randomString = Helper.randomString(length: 16)
         
         let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
         
@@ -99,7 +99,13 @@ class PartyViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "presentPartyDisplay"
+        {
+            NextButton()
+        }
+    }
 
     
 }

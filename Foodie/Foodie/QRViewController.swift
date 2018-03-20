@@ -8,7 +8,7 @@
 
 import Foundation
 import AVFoundation
-import SwiftQRCode
+//import SwiftQRCode
 import UIKit
 import Firebase
 

@@ -212,13 +212,10 @@
 				8E2DEB7D203E2E5F0067717B /* Party.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
-
 				8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */,
-
 				8E1A0725205E2115001B2724 /* FriendListViewController.swift */,
 				8E1A0727205E2125001B2724 /* FriendList.storyboard */,
 				8E1A0729205E2336001B2724 /* FriendListCell.swift */,
-
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SSQRScanner/SSQRScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftQRCode/SwiftQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
@@ -367,7 +363,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSQRScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
