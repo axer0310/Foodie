@@ -30,27 +30,27 @@ class MainPageViewController: UIViewController
     }
     func getPartys()
     {
-        ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
-
-            let value = snapshot.value as? [String:AnyObject]
-            if let parties = value
-            {
-                for party in parties.values
-                {
-                    if let partyDic = party as? [String:AnyObject]
-                    {
-                        let coordinate = partyDic["Coordinate"] as? NSDictionary
-                        let x = Double( coordinate?["x"] as! Double )
-                        let y = Double( coordinate?["y"] as! Double )
-
-                        var pin = MKPointAnnotation()
-                        pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
-                        self.mapView.addAnnotation(pin)
-
-                    }
-                }
-            }
-        })
+//        ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            let value = snapshot.value as? [String:AnyObject]
+//            if let parties = value
+//            {
+//                for party in parties.values
+//                {
+//                    if let partyDic = party as? [String:AnyObject]
+//                    {
+//                        let coordinate = partyDic["Coordinate"] as? NSDictionary
+//                        let x = Double( coordinate?["x"] as! Double )
+//                        let y = Double( coordinate?["y"] as! Double )
+//
+//                        var pin = MKPointAnnotation()
+//                        pin.coordinate = CLLocationCoordinate2D(latitude: x, longitude: y)
+//                        self.mapView.addAnnotation(pin)
+//
+//                    }
+//                }
+//            }
+//        })
 
     }
     @IBAction func showRestaurant(_ sender: Any)

@@ -22,18 +22,18 @@ class PartyViewController: UIViewController
     var numPeople: String = "";
     var x: Double = 40.4278709
     var y: Double = -86.9169629
+    var carpool_status: Bool = false;
     
     
     @IBAction func NextButton(_ sender: Any) {
         
         var randomString = Helper.randomString(length: 16)
         
-        let post = ["Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
+        let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
         
         let childUpdates = ["PartyIDs/\(randomString)": post ]
         
         ref.updateChildValues(childUpdates)
-        //ref.updateChildValues(childUpdates)
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -76,8 +76,10 @@ class PartyViewController: UIViewController
     @IBAction func CarPoolButton(_ sender: Any) {
 
         if CarPoolButton.isOn {
+            carpool_status = true
             CarPool.text = "Carpool Option On"
         } else {
+            carpool_status = false
             CarPool.text = "Carpool Option Off"
         }
     }
