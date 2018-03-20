@@ -62,6 +62,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jAw-O6-uWM">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="QCo-0P-eqV">
+                            <connections>
+                                <action selector="showMap:" destination="OhQ-u8-4Mb" id="xo3-Fg-lmb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="FpF-Y6-lZp">
                             <connections>
                                 <action selector="dismiss:" destination="OhQ-u8-4Mb" id="WmX-Gc-p3t"/>
