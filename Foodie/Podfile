@@ -18,7 +18,7 @@ target 'Foodie' do
     pod 'BDBOAuth1Manager'
     pod 'SVPullToRefresh'
 #    pod 'QRCode'
-    pod 'SSQRScanner'
+#    pod 'SSQRScanner'
     pod 'SwiftQRCode'
 # for chat room database
 pod 'Firebase/RemoteConfig'

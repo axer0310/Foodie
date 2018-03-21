@@ -45,7 +45,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 for business in businesses {
                     print(business.name!)
                     print(business.address!)
-                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
+                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!, id: business.id!)
                 }
             }
             
@@ -71,7 +71,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
     }
     // add an annotation with an address: String
-    func addAnnotationAtAddress(address: String, title: String, subtitle: String) {
+    func addAnnotationAtAddress(address: String, title: String, subtitle: String, id:String ) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let placemarks = placemarks {
@@ -81,6 +81,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     annotation.coordinate = coordinate.coordinate
                     annotation.title = title
                     annotation.subtitle = subtitle
+                    annotation.id = id
                     self.mapView.addAnnotation(annotation)
                 }
             }
@@ -116,7 +117,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         
         detailVC.storename = ((annView?.title!)!)
         detailVC.sub = ((annView?.subtitle!)!)
-        
+        detailVC.id = ((annView?.id!)!)
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

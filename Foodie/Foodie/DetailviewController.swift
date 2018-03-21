@@ -15,14 +15,22 @@ class DetailviewController: UIViewController {
     
     var storename = ""
     var sub = ""
+    var id = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
         lableName.text = storename
         labelSub.text = sub
-        
-        
-        
+        YelpClient.fetchReviews(forBusinessId: id){
+            if let response = response,
+                let reviews = response.reviews,
+                reviews.count > 0 {
+                print(reviews)
+            }
+            
+        }
         
     }
+    public func fetchReviews(forBusinessId id: String!, // Required
+        completion: @escaping (CDReview?) -> Void)
 }

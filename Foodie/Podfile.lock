@@ -23,19 +23,19 @@ PODS:
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
-  - Firebase/Auth (4.9.0):
+  - Firebase/Auth (4.8.2):
     - Firebase/Core
-    - FirebaseAuth (= 4.4.3)
-  - Firebase/Core (4.9.0):
+    - FirebaseAuth (= 4.4.2)
+  - Firebase/Core (4.8.2):
     - FirebaseAnalytics (= 4.0.9)
-    - FirebaseCore (= 4.0.15)
-  - Firebase/Database (4.9.0):
+    - FirebaseCore (= 4.0.14)
+  - Firebase/Database (4.8.2):
     - Firebase/Core
     - FirebaseDatabase (= 4.1.4)
-  - Firebase/RemoteConfig (4.9.0):
+  - Firebase/RemoteConfig (4.8.2):
     - Firebase/Core
-    - FirebaseRemoteConfig (= 2.1.2)
-  - Firebase/Storage (4.9.0):
+    - FirebaseRemoteConfig (= 2.1.1)
+  - Firebase/Storage (4.8.2):
     - Firebase/Core
     - FirebaseStorage (= 2.1.2)
   - FirebaseABTesting (1.0.0):
@@ -46,19 +46,19 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.4.3):
+  - FirebaseAuth (4.4.2):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.15):
+  - FirebaseCore (4.0.14):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (4.1.4):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.9):
+  - FirebaseInstanceID (2.0.8):
     - FirebaseCore (~> 4.0)
-  - FirebaseRemoteConfig (2.1.2):
+  - FirebaseRemoteConfig (2.1.1):
     - FirebaseABTesting (~> 1.0)
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
@@ -103,7 +103,6 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
-  - SSQRScanner (1.0.1)
   - SVPullToRefresh (0.4.1)
   - SwiftQRCode (3.0.2)
   - YelpAPI (2.0.0)
@@ -118,7 +117,6 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleMaps
   - GoogleSignIn
-  - SSQRScanner
   - SVPullToRefresh
   - SwiftQRCode
   - YelpAPI (~> 2.0)
@@ -126,14 +124,14 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
-  Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
+  Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
-  FirebaseAuth: aaaf68d5064a6c8fec435758f83a43b8db26ccaa
-  FirebaseCore: 3bd047463058fa6b5d312c97502c52e45401cdfb
+  FirebaseAuth: bd2738c5c1e92b108ba5f7f7335908097a4e50bb
+  FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
   FirebaseDatabase: de4446507ccd3257fca37d16f40e1540324571fd
-  FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
-  FirebaseRemoteConfig: df64ce784a45e9b9d4988030a59da6baede8bdb0
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseRemoteConfig: 3310f264fff78b6c2e78b24dcfc4c1b3d6766209
   FirebaseStorage: 181bb543d39ee3c53e0558de7ba86b1286a0427f
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
@@ -143,11 +141,10 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  SSQRScanner: 7b5ac3dd17e094182f88c0aaedab4cd208bd888c
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: f6ebe390f91174aac920ba562e3014bd8609a971
+PODFILE CHECKSUM: fb4cd62a85425d88fbac142ddc842d45686826fb
 
 COCOAPODS: 1.4.0

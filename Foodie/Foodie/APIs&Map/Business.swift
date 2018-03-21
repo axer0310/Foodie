@@ -17,9 +17,13 @@ class Business: NSObject {
     let ratingImageURL: URL?
     let reviewCount: NSNumber?
     let rating: Double?
+    let phone: String?
+    let id: String?
+    let reviews: NSObject?
     
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
+        id = dictionary["id"] as? String
         
         let imageURLString = dictionary["image_url"] as? String
         if imageURLString != nil {
@@ -78,6 +82,20 @@ class Business: NSObject {
         } else {
             rating = nil
         }
+        
+        let phonenumber = dictionary["phone"] as? String
+        if phonenumber != nil {
+            phone = phonenumber
+        } else {
+            phone = nil
+        }
+        
+        //let reviews = dictionary["id"] as? NSObject
+        
+        
+        print(rating!, phone!)
+        print("some kind")
+        
         
         reviewCount = dictionary["review_count"] as? NSNumber
     }
