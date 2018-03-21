@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
+class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate,UISearchBarDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var Search: UISearchBar!
     var businesses: [Business]!
@@ -31,8 +31,8 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         locationMan.distanceFilter = 200
         locationMan.requestWhenInUseAuthorization()
         
-        let Search = UISearchBar()
-        Search.delegate = self as? UISearchBarDelegate
+//        let Search = UISearchBar()
+        Search.delegate = self 
         
         //        self.navigationItem.titleView = Search
         //        mapView.delegate = self
@@ -120,7 +120,10 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    func searchBar(Search: UISearchBar, textDidChange searchText: String) {
+    func searchBar(Search: UISearchBar, textDidChange searchText: String)
+    {
+        
+        print(searchText)
         Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             

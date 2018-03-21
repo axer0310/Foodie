@@ -34,7 +34,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
 
         self.mapView.delegate = self
         getPartys()
-        
+        partyInfoView.isHidden = true
     }
     func getPartys()
     {
@@ -65,7 +65,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
     }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
-        partyInfoView.isHidden = true
+//        partyInfoView.isHidden = false
         
 //        if let annotationTitle = view.annotation?.title
 //        {
@@ -81,12 +81,17 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
     }
     @IBAction func showRestaurant(_ sender: Any)
     {
+        
         if let sb = UIStoryboard.init(name: "ResturantPage", bundle: nil) as? UIStoryboard
         {
-            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
+            if let nav = sb.instantiateViewController(withIdentifier: "restaurantNav") as? UINavigationController
             {
-                self.present(vc, animated: true, completion: nil)
+                  self.present(nav, animated: true, completion: nil)
             }
+//            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
+//            {
+//                self.present(vc, animated: true, completion: nil)
+//            }
         }
     }
    
