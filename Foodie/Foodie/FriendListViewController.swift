@@ -56,6 +56,20 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         }
         
     }
+    @IBAction func showMap(_ sender: Any)
+    {
+        if let story = UIStoryboard.init(name: "FriendLocation", bundle: nil) as? UIStoryboard
+        {
+            if let nav = story.instantiateViewController(withIdentifier: "FriendLocationNav") as? UINavigationController
+            {
+                if let vc = nav.childViewControllers[0] as? FriendLocationViewController
+                {
+                    vc.friendList = friendList
+                    self.present(nav, animated: true, completion: nil)
+                }
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendListCell
