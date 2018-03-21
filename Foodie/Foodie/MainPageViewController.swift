@@ -81,12 +81,17 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
     }
     @IBAction func showRestaurant(_ sender: Any)
     {
+        
         if let sb = UIStoryboard.init(name: "ResturantPage", bundle: nil) as? UIStoryboard
         {
-            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
+            if let nav = sb.instantiateViewController(withIdentifier: "restaurantNav") as? UINavigationController
             {
-                self.present(vc, animated: true, completion: nil)
+                  self.present(nav, animated: true, completion: nil)
             }
+//            if let vc = sb.instantiateViewController(withIdentifier: "RestaurantView") as? ResturantViewController
+//            {
+//                self.present(vc, animated: true, completion: nil)
+//            }
         }
     }
    
