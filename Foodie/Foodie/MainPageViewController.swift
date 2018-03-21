@@ -34,7 +34,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
 
         self.mapView.delegate = self
         getPartys()
-        
+        partyInfoView.isHidden = true
     }
     func getPartys()
     {
@@ -66,7 +66,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
     }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
-        partyInfoView.isHidden = true
+//        partyInfoView.isHidden = false
         
 //        if let annotationTitle = view.annotation?.title
 //        {
