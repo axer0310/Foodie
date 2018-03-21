@@ -19,7 +19,7 @@ class Business: NSObject {
     let rating: Double?
     let phone: String?
     let id: String?
-    let reviews: NSObject?
+    let reviewwritten: String?
     
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
@@ -90,11 +90,24 @@ class Business: NSObject {
             phone = nil
         }
         
-        //let reviews = dictionary["id"] as? NSObject
+        let reviewupper = dictionary["snippet_text"] as? String
+//        var temp = ""
+        if reviewupper != nil {
+            reviewwritten = reviewupper
+//            let reviewsArr = location!["reviews"] as? NSArray
+//            if reviewsArr != nil && reviewsArr!.count > 0 {
+//                temp = reviewsArr![0] as! String
+//            }
+////            reviews = storeids.joined(separator: "\n")
+        }else{
+            reviewwritten = nil
+        }
+//        self.reviews = temp
         
+        print(rating!, phone ?? "" , reviewwritten ?? "")
         
-        print(rating!, phone!)
-        print("some kind")
+//        print(reviews?)
+       // print("some kind")
         
         
         reviewCount = dictionary["review_count"] as? NSNumber

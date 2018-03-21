@@ -38,14 +38,14 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         //        mapView.delegate = self
         //        self.view.addSubview(mapView)
         
-        Business.searchWithTerm(term: "Asian", completion: { (businesses: [Business]?, error: Error?) -> Void in
+        Business.searchWithTerm(term: "restaurants", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
             self.businesses = businesses
             if let businesses = businesses {
                 for business in businesses {
                     print(business.name!)
                     print(business.address!)
-                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!, id: business.id!)
+                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
                 }
             }
             
@@ -71,7 +71,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
     }
     // add an annotation with an address: String
-    func addAnnotationAtAddress(address: String, title: String, subtitle: String, id:String ) {
+    func addAnnotationAtAddress(address: String, title: String, subtitle: String ) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let placemarks = placemarks {
@@ -81,7 +81,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     annotation.coordinate = coordinate.coordinate
                     annotation.title = title
                     annotation.subtitle = subtitle
-                    annotation.id = id
+//                    annotation.description.append(id)
                     self.mapView.addAnnotation(annotation)
                 }
             }
@@ -89,13 +89,24 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        let identifier = "customAnnotationView"
+        if annotation is MKUserLocation { return nil }
         
-        pin.canShowCallout = true
-        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        return pin
-        
-        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        annotationView?.pinTintColor = UIColor.green
+        return annotationView
+//        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+//
+//        pin.canShowCallout = true
+//        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//        return pin
 //        let identifier = "customAnnotationView"
 //        // custom pin annotation
 //        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
@@ -117,9 +128,20 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         
         detailVC.storename = ((annView?.title!)!)
         detailVC.sub = ((annView?.subtitle!)!)
-        detailVC.id = ((annView?.id!)!)
+//        detailVC.id = ((annView?.description)!)
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    func mapView(_ mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        //let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "anotherViewController") as! AnotherViewController
+        if let atmPin = view.annotation as? MKAnnotation
+        {
+            print("clicked")
+        }
+//        present(detailedVC, animated: true, completion: nil)
+//        present
+    }
+    
     
     func searchBar(Search: UISearchBar, textDidChange searchText: String)
     {
