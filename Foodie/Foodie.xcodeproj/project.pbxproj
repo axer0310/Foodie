@@ -13,6 +13,7 @@
 		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
 		83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */; };
 		83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */; };
+		83F2FE9B2062A5BC003A15DC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F2FE9A2062A5BC003A15DC /* UserModel.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
@@ -52,6 +53,7 @@
 		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		83F2FE9A2062A5BC003A15DC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				8E2DEB7D203E2E5F0067717B /* Party.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
+				83F2FE9A2062A5BC003A15DC /* UserModel.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */,
 				8E5502A22046001600F11825 /* Helper.swift in Sources */,
 				8E5502A02045FF3800F11825 /* Party.swift in Sources */,
+				83F2FE9B2062A5BC003A15DC /* UserModel.swift in Sources */,
 				8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
