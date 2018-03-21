@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 import UIKit
 import Firebase
 
@@ -16,11 +17,54 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     var dataList = [[String:AnyObject]]()
     var user = User()
     var ref = Database.database().reference()
+    let locationManager = CLLocationManager()
+    var flag = 0
+//    var stat: Bool = true
+
+    
 
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad()
     {
+        
+        ref.child("/Users/\(user.id)/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? [String:Double]
+            if let coordinate = value
+            {
+                if (coordinate["x"] == -1 && coordinate["y"] == -1)
+                {
+                    self.StatusCheck.setOn(false, animated: true)
+                }
+                else
+                {
+                    self.StatusCheck.setOn(true, animated: true)
+                }
+            }
+            for friend in self.friendList
+            {
+                print(friend)
+            }
+            self.getData()
+        })
+        
+//        if stat == true {
+//            let xVal = ["Users/\(user.id)/Coordinate/x": (locationManager.location?.coordinate.latitude)!]
+//            let yVal = ["Users/\(user.id)/Coordinate/y": (locationManager.location?.coordinate.longitude)!]
+//
+//            ref.updateChildValues(xVal)
+//            ref.updateChildValues(yVal)
+//        } else {
+//            self.StatusCheck.setOn(false, animated: false)
+//            let xVal = ["Users/\(user.id)/Coordinate/x": -1]
+//            let yVal = ["Users/\(user.id)/Coordinate/y": -1]
+//
+//            ref.updateChildValues(xVal)
+//            ref.updateChildValues(yVal)
+//        }
+        
+        
         ref.child("/Users/\(user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? [String]
@@ -100,6 +144,57 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     }
     @IBAction func dismiss(_ sender: Any)
     {
-         self.dismiss(animated: true, completion: nil)
+     
+        flag = 1
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBOutlet weak var StatusCheck: UISwitch!
+    
+
+    
+    
+//    let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
+//
+//    let childUpdates = ["PartyIDs/\(randomString)": post ]
+//
+//    ref.updateChildValues(childUpdates)
+    
+    @IBAction func StatusCheck(_ sender: Any) {
+
+
+        
+        
+        
+        if !StatusCheck.isOn {
+            let xVal = ["Users/\(user.id)/Coordinate/x": -1]
+            let yVal = ["Users/\(user.id)/Coordinate/y": -1]
+            
+            ref.updateChildValues(xVal)
+            ref.updateChildValues(yVal)
+            
+        } else {
+        
+            
+            if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways)
+            {
+                let xVal = ["Users/\(user.id)/Coordinate/x": (locationManager.location?.coordinate.latitude)!]
+                let yVal = ["Users/\(user.id)/Coordinate/y": (locationManager.location?.coordinate.longitude)!]
+                
+                ref.updateChildValues(xVal)
+                ref.updateChildValues(yVal)
+            }
+            else
+            {
+                var alert = UIAlertView()
+                alert.title = "Unable to Locate"
+                alert.message = "Please enable location service in privacy settings."
+                alert.addButton(withTitle: "OK")
+                alert.show()
+            }
+            
+        }
+    }
+    
+    
 }

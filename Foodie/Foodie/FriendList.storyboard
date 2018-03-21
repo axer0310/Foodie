@@ -62,11 +62,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jAw-O6-uWM">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Map" id="QCo-0P-eqV">
                             <connections>
                                 <action selector="showMap:" destination="OhQ-u8-4Mb" id="xo3-Fg-lmb"/>
                             </connections>
                         </barButtonItem>
+                        <switch key="titleView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="LgX-Ji-aU7">
+                            <rect key="frame" x="162" y="6.5" width="51" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="StatusCheck:" destination="OhQ-u8-4Mb" eventType="valueChanged" id="MiO-ED-zmr"/>
+                            </connections>
+                        </switch>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="FpF-Y6-lZp">
                             <connections>
                                 <action selector="dismiss:" destination="OhQ-u8-4Mb" id="WmX-Gc-p3t"/>
@@ -74,6 +82,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="StatusCheck" destination="LgX-Ji-aU7" id="ZFK-D7-I1q"/>
                         <outlet property="tableView" destination="A1e-II-sJl" id="VDi-So-KUo"/>
                     </connections>
                 </tableViewController>
