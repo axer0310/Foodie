@@ -45,7 +45,18 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 for business in businesses {
                     print(business.name!)
                     print(business.address!)
-                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!)
+                    var moreinfo = [business.name!, business.address!, business.imageURL!, business.distance!, business.rating!, business.reviewCount!] as [Any]
+//                    var name = ""
+//                    var address = ""
+//                    var imageURL = URL.init(string: "")
+//                    var distance = ""
+//                    var ratingImageURL = URL.init(string: "")
+//                    var reviewCount = 0
+//                    var rating = 0.0
+//                    var phone = ""
+//                    var id = ""
+//                    var reviewwritten = ""
+                    self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!, lat: business.lat!, long: business.long!, moreInfo: moreinfo)
                 }
             }
             
@@ -71,16 +82,22 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
     }
     // add an annotation with an address: String
-    func addAnnotationAtAddress(address: String, title: String, subtitle: String ) {
+    func addAnnotationAtAddress(address: String, title: String, subtitle: String , lat: Double, long: Double, moreInfo: [Any]) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let placemarks = placemarks {
                 if placemarks.count != 0 {
                     let coordinate = placemarks.first!.location!
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = coordinate.coordinate
-                    annotation.title = title
-                    annotation.subtitle = subtitle
+                    let annotation = Food(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
+//                    annotation.
+//                    annotation.coordinate = coordinate.coordinate
+                    annotation.name = title
+                    annotation.address = subtitle
+                    //[business.name!, business.address!, business.imageURL!, business.distance!, business.rating!, business.reviewCount!]
+                    annotation.imageURL = moreInfo[2] as! URL
+                    annotation.distance = moreInfo[3] as! String
+                    annotation.rating = moreInfo[4] as! Double
+                    annotation.reviewCount = moreInfo[5] as! Int
 //                    annotation.description.append(id)
                     self.mapView.addAnnotation(annotation)
                 }
@@ -96,8 +113,8 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView?.canShowCallout = true
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView?.canShowCallout = false
+//            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         } else {
             annotationView?.annotation = annotation
         }
@@ -118,12 +135,21 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    func mapView(_ mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        //let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "anotherViewController") as! AnotherViewController
-        if let atmPin = view.annotation as? MKAnnotation
-        {
-            print("clicked")
-        }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let innerAnnotation = view.annotation as! Food
+        let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil) //!!!!!!ERRROR HEREEE
+        let calloutView = views?[0] as! CustomCalloutView
+        calloutView.MainName.text = innerAnnotation.name
+        calloutView.MainAddress.text = innerAnnotation.address
+        calloutView.MainPhone.text = innerAnnotation.phone
+//        calloutView.starbucksImage.image = starbucksAnnotation.image
+        let button = UIButton(frame: calloutView.MainPhone.frame)
+//        button.addTarget(self, action: #selector(ResturantViewController.callPhoneNumber(sender:)), for: .touchUpInside)
+        calloutView.addSubview(button)
+        // 3
+        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+        view.addSubview(calloutView)
+        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
 //        present(detailedVC, animated: true, completion: nil)
 //        present
     }

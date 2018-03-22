@@ -20,6 +20,9 @@ class Business: NSObject {
     let phone: String?
     let id: String?
     let reviewwritten: String?
+    var lat: Double?
+    var long: Double?
+    
     
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
@@ -34,12 +37,22 @@ class Business: NSObject {
         
         let location = dictionary["location"] as? NSDictionary
         var address = ""
+        lat = 0.0
+        long = 0.0
         if location != nil {
             let addressArray = location!["address"] as? NSArray
             if addressArray != nil && addressArray!.count > 0 {
                 address = addressArray![0] as! String
             }
             
+            let coordArray = location!["coordinate"] as? NSDictionary
+//            print(location![4])[7][4]    (null)    "coordinate" : 2 key/value pairs        (null)    "display_address" : 2 elements
+            print(coordArray!.count)
+            if coordArray != nil && coordArray!.count > 1{
+                    long = coordArray!.allValues[0] as! Double
+                    lat = coordArray!.allValues[1] as! Double
+                
+            }
             let neighborhoods = location!["neighborhoods"] as? NSArray
             if neighborhoods != nil && neighborhoods!.count > 0 {
                 if !address.isEmpty {

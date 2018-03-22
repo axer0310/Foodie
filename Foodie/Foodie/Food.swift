@@ -7,7 +7,10 @@
 //
 
 import Foundation
-class Food: NSObject {
+import MapKit
+class Food: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    
     var name = ""
     var address = ""
     var imageURL = URL.init(string: "")
@@ -18,6 +21,9 @@ class Food: NSObject {
     var phone = ""
     var id = ""
     var reviewwritten = ""
+//    var coordinate: CLLocationCoordinate2D
 //    var location: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid
-    
+    init(coordinate: CLLocationCoordinate2D) {
+        self.coordinate = coordinate
+    }
 }
