@@ -211,10 +211,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
 //            } as! ([Business]?, Error?) -> Void)
 //    }
     
-    @IBAction func dismiss(_ sender: Any)
-    {
-        self.dismiss(animated: true, completion: nil)
-    }
 }
 
 
