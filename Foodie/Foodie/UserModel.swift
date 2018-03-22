@@ -6,10 +6,12 @@
 //  Copyright © 2018년 Foodie. All rights reserved.
 //
 
+import Foundation
 import UIKit
-
-class UserModel: NSObject {
-    var profileImageUrl :String?
-    var userName :String?
-    var uid : String?
+class UserModel: UITableViewCell {
+    
+    @IBOutlet weak var FriendName: UITextField!
+    
 }
+
+
