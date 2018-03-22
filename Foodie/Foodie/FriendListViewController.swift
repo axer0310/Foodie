@@ -19,7 +19,6 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     var ref = Database.database().reference()
     let locationManager = CLLocationManager()
     var flag = 0
-//    var stat: Bool = true
 
     
 
@@ -48,21 +47,6 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             }
             self.getData()
         })
-        
-//        if stat == true {
-//            let xVal = ["Users/\(user.id)/Coordinate/x": (locationManager.location?.coordinate.latitude)!]
-//            let yVal = ["Users/\(user.id)/Coordinate/y": (locationManager.location?.coordinate.longitude)!]
-//
-//            ref.updateChildValues(xVal)
-//            ref.updateChildValues(yVal)
-//        } else {
-//            self.StatusCheck.setOn(false, animated: false)
-//            let xVal = ["Users/\(user.id)/Coordinate/x": -1]
-//            let yVal = ["Users/\(user.id)/Coordinate/y": -1]
-//
-//            ref.updateChildValues(xVal)
-//            ref.updateChildValues(yVal)
-//        }
         
         
         ref.child("/Users/\(user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -150,15 +134,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBOutlet weak var StatusCheck: UISwitch!
-    
 
-    
-    
-//    let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
-//
-//    let childUpdates = ["PartyIDs/\(randomString)": post ]
-//
-//    ref.updateChildValues(childUpdates)
     
     @IBAction func StatusCheck(_ sender: Any) {
 

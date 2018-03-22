@@ -98,6 +98,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wob-L9-cBb">
+                                <rect key="frame" x="133" y="528" width="127" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Parties"/>
+                                <connections>
+                                    <action selector="ViewParties:" destination="RUG-sX-OB9" eventType="touchUpInside" id="rwN-pf-5Bq"/>
+                                    <segue destination="dXk-Hx-lLM" kind="presentation" id="Sfb-6s-ekC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="esS-hV-Gfi"/>
@@ -124,6 +133,7 @@
                         <outlet property="NumberOfPeople" destination="evS-Sg-uKn" id="t12-33-QW7"/>
                         <outlet property="PartyName" destination="QhB-Xu-0gm" id="4hD-Ij-mma"/>
                         <outlet property="PartyNameLabel" destination="gtM-ID-5P0" id="ift-rK-CcQ"/>
+                        <outlet property="ViewParties" destination="wob-L9-cBb" id="2CN-4P-MM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5T-f1-p02" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,13 +147,54 @@
                     <view key="view" contentMode="scaleToFill" id="Cur-u4-H3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLK-YX-CEk">
+                                <rect key="frame" x="318" y="14" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="DoneButton:" destination="dXk-Hx-lLM" eventType="touchUpInside" id="hp7-gm-v2h"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kqa-bg-pDs">
+                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="65" id="SQV-dd-Voe" customClass="MainPartyTableViewCells" customModule="Foodie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SQV-dd-Voe" id="eD4-au-ejS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-JT-4Ox">
+                                                    <rect key="frame" x="94" y="17" width="233" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="PartyName" destination="tdK-JT-4Ox" id="Qk5-BA-i6v"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UKU-m0-Sci"/>
                     </view>
+                    <connections>
+                        <outlet property="DoneButton" destination="PLK-YX-CEk" id="7c5-OX-YCH"/>
+                        <outlet property="tableView" destination="Kqa-bg-pDs" id="Tel-JI-nKo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH7-H6-eE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-596" y="-349"/>
+            <point key="canvasLocation" x="-639.20000000000005" y="-348.57571214392806"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YYW-aF-5YI">
@@ -164,4 +215,7 @@
             <point key="canvasLocation" x="-2049" y="-348"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WDc-Qn-SQI"/>
+    </inferredMetricsTieBreakers>
 </document>

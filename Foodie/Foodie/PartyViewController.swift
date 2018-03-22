@@ -23,11 +23,13 @@ class PartyViewController: UIViewController
     var x: Double = 40.4278709
     var y: Double = -86.9169629
     var carpool_status: Bool = false;
+    var randString: String = ""
     
     
     func NextButton() {
         
         let randomString = Helper.randomString(length: 16)
+        randString = randomString
         
         let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
         
@@ -104,9 +106,30 @@ class PartyViewController: UIViewController
         if segue.identifier == "presentPartyDisplay"
         {
             NextButton()
+            var vc = segue.destination as? MainPartyViewController
+            if let vc = vc {
+                var party = Party()
+                party.PartyID = randString
+                vc.user = party
+            }
         }
     }
-
+    
+    
+    @IBOutlet weak var ViewParties: UIButton!
+    
+    @IBAction func ViewParties(_ sender: Any) {
+        
+    }
+    
+    
     
 }
+
+
+
+
+
+
+
 
