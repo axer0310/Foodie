@@ -20,7 +20,8 @@ target 'Foodie' do
 #    pod 'QRCode'
 #    pod 'SSQRScanner'
     pod 'SwiftQRCode'
-    pod 'ObjectMapper'
+    #  pod 'MapViewPlus'
+
 # for chat room database
 pod 'Firebase/RemoteConfig'
 

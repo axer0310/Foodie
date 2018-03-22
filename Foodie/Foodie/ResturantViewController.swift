@@ -88,6 +88,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
     }
     
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "customAnnotationView"
         if annotation is MKUserLocation { return nil }
@@ -101,24 +102,9 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             annotationView?.annotation = annotation
         }
         annotationView?.pinTintColor = UIColor.green
+//        annotationView?.titleVisibility
+//        annotationView.
         return annotationView
-//        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-//
-//        pin.canShowCallout = true
-//        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//        return pin
-//        let identifier = "customAnnotationView"
-//        // custom pin annotation
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-//        if (annotationView == nil) {
-//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//        }
-//        else {
-//            annotationView!.annotation = annotation
-//        }
-//        annotationView!.pinTintColor = UIColor.green
-//
-//        return annotationView
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
