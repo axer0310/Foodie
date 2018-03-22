@@ -35,7 +35,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         Search.delegate = self 
         
         //        self.navigationItem.titleView = Search
-        //        mapView.delegate = self
+        mapView.delegate = self
         //        self.view.addSubview(mapView)
         
         Business.searchWithTerm(term: "restaurants", completion: { (businesses: [Business]?, error: Error?) -> Void in
@@ -91,7 +91,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "customAnnotationView"
         if annotation is MKUserLocation { return nil }
-        
+
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -123,7 +123,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let annView = view.annotation
-        let storyboard = UIStoryboard(name: "ResturantViewController", bundle: nil)
+        let storyboard = UIStoryboard(name: "ResturantPage", bundle: nil)
         let detailVC = storyboard.instantiateViewController(withIdentifier: "detailView") as! DetailviewController
         
         detailVC.storename = ((annView?.title!)!)
@@ -142,20 +142,19 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
 //        present
     }
     
-    
-    func searchBar(Search: UISearchBar, textDidChange searchText: String)
-    {
-        
-        print(searchText)
-        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
-            self.businesses = businesses
-            
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
-            } as! ([Business]?, Error?) -> Void)
-    }
+//
+//    func searchBar(Search: UISearchBar, textDidChange searchText: String)
+//    {
+//
+//        print(searchText)
+//        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+//            self.businesses = businesses
+//
+//            for business in businesses {
+//                print(business.name!)
+//                print(business.address!)
+//            }
+//            } as! ([Business]?, Error?) -> Void)
+//    }
     
 }
-

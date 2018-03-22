@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
 		3F4B6166205F6A5F007FFAB6 /* DetailviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */; };
+		3F5861F52062F94800AB1A27 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5861F42062F94800AB1A27 /* File.swift */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
 		3FED2CF22061FE8D00D6FA8F /* CDReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FED2CF12061FE8D00D6FA8F /* CDReview.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailviewController.swift; sourceTree = "<group>"; };
+		3F5861F42062F94800AB1A27 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		3FB34B5D203E2DD1000821F7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		3FED2CF12061FE8D00D6FA8F /* CDReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDReview.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
 				3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */,
 				8E48D844203FD28C003E9958 /* ResturantViewController.swift */,
+				3F5861F42062F94800AB1A27 /* File.swift */,
 				8E48D847203FD38E003E9958 /* FoodieImage.png */,
 				8E20333520386C6D003B71A7 /* Bolts.framework */,
 				8E20333320386C6D003B71A7 /* FBSDKCoreKit.framework */,
@@ -418,6 +421,7 @@
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
+				3F5861F52062F94800AB1A27 /* File.swift in Sources */,
 				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
 				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,
 				83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */,
