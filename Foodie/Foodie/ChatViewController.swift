@@ -94,7 +94,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "CreateRoomViewController") as? CreateRoomViewController
+        view?.destinationUid = self.array[indexPath.row].uid
+        
+        self.navigationController?.pushViewController(view!, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

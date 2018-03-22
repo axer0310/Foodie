@@ -1,5 +1,5 @@
 //
-//  FriendList.swift
+//  UserModel.swift
 //  Foodie
 //
 //  Created by Youngjoon Park on 2018. 3. 21..
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class FriendList: NSObject {
-    var profileImageUrl : String?
-    var name : String?
-    
+class UserModel: NSObject {
+    var profileImageUrl :String?
+    var userName :String?
+    var uid : String?
 }
