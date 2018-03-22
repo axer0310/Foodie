@@ -6,7 +6,8 @@ target 'Foodie' do
   use_frameworks!
 
 #Firebase for Database 
-
+   
+    pod 'SnapKit', '~> 4.0.0'
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
     pod 'Firebase/Database'
@@ -18,7 +19,6 @@ target 'Foodie' do
     pod 'BDBOAuth1Manager'
     pod 'SVPullToRefresh'
 #    pod 'QRCode'
-    pod 'SSQRScanner'
     pod 'SwiftQRCode'
 # for chat room database
 pod 'Firebase/RemoteConfig'

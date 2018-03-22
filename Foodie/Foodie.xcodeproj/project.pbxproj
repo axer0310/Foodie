@@ -10,6 +10,8 @@
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
+		8329E88D2063348E00C46589 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88C2063348E00C46589 /* UserModel.swift */; };
+		8329E88F206334BB00C46589 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88E206334BB00C46589 /* ChatModel.swift */; };
 		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
 		83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */; };
 		83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */; };
@@ -56,6 +58,8 @@
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		3FB34B5D203E2DD1000821F7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
+		8329E88C2063348E00C46589 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8329E88E206334BB00C46589 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 			children = (
 				3FB34B5B203E2DA4000821F7 /* YelpClient.swift */,
 				3FB34B5D203E2DD1000821F7 /* Business.swift */,
+				8329E88E206334BB00C46589 /* ChatModel.swift */,
 			);
 			path = "APIs&Map";
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				8E1A0725205E2115001B2724 /* FriendListViewController.swift */,
 				8E1A0727205E2125001B2724 /* FriendList.storyboard */,
 				8E1A0729205E2336001B2724 /* FriendListCell.swift */,
+				8329E88C2063348E00C46589 /* UserModel.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -353,8 +359,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SSQRScanner/SSQRScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftQRCode/SwiftQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -368,8 +374,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSQRScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -409,6 +415,7 @@
 			files = (
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
+				8329E88F206334BB00C46589 /* ChatModel.swift in Sources */,
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
@@ -423,6 +430,7 @@
 				83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */,
 				8E5502A22046001600F11825 /* Helper.swift in Sources */,
 				8E5502A02045FF3800F11825 /* Party.swift in Sources */,
+				8329E88D2063348E00C46589 /* UserModel.swift in Sources */,
 				8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
