@@ -13,14 +13,13 @@ class DetailviewController: UIViewController {
     @IBOutlet weak var lableName: UILabel!
     @IBOutlet weak var labelSub: UILabel!
     
-    var storename = ""
-    var sub = ""
-    var id = ""
+    var infos:Food?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lableName.text = storename
-        labelSub.text = sub
+        lableName.text = infos?.name
+        labelSub.text = infos?.address
         
         
     }

@@ -12,7 +12,7 @@
 		3F0B22EB20633F97008DDF32 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B22EA20633F97008DDF32 /* Food.swift */; };
 		3F0B22ED20634110008DDF32 /* PersonalAnnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B22EC20634110008DDF32 /* PersonalAnnView.swift */; };
 		3F4B6166205F6A5F007FFAB6 /* DetailviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */; };
-		3F5861F52062F94800AB1A27 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5861F42062F94800AB1A27 /* File.swift */; };
+		3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5861F42062F94800AB1A27 /* AnnotationView.swift */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
 		3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6B45020635C4A00B9D105 /* CustomCalloutView.swift */; };
@@ -64,7 +64,7 @@
 		3F0B22EA20633F97008DDF32 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		3F0B22EC20634110008DDF32 /* PersonalAnnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAnnView.swift; sourceTree = "<group>"; };
 		3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailviewController.swift; sourceTree = "<group>"; };
-		3F5861F42062F94800AB1A27 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		3F5861F42062F94800AB1A27 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		3FB34B5D203E2DD1000821F7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		3FD6B45020635C4A00B9D105 /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 				3F0B22EA20633F97008DDF32 /* Food.swift */,
 				3F0B22EC20634110008DDF32 /* PersonalAnnView.swift */,
 				8E48D844203FD28C003E9958 /* ResturantViewController.swift */,
-				3F5861F42062F94800AB1A27 /* File.swift */,
+				3F5861F42062F94800AB1A27 /* AnnotationView.swift */,
 				8E48D847203FD38E003E9958 /* FoodieImage.png */,
 				8E20333520386C6D003B71A7 /* Bolts.framework */,
 				8E20333320386C6D003B71A7 /* FBSDKCoreKit.framework */,
@@ -442,7 +442,7 @@
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				3F0B22ED20634110008DDF32 /* PersonalAnnView.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
-				3F5861F52062F94800AB1A27 /* File.swift in Sources */,
+				3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */,
 				3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */,
 				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
 				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,

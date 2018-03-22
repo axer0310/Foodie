@@ -13,7 +13,14 @@ import CoreLocation
 class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManagerDelegate,UISearchBarDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var Search: UISearchBar!
+    @IBOutlet var infoView: UIView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var phoneLabel: UILabel!
+    
     var businesses: [Business]!
+    var infoToPass: Food?
+    
 //    @IBAction func BackButton(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
 //    }
@@ -22,6 +29,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        infoView.isHidden = true
         //        let centerLocation = CLLocation(latitude: 40.4237, longitude: 86.9212)
         //goToLocation(location: centerLocation)
         
@@ -45,7 +53,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 for business in businesses {
                     print(business.name!)
                     print(business.address!)
-                    var moreinfo = [business.name!, business.address!, business.imageURL!, business.distance!, business.rating!, business.reviewCount!] as [Any]
+                    var moreinfo = ["Name": business.name!, "Address":business.address!, "ImageURL" : business.imageURL!,"Distance": business.distance!, "Rating": business.rating!, "reviewCount" : business.reviewCount!, "Phone": business.phone!, "Reviews": business.reviewwritten!, "ID": business.id] as Dictionary
 //                    var name = ""
 //                    var address = ""
 //                    var imageURL = URL.init(string: "")
@@ -82,7 +90,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         }
     }
     // add an annotation with an address: String
-    func addAnnotationAtAddress(address: String, title: String, subtitle: String , lat: Double, long: Double, moreInfo: [Any]) {
+    func addAnnotationAtAddress(address: String, title: String, subtitle: String , lat: Double, long: Double, moreInfo: Dictionary<String, Any>) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let placemarks = placemarks {
@@ -94,10 +102,13 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     annotation.name = title
                     annotation.address = subtitle
                     //[business.name!, business.address!, business.imageURL!, business.distance!, business.rating!, business.reviewCount!]
-                    annotation.imageURL = moreInfo[2] as! URL
-                    annotation.distance = moreInfo[3] as! String
-                    annotation.rating = moreInfo[4] as! Double
-                    annotation.reviewCount = moreInfo[5] as! Int
+                    annotation.imageURL = moreInfo["ImageURL"] as! URL
+                    annotation.distance = moreInfo["Distance"] as! String
+                    annotation.rating = moreInfo["Rating"] as! Double
+                    annotation.reviewCount = moreInfo["reviewCount"] as! Int
+                    annotation.reviewwritten = moreInfo["Reviews"] as! String
+                    annotation.phone = moreInfo["Phone"] as! String
+                    annotation.id = moreInfo["ID"] as! String
 //                    annotation.description.append(id)
                     self.mapView.addAnnotation(annotation)
                 }
@@ -124,37 +135,68 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let annView = view.annotation
-        let storyboard = UIStoryboard(name: "ResturantPage", bundle: nil)
-        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailView") as! DetailviewController
-        
-        detailVC.storename = ((annView?.title!)!)
-        detailVC.sub = ((annView?.subtitle!)!)
-//        detailVC.id = ((annView?.description)!)
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        let annView = view.annotation
+//        let storyboard = UIStoryboard(name: "ResturantPage", bundle: nil)
+//        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailView") as! DetailviewController
+//        
+//        detailVC.storename = ((annView?.title!)!)
+//        detailVC.sub = ((annView?.subtitle!)!)
+////        detailVC.id = ((annView?.description)!)
+//        self.navigationController?.pushViewController(detailVC, animated: true)
+//    }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let innerAnnotation = view.annotation as! Food
-        let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil) //!!!!!!ERRROR HEREEE
-        let calloutView = views?[0] as! CustomCalloutView
-        calloutView.MainName.text = innerAnnotation.name
-        calloutView.MainAddress.text = innerAnnotation.address
-        calloutView.MainPhone.text = innerAnnotation.phone
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
+    {
+        
+        self.infoToPass = view.annotation as? Food
+        if let innerAnnotation = infoToPass
+        {
+            infoView.isHidden = false
+            nameLabel.text = innerAnnotation.name
+            addressLabel.text = innerAnnotation.address
+            phoneLabel.text = innerAnnotation.phone
+            
+        }
+        else
+        {
+            infoView.isHidden = true
+        }
+        
+        
+        
+        
+        
+//        let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil) //!!!!!!ERRROR HEREEE
+//        let calloutView = views?[0] as! CustomCalloutView
+//        calloutView.MainName.text = innerAnnotation.name
+//        calloutView.MainAddress.text = innerAnnotation.address
+//        calloutView.MainPhone.text = innerAnnotation.phone
+//        calloutView.superViewController = self
 //        calloutView.starbucksImage.image = starbucksAnnotation.image
-        let button = UIButton(frame: calloutView.MainPhone.frame)
+//        let button = UIButton(frame: calloutView.MainPhone.frame)
 //        button.addTarget(self, action: #selector(ResturantViewController.callPhoneNumber(sender:)), for: .touchUpInside)
-        calloutView.addSubview(button)
+//        calloutView.addSubview(button)
         // 3
-        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
-        view.addSubview(calloutView)
-        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
+//        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+//        view.addSubview(calloutView)
+//        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
 //        present(detailedVC, animated: true, completion: nil)
 //        present
     }
     
-//
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "detailView")
+        {
+            let detailVC = segue.destination as? DetailviewController
+            if let vc = detailVC
+            {
+                vc.infos = infoToPass
+            }
+        }
+    }
+    //
 //    func searchBar(Search: UISearchBar, textDidChange searchText: String)
 //    {
 //
@@ -170,3 +212,5 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
 //    }
     
 }
+
+

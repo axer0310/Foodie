@@ -14,15 +14,21 @@ class CustomCalloutView: UIView {
     @IBOutlet var MainName: UILabel!
     @IBOutlet var MainAddress: UILabel!
     @IBOutlet var MainPhone: UILabel!
-//    @IBAction func MoreinFo(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "ResturantPage", bundle: nil)
-//        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailView") as! DetailviewController
+    
+    var superViewController : ResturantViewController?
+    
+    
+    @IBAction func MoreinFo(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ResturantPage", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailView") as! DetailviewController
 //
 //        detailVC.storename = ((MainName?.text!)!)
 //        detailVC.sub = ((MainAddress?.text!)!)
-//        //        detailVC.id = ((annView?.description)!)
-////        ResturantViewController.navigationController?.pushViewController(detailVC, animated: true)
-//    }
+        self.superViewController?.present(detailVC, animated: true, completion: nil)
+        
+        //        detailVC.id = ((annView?.description)!)
+//        ResturantViewController.navigationController?.pushViewController(detailVC, animated: true)
+    }
     
     
     
