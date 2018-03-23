@@ -49,8 +49,12 @@ class ChatRoom:JSQMessagesViewController
         }
         
         self.REF = Database.database().reference().child(path)
-        self.REF2 = Database.database().reference().child("/Users/\(chatVC!.friendID)/chats/\(chatVC!.user.id)")
-//        senderId = "1234"
+        if let chatVC = chatVC
+        {
+            self.REF2 = Database.database().reference().child("/Users/\(chatVC.friendID)/chats/\(chatVC.user.id)")
+
+        }
+        //        senderId = "1234"
 //        senderDisplayName = "human1"
 //        
         let defaults = UserDefaults.standard
