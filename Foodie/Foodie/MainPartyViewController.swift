@@ -29,7 +29,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.navigationItem.title = "Parties List"
         
-        self.tableView.delegate = self
+//        self.tableView.delegate = self
         
         ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -50,8 +50,6 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
             }
         })
 
-        
-        
     }
     
 //    func getData()
@@ -70,14 +68,13 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
 //        }
 //
 //    }
- 
     
-    @IBOutlet weak var DoneButton: UIButton!
-
+    
+    @IBOutlet weak var DoneButton: UIBarButtonItem!
+    
     @IBAction func DoneButton(_ sender: Any) {
-     self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "PartyCell") as! MainPartyTableViewCells
