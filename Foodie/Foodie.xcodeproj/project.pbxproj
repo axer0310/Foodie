@@ -10,14 +10,9 @@
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
-		8329E88D2063348E00C46589 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88C2063348E00C46589 /* UserModel.swift */; };
 		8329E88F206334BB00C46589 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88E206334BB00C46589 /* ChatModel.swift */; };
-		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
-		83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */; };
-		83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
-		8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F6202A3D520019B0C8 /* Chat.storyboard */; };
 		8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0725205E2115001B2724 /* FriendListViewController.swift */; };
 		8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A0727205E2125001B2724 /* FriendList.storyboard */; };
 		8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0729205E2336001B2724 /* FriendListCell.swift */; };
@@ -58,14 +53,9 @@
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		3FB34B5D203E2DD1000821F7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
-		8329E88C2063348E00C46589 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8329E88E206334BB00C46589 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
-		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
-		83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
-		8E0D16F6202A3D520019B0C8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8E1A0722205E1106001B2724 /* SwiftQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1A0723205E1172001B2724 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/QRCodeDemo-chdzbrqcunfoomakbbrwdotaatpl/Build/Products/Debug-iphoneos/QRCode.framework"; sourceTree = "<group>"; };
 		8E1A0725205E2115001B2724 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
@@ -204,10 +194,6 @@
 				8E30737E2061B87500E1A3CB /* FriendLocationViewController.swift */,
 				8E2E8FEC20521A5B000F67EE /* QR.storyboard */,
 				8E2E8FEE20521ACD000F67EE /* QRViewController.swift */,
-				8E0D16F6202A3D520019B0C8 /* Chat.storyboard */,
-				83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */,
-				83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */,
-				837C2343202FA7D00050F05E /* ChatViewController.swift */,
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
 				8E48D844203FD28C003E9958 /* ResturantViewController.swift */,
 				8E48D847203FD38E003E9958 /* FoodieImage.png */,
@@ -224,7 +210,6 @@
 				8E1A0725205E2115001B2724 /* FriendListViewController.swift */,
 				8E1A0727205E2125001B2724 /* FriendList.storyboard */,
 				8E1A0729205E2336001B2724 /* FriendListCell.swift */,
-				8329E88C2063348E00C46589 /* UserModel.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -307,7 +292,6 @@
 				8E20332F20386C47003B71A7 /* party@2x.png in Resources */,
 				8E89FB58205F7E2B007A5F96 /* reload@2x.png in Resources */,
 				8E2E8FF12052249F000F67EE /* scan@2x.png in Resources */,
-				8E0D16F7202A3D520019B0C8 /* Chat.storyboard in Resources */,
 				8E20333120386C47003B71A7 /* restaurant@2x.png in Resources */,
 				8E20333220386C47003B71A7 /* restaurant@3x.png in Resources */,
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
@@ -419,18 +403,14 @@
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
-				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
 				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,
-				83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */,
 				8E30737F2061B87500E1A3CB /* FriendLocationViewController.swift in Sources */,
 				8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */,
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
 				3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */,
 				8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */,
-				83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */,
 				8E5502A22046001600F11825 /* Helper.swift in Sources */,
 				8E5502A02045FF3800F11825 /* Party.swift in Sources */,
-				8329E88D2063348E00C46589 /* UserModel.swift in Sources */,
 				8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
