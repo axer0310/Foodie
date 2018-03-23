@@ -6,6 +6,7 @@
 //  Copyright © 2018년 Foodie. All rights reserved.
 //
 
+<<<<<<< HEAD
 import UIKit
 
 class UserModel: NSObject {
@@ -14,3 +15,14 @@ class UserModel: NSObject {
     var userName :String?
     
 }
+=======
+import Foundation
+import UIKit
+class UserModel: UITableViewCell {
+    
+    @IBOutlet weak var FriendName: UITextField!
+    
+}
+
+
+>>>>>>> master

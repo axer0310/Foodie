@@ -6,18 +6,23 @@ target 'Foodie' do
   use_frameworks!
 
 #Firebase for Database 
-
+   
+    pod 'SnapKit', '~> 4.0.0'
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
     pod 'Firebase/Database'
     pod 'Firebase/Auth'
+    pod 'JSQMessagesViewController'
     pod 'GoogleSignIn'
     pod 'GoogleMaps'
-    pod 'YelpAPI', '~> 2.0'
+    pod 'YelpAPI'
     pod 'AFNetworking', '~> 2.5’
     pod 'BDBOAuth1Manager'
     pod 'SVPullToRefresh'
-    pod 'QRCode'
+#    pod 'QRCode'
+
+    pod 'SwiftQRCode'
+    pod 'JSQMessagesViewController'
 # for chat room database
 pod 'Firebase/RemoteConfig'
 

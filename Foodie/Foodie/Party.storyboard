@@ -98,6 +98,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wob-L9-cBb">
+                                <rect key="frame" x="133" y="528" width="127" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Parties"/>
+                                <connections>
+                                    <action selector="ViewParties:" destination="RUG-sX-OB9" eventType="touchUpInside" id="rwN-pf-5Bq"/>
+                                    <segue destination="dXk-Hx-lLM" kind="presentation" identifier="viewAllParties" id="Sfb-6s-ekC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="esS-hV-Gfi"/>
@@ -110,7 +119,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Lg6-Lx-yaq">
                             <connections>
-                                <action selector="NextButton:" destination="RUG-sX-OB9" id="rSR-20-4yP"/>
+                                <segue destination="dXk-Hx-lLM" kind="presentation" identifier="presentPartyDisplay" id="WDc-Qn-SQI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -124,11 +133,80 @@
                         <outlet property="NumberOfPeople" destination="evS-Sg-uKn" id="t12-33-QW7"/>
                         <outlet property="PartyName" destination="QhB-Xu-0gm" id="4hD-Ij-mma"/>
                         <outlet property="PartyNameLabel" destination="gtM-ID-5P0" id="ift-rK-CcQ"/>
+                        <outlet property="ViewParties" destination="wob-L9-cBb" id="2CN-4P-MM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5T-f1-p02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1364" y="-347.67616191904051"/>
+        </scene>
+        <!--Main Party View Controller-->
+        <scene sceneID="Ii2-A4-UxN">
+            <objects>
+                <viewController id="dXk-Hx-lLM" customClass="MainPartyViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cur-u4-H3t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kqa-bg-pDs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="65" id="SQV-dd-Voe" customClass="MainPartyTableViewCells" customModule="Foodie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SQV-dd-Voe" id="eD4-au-ejS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-JT-4Ox">
+                                                    <rect key="frame" x="94" y="17" width="233" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="PartyName" destination="tdK-JT-4Ox" id="Qk5-BA-i6v"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWf-FP-iZb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Parties" id="pcP-rs-5OO">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="JpP-WY-LSG">
+                                            <connections>
+                                                <action selector="DoneButton:" destination="dXk-Hx-lLM" id="3Dg-5g-tbX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kqa-bg-pDs" firstAttribute="top" secondItem="bWf-FP-iZb" secondAttribute="bottom" constant="20" id="IHB-BZ-mBk"/>
+                            <constraint firstItem="bWf-FP-iZb" firstAttribute="trailing" secondItem="UKU-m0-Sci" secondAttribute="trailing" id="SJX-S1-paE"/>
+                            <constraint firstItem="Kqa-bg-pDs" firstAttribute="trailing" secondItem="UKU-m0-Sci" secondAttribute="trailing" id="VtE-W3-l1c"/>
+                            <constraint firstItem="bWf-FP-iZb" firstAttribute="leading" secondItem="UKU-m0-Sci" secondAttribute="leading" id="cKk-cu-eoc"/>
+                            <constraint firstItem="bWf-FP-iZb" firstAttribute="top" secondItem="Cur-u4-H3t" secondAttribute="top" id="gKa-LN-7Lk"/>
+                            <constraint firstItem="Kqa-bg-pDs" firstAttribute="leading" secondItem="UKU-m0-Sci" secondAttribute="leading" id="kww-cz-d07"/>
+                            <constraint firstItem="Kqa-bg-pDs" firstAttribute="bottom" secondItem="UKU-m0-Sci" secondAttribute="bottom" id="zQL-xP-eKB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UKU-m0-Sci"/>
+                    </view>
+                    <connections>
+                        <outlet property="DoneButton" destination="JpP-WY-LSG" id="e5N-A6-81L"/>
+                        <outlet property="tableView" destination="Kqa-bg-pDs" id="Tel-JI-nKo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wH7-H6-eE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-639.20000000000005" y="-348.57571214392806"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YYW-aF-5YI">
@@ -149,4 +227,7 @@
             <point key="canvasLocation" x="-2049" y="-348"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sfb-6s-ekC"/>
+    </inferredMetricsTieBreakers>
 </document>

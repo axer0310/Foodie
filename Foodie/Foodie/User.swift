@@ -33,4 +33,5 @@ struct  firebaseUserInfo{
     var FriendList = [""]
     var UserId = ""
     var profilePicURL=""
+    var name = ""
 }
