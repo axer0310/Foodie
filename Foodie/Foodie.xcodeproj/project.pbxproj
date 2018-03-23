@@ -10,6 +10,7 @@
 		3D2F4EB67BBF539C8185B994 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
+		8317973A20644DCB00216943 /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317973920644DCB00216943 /* ChatInfo.swift */; };
 		8329E88F206334BB00C46589 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88E206334BB00C46589 /* ChatModel.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
@@ -47,12 +48,19 @@
 		8EB670C02021004200E9228B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BF2021004200E9228B /* Assets.xcassets */; };
 		8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670C12021004200E9228B /* LaunchScreen.storyboard */; };
 		8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670CA2021048600E9228B /* GoogleService-Info.plist */; };
+		8ED50C0F20648EF200FFEA85 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */; };
+		8ED50C1020648EF200FFEA85 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */; };
+		8ED50C1120648EF200FFEA85 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C0D20648EF100FFEA85 /* ChatViewController.swift */; };
+		8ED50C1220648EF200FFEA85 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED50C0E20648EF200FFEA85 /* Chat.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		3FB34B5D203E2DD1000821F7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		6ADFDEF0262A3429347F761C /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
+		8317973820644C4100216943 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8317973920644DCB00216943 /* ChatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfo.swift; sourceTree = "<group>"; };
+		8329E88C2063348E00C46589 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8329E88E206334BB00C46589 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
@@ -95,6 +103,10 @@
 		8EB670C22021004200E9228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EB670C42021004200E9228B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB670CA2021048600E9228B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		8ED50C0D20648EF100FFEA85 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8ED50C0E20648EF200FFEA85 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA16ABF0E69630EF9F5E8F8 /* Pods-Foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +141,6 @@
 			children = (
 				3FB34B5B203E2DA4000821F7 /* YelpClient.swift */,
 				3FB34B5D203E2DD1000821F7 /* Business.swift */,
-				8329E88E206334BB00C46589 /* ChatModel.swift */,
 			);
 			path = "APIs&Map";
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 		8EB670AC2021004200E9228B = {
 			isa = PBXGroup;
 			children = (
+				8317973820644C4100216943 /* Bridging-Header.h */,
 				8EB670B72021004200E9228B /* Foodie */,
 				8E20332820386C47003B71A7 /* icons */,
 				8EB670B62021004200E9228B /* Products */,
@@ -184,6 +196,7 @@
 				3FB34B58203E2D88000821F7 /* APIs&Map */,
 				8EAB0683202D3CD60046A904 /* User.swift */,
 				8E55029F2045FF3800F11825 /* Party.swift */,
+				8329E88E206334BB00C46589 /* ChatModel.swift */,
 				8E5502A12046001600F11825 /* Helper.swift */,
 				8EB670B82021004200E9228B /* AppDelegate.swift */,
 				8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */,
@@ -210,6 +223,12 @@
 				8E1A0725205E2115001B2724 /* FriendListViewController.swift */,
 				8E1A0727205E2125001B2724 /* FriendList.storyboard */,
 				8E1A0729205E2336001B2724 /* FriendListCell.swift */,
+				8329E88C2063348E00C46589 /* UserModel.swift */,
+				8317973920644DCB00216943 /* ChatInfo.swift */,
+				8ED50C0E20648EF200FFEA85 /* Chat.storyboard */,
+				8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */,
+				8ED50C0D20648EF100FFEA85 /* ChatViewController.swift */,
+				8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -286,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED50C1220648EF200FFEA85 /* Chat.storyboard in Resources */,
 				8E89FB56205F7DF5007A5F96 /* friend@2x.png in Resources */,
 				8E20332E20386C47003B71A7 /* chat@2x.png in Resources */,
 				8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */,
@@ -342,6 +362,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -357,6 +379,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -397,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED50C1020648EF200FFEA85 /* ChatRoom.swift in Sources */,
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
 				8329E88F206334BB00C46589 /* ChatModel.swift in Sources */,
@@ -406,8 +431,11 @@
 				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,
 				8E30737F2061B87500E1A3CB /* FriendLocationViewController.swift in Sources */,
 				8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */,
+				8ED50C0F20648EF200FFEA85 /* CreateRoomViewController.swift in Sources */,
+				8ED50C1120648EF200FFEA85 /* ChatViewController.swift in Sources */,
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
 				3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */,
+				8317973A20644DCB00216943 /* ChatInfo.swift in Sources */,
 				8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */,
 				8E5502A22046001600F11825 /* Helper.swift in Sources */,
 				8E5502A02045FF3800F11825 /* Party.swift in Sources */,
@@ -560,6 +588,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Foodie.CS307.Team19;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -581,6 +610,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Foodie.CS307.Team19;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
