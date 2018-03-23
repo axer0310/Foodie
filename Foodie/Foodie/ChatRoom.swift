@@ -27,9 +27,9 @@ class ChatRoom:JSQMessagesViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        senderId = "1234"
-        senderDisplayName = "human1"
-        
+//        senderId = "1234"
+//        senderDisplayName = "human1"
+//        
         let defaults = UserDefaults.standard
         
         if  let id = defaults.string(forKey: "jsq_id"),
@@ -85,7 +85,7 @@ class ChatRoom:JSQMessagesViewController
     {
         let defaults = UserDefaults.standard
         
-        let alert = UIAlertController(title: "Your Display Name", message: "Before you can chat, please choose a display name. Others will see this name when you send chat messages. You can change your display name again by tapping the navigation bar.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Your Display Name", message: "Please choose a display name.", preferredStyle: .alert)
         
         alert.addTextField { textField in
             

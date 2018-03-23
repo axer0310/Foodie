@@ -97,8 +97,11 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
         {
             if let nav = sb.instantiateViewController(withIdentifier: "ChatNavigationController") as? UINavigationController
             {
-                self.present(nav, animated: true, completion: nil)
-
+                if let vc = nav.childViewControllers[0] as? ChatViewController
+                {
+                    vc.user = user
+                    self.present(nav, animated: true, completion: nil)
+                }
             }
         }
    

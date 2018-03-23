@@ -21,6 +21,7 @@ target 'Foodie' do
     pod 'SVPullToRefresh'
 #    pod 'QRCode'
     pod 'SwiftQRCode'
+    pod 'JSQMessagesViewController'
 # for chat room database
 pod 'Firebase/RemoteConfig'
 
