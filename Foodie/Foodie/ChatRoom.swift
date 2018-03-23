@@ -16,8 +16,11 @@ class ChatRoom:JSQMessagesViewController
     
     var messages = [JSQMessage]()
     var REF :  DatabaseReference?
+    var REF2 :  DatabaseReference?
     var chatVC : ChatViewController?
     var path = "chats"
+    var userid = ""
+    var friendid = ""
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
@@ -46,7 +49,12 @@ class ChatRoom:JSQMessagesViewController
         }
         
         self.REF = Database.database().reference().child(path)
-//        senderId = "1234"
+        if let chatVC = chatVC
+        {
+            self.REF2 = Database.database().reference().child("/Users/\(chatVC.friendID)/chats/\(chatVC.user.id)")
+
+        }
+        //        senderId = "1234"
 //        senderDisplayName = "human1"
 //        
         let defaults = UserDefaults.standard
@@ -169,10 +177,12 @@ class ChatRoom:JSQMessagesViewController
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
         let ref = self.REF!.childByAutoId()
+        let ref2 = self.REF2!.childByAutoId()
         
         let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
         
         ref.setValue(message)
+        ref2.setValue(message)
         
         finishSendingMessage()
     }

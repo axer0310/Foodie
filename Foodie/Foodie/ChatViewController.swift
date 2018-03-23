@@ -23,6 +23,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
  
     var user = User()
     var friendList = [String]()
+    var friendIDList = [String]()
     var dataList = [[String:AnyObject]]()
 
     @IBOutlet var tableView: UITableView!
@@ -67,6 +68,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if let data = value
                 {
                     self.dataList.append(data)
+                    self.friendIDList.append(id)
                 }
                 self.tableView.reloadData()
             })
@@ -77,7 +79,17 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        friendID = friendList[indexPath.row]
+//        var bufferList = [String]()
+//        for ids in dataList
+//        {
+//            for value in ids
+//            {
+//                bufferList.append(value.key)
+////                bufferList.append()
+//            }
+//
+//        }
+        friendID = friendIDList[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
