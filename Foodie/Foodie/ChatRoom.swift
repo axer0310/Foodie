@@ -15,7 +15,9 @@ class ChatRoom:JSQMessagesViewController
 {
     
     var messages = [JSQMessage]()
-
+    var REF :  DatabaseReference?
+    var chatVC : ChatViewController?
+    var path = "chats"
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
@@ -26,7 +28,24 @@ class ChatRoom:JSQMessagesViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        button.backgroundColor = .blue
+        button.setTitle("Back", for: .normal)
+        button.addTarget(self, action: #selector(BackButton), for: .touchUpInside)
+        
+        self.view.addSubview(button)
+        
+        if let chatVC = chatVC
+        {
+            path += chatVC.friendID
+        }
+        else
+        {
+            path+=""
+        }
+        
+        self.REF = Database.database().reference().child(path)
 //        senderId = "1234"
 //        senderDisplayName = "human1"
 //        
@@ -61,7 +80,7 @@ class ChatRoom:JSQMessagesViewController
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
-        let query = Constants.refs.databaseChats.queryLimited(toLast: 10)
+        let query = self.REF!.queryLimited(toLast: 10)
         
         _ = query.observe(.childAdded, with: { [weak self] snapshot in
             
@@ -149,7 +168,7 @@ class ChatRoom:JSQMessagesViewController
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
-        let ref = Constants.refs.databaseChats.childByAutoId()
+        let ref = self.REF!.childByAutoId()
         
         let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
         

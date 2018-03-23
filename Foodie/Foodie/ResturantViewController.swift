@@ -53,7 +53,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 for business in businesses {
                     print(business.name!)
                     print(business.address!)
-                    var moreinfo = ["Name": business.name!, "Address":business.address!, "ImageURL" : business.imageURL!,"Distance": business.distance!, "Rating": business.rating!, "reviewCount" : business.reviewCount!, "Phone": business.phone!, "Reviews": business.reviewwritten!, "ID": business.id] as Dictionary
+                    var moreinfo = ["Name": business.name, "Address":business.address, "ImageURL" : business.imageURL,"Distance": business.distance, "Rating": business.rating, "reviewCount" : business.reviewCount, "Phone": business.phone, "Reviews": business.reviewwritten, "ID": business.id] as Dictionary
 //                    var name = ""
 //                    var address = ""
 //                    var imageURL = URL.init(string: "")
@@ -107,7 +107,11 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                     annotation.rating = moreInfo["Rating"] as! Double
                     annotation.reviewCount = moreInfo["reviewCount"] as! Int
                     annotation.reviewwritten = moreInfo["Reviews"] as! String
-                    annotation.phone = moreInfo["Phone"] as! String
+                    if let phone = moreInfo["Phone"] as? String
+                    {
+                        annotation.phone  = phone
+                    }
+//                    annotation.phone = (moreInfo["Phone"] as? String)!
                     annotation.id = moreInfo["ID"] as! String
 //                    annotation.description.append(id)
                     self.mapView.addAnnotation(annotation)

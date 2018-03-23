@@ -22,13 +22,19 @@ class PartyViewController: UIViewController
     var numPeople: String = "";
     var x: Double = 40.4278709
     var y: Double = -86.9169629
+    var carpool_status: Bool = false;
+    var randString: String = ""
     
     
-    
-    @IBAction func NextButton(_ sender: Any) {
+    func NextButton() {
         
-        let post = ["Party Name": partyName, "Coordinate": ["x" : x, "y": y], "Description": info, "Number of People": (NumberOfPeople.text)] as [String : Any]
-        let childUpdates = ["/PartyIDs": post]
+        let randomString = Helper.randomString(length: 16)
+        randString = randomString
+        
+        let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
+        
+        let childUpdates = ["PartyIDs/\(randomString)": post ]
+        
         ref.updateChildValues(childUpdates)
     }
     
@@ -37,7 +43,7 @@ class PartyViewController: UIViewController
     }
     
     @IBOutlet weak var PartyNameLabel: UILabel!
-  
+    
     @IBOutlet weak var PartyName: UITextField!
     
     @IBAction func PartyName(_ sender: Any) {
@@ -57,7 +63,7 @@ class PartyViewController: UIViewController
     @IBOutlet weak var Description2: UITextField!
     
     @IBAction func Description(_ sender: Any) {
-
+        
         info = Description2.text!
     }
     
@@ -72,8 +78,10 @@ class PartyViewController: UIViewController
     @IBAction func CarPoolButton(_ sender: Any) {
 
         if CarPoolButton.isOn {
+            carpool_status = true
             CarPool.text = "Carpool Option On"
         } else {
+            carpool_status = false
             CarPool.text = "Carpool Option Off"
         }
     }
@@ -93,8 +101,39 @@ class PartyViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "presentPartyDisplay"
+        {
+            NextButton()
+            var vc = segue.destination as? MainPartyViewController
+            if let vc = vc {
+                var party = Party()
+                party.PartyID = randString
+                vc.user = party
+            }
+        }
+        else if segue.identifier == "viewAllParties"
+        {
+            print("viewingAllParties")
+        }
+    }
     
-
+    
+    @IBOutlet weak var ViewParties: UIButton!
+    
+    @IBAction func ViewParties(_ sender: Any) {
+        
+    }
+    
+    
     
 }
+
+
+
+
+
+
+
 

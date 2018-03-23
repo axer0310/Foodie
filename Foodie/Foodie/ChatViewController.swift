@@ -1,4 +1,4 @@
-//
+
 //  ChatViewController.swift
 //  Foodie
 //
@@ -27,7 +27,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet var tableView: UITableView!
     var ref = Database.database().reference()
-    
+    var friendID = ""
     
     
     //var tableView1: UITableView!
@@ -77,8 +77,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        
-        
+        friendID = friendList[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -108,6 +107,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return dataList.count;
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "goChat"
+        {
+            var dest = segue.destination as? ChatRoom
+            if let dest = dest
+            {
+                dest.path = "/Users/\(user.id)/chats/"
+                dest.chatVC = self
+            }
+        }
     }
 
 //

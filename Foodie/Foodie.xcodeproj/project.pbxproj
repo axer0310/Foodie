@@ -15,17 +15,13 @@
 		3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5861F42062F94800AB1A27 /* AnnotationView.swift */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
-
-		8317973A20644DCB00216943 /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317973920644DCB00216943 /* ChatInfo.swift */; };
-		8329E88F206334BB00C46589 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88E206334BB00C46589 /* ChatModel.swift */; };
-
 		3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6B45020635C4A00B9D105 /* CustomCalloutView.swift */; };
 		3FD6B45320635C8D00B9D105 /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6B45220635C8D00B9D105 /* CustomCalloutView.xib */; };
-		837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C2343202FA7D00050F05E /* ChatViewController.swift */; };
-		83BF5579203F9EFD00B9FBC4 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF5578203F9EFD00B9FBC4 /* ChatRoom.swift */; };
-		83BF557B203FA6AE00B9FBC4 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF557A203FA6AE00B9FBC4 /* CreateRoomViewController.swift */; };
-
+		8317973A20644DCB00216943 /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317973920644DCB00216943 /* ChatInfo.swift */; };
+		8329E88F206334BB00C46589 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88E206334BB00C46589 /* ChatModel.swift */; };
+		8C1E570F2063201700721626 /* MainPartyTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
+		8CB72DB320521DAC00C519AD /* MainPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0725205E2115001B2724 /* FriendListViewController.swift */; };
 		8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A0727205E2125001B2724 /* FriendList.storyboard */; };
@@ -63,8 +59,8 @@
 		8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670CA2021048600E9228B /* GoogleService-Info.plist */; };
 		8ED50C0F20648EF200FFEA85 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */; };
 		8ED50C1020648EF200FFEA85 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */; };
-		8ED50C1120648EF200FFEA85 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C0D20648EF100FFEA85 /* ChatViewController.swift */; };
 		8ED50C1220648EF200FFEA85 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED50C0E20648EF200FFEA85 /* Chat.storyboard */; };
+		8ED50C142064945200FFEA85 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED50C132064945100FFEA85 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +78,10 @@
 		8317973920644DCB00216943 /* ChatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfo.swift; sourceTree = "<group>"; };
 		8329E88C2063348E00C46589 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8329E88E206334BB00C46589 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartyTableViewCells.swift; sourceTree = "<group>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
+		8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartyViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E1A0722205E1106001B2724 /* SwiftQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1A0723205E1172001B2724 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/QRCodeDemo-chdzbrqcunfoomakbbrwdotaatpl/Build/Products/Debug-iphoneos/QRCode.framework"; sourceTree = "<group>"; };
@@ -125,8 +124,8 @@
 		8EB670CA2021048600E9228B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
-		8ED50C0D20648EF100FFEA85 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8ED50C0E20648EF200FFEA85 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		8ED50C132064945100FFEA85 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		92AA367551CC38E2D2FD9C2B /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA16ABF0E69630EF9F5E8F8 /* Pods-Foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */,
+				837C2343202FA7D00050F05E /* ChatViewController.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -255,14 +255,16 @@
 				8E2DEB7D203E2E5F0067717B /* Party.storyboard */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
+				8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */,
 				8E1A0725205E2115001B2724 /* FriendListViewController.swift */,
+				8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */,
 				8E1A0727205E2125001B2724 /* FriendList.storyboard */,
 				8E1A0729205E2336001B2724 /* FriendListCell.swift */,
 				8329E88C2063348E00C46589 /* UserModel.swift */,
 				8317973920644DCB00216943 /* ChatInfo.swift */,
 				8ED50C0E20648EF200FFEA85 /* Chat.storyboard */,
 				8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */,
-				8ED50C0D20648EF100FFEA85 /* ChatViewController.swift */,
+				8ED50C132064945100FFEA85 /* ChatViewController.swift */,
 				8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */,
 			);
 			path = Foodie;
@@ -457,33 +459,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				8ED50C1020648EF200FFEA85 /* ChatRoom.swift in Sources */,
-
 				3F0B22E920633F29008DDF32 /* PersonalAnn.swift in Sources */,
-
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
+				8CB72DB320521DAC00C519AD /* MainPartyViewController.swift in Sources */,
 				8329E88F206334BB00C46589 /* ChatModel.swift in Sources */,
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				3F0B22ED20634110008DDF32 /* PersonalAnnView.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
+				8ED50C142064945200FFEA85 /* ChatViewController.swift in Sources */,
 				3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */,
 				3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */,
-				837C2344202FA7D00050F05E /* ChatViewController.swift in Sources */,
-
 				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,
 				8E30737F2061B87500E1A3CB /* FriendLocationViewController.swift in Sources */,
 				3F0B22EB20633F97008DDF32 /* Food.swift in Sources */,
 				8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */,
-
 				8ED50C0F20648EF200FFEA85 /* CreateRoomViewController.swift in Sources */,
-				8ED50C1120648EF200FFEA85 /* ChatViewController.swift in Sources */,
-
 				3F4B6166205F6A5F007FFAB6 /* DetailviewController.swift in Sources */,
-
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
+				8C1E570F2063201700721626 /* MainPartyTableViewCells.swift in Sources */,
 				3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */,
 				8317973A20644DCB00216943 /* ChatInfo.swift in Sources */,
 				8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */,

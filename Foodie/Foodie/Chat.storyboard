@@ -57,7 +57,7 @@
                                         <connections>
                                             <outlet property="Name" destination="HCn-hb-GwU" id="SB2-yc-bPC"/>
                                             <outlet property="ProfilePic" destination="zFE-zm-4L8" id="Ozt-yc-ogf"/>
-                                            <segue destination="pk9-J3-y0a" kind="show" id="SUP-8c-2SL"/>
+                                            <segue destination="pk9-J3-y0a" kind="show" identifier="goChat" id="Eta-1i-Dqy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

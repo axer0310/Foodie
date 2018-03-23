@@ -10,6 +10,17 @@ import Foundation
 
 import Firebase
 
+//class REF
+//{
+//
+//    var path = ""
+//
+//    static let databaseRoot = Database.database().reference()
+//    static let databaseChats = databaseRoot.child("chats")
+//}
+
+
+
 struct Constants
 {
     struct refs

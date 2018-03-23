@@ -38,6 +38,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
     }
     func getPartys()
     {
+
         ref.child("/PartyIDs").observeSingleEvent(of: .value, with: { (snapshot) in
 
             let value = snapshot.value as? [String:AnyObject]
@@ -93,6 +94,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
 //                self.present(vc, animated: true, completion: nil)
 //            }
         }
+
     }
    
 
@@ -149,6 +151,7 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
                 if let vc = nav.childViewControllers[0] as? FriendListViewController
                 {
                     vc.user = self.user
+                    
                     self.present(nav, animated: true, completion: nil)
                 }
             }
@@ -159,4 +162,16 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
         self.loginEntry.logOut()
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
