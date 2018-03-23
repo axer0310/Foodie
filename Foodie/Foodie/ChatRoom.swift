@@ -177,12 +177,17 @@ class ChatRoom:JSQMessagesViewController
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
         let ref = self.REF!.childByAutoId()
-        let ref2 = self.REF2!.childByAutoId()
+        var ref2 : DatabaseReference
         
         let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
-        
+        if let ref = self.REF2?.childByAutoId()
+        {
+            ref2 = ref
+            ref2.setValue(message)
+        }
+
         ref.setValue(message)
-        ref2.setValue(message)
+        
         
         finishSendingMessage()
     }
