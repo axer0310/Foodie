@@ -16,9 +16,17 @@ class Business: NSObject {
     let distance: String?
     let ratingImageURL: URL?
     let reviewCount: NSNumber?
+    let rating: Double?
+    let phone: String?
+    let id: String?
+    let reviewwritten: String?
+    var lat: Double?
+    var long: Double?
+    
     
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
+        id = dictionary["id"] as? String
         
         let imageURLString = dictionary["image_url"] as? String
         if imageURLString != nil {
@@ -29,12 +37,22 @@ class Business: NSObject {
         
         let location = dictionary["location"] as? NSDictionary
         var address = ""
+        lat = 0.0
+        long = 0.0
         if location != nil {
             let addressArray = location!["address"] as? NSArray
             if addressArray != nil && addressArray!.count > 0 {
                 address = addressArray![0] as! String
             }
             
+            let coordArray = location!["coordinate"] as? NSDictionary
+//            print(location![4])[7][4]    (null)    "coordinate" : 2 key/value pairs        (null)    "display_address" : 2 elements
+            print(coordArray!.count)
+            if coordArray != nil && coordArray!.count > 1{
+                    long = coordArray!.allValues[0] as! Double
+                    lat = coordArray!.allValues[1] as! Double
+                
+            }
             let neighborhoods = location!["neighborhoods"] as? NSArray
             if neighborhoods != nil && neighborhoods!.count > 0 {
                 if !address.isEmpty {
@@ -71,6 +89,39 @@ class Business: NSObject {
         } else {
             ratingImageURL = nil
         }
+        let ratingV = dictionary["rating"] as? Double
+        if ratingV != nil {
+            rating = ratingV
+        } else {
+            rating = nil
+        }
+        
+        let phonenumber = dictionary["phone"] as? String
+        if phonenumber != nil {
+            phone = phonenumber
+        } else {
+            phone = nil
+        }
+        
+        let reviewupper = dictionary["snippet_text"] as? String
+//        var temp = ""
+        if reviewupper != nil {
+            reviewwritten = reviewupper
+//            let reviewsArr = location!["reviews"] as? NSArray
+//            if reviewsArr != nil && reviewsArr!.count > 0 {
+//                temp = reviewsArr![0] as! String
+//            }
+////            reviews = storeids.joined(separator: "\n")
+        }else{
+            reviewwritten = nil
+        }
+//        self.reviews = temp
+        
+        print(rating!, phone ?? "" , reviewwritten ?? "")
+        
+//        print(reviews?)
+       // print("some kind")
+        
         
         reviewCount = dictionary["review_count"] as? NSNumber
     }
