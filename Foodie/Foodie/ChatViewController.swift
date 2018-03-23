@@ -77,6 +77,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+//        var bufferList = [String]()
+//        for ids in dataList
+//        {
+//            for value in ids
+//            {
+//                bufferList.append(value.key)
+////                bufferList.append()
+//            }
+//
+//        }
         friendID = friendList[indexPath.row]
     }
     

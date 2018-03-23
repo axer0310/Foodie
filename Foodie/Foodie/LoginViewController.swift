@@ -189,10 +189,37 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         var userInfo = firebaseUserInfo()
         userInfo.CoordinateX = self.user.coordinate["x"]!
         userInfo.CoordinateY = self.user.coordinate["y"]!
-        userInfo.FriendList = self.user.friendList
         userInfo.UserId = self.user.id
         userInfo.profilePicURL = self.user.profilePicUrlStr
         userInfo.name = self.user.name
+//        var friendList = [String]()
+//        var chats = [String:AnyObject]()
+//        ref.child("/Users/\(self.user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            let value = snapshot.value as? [String]
+//            if let data = value
+//            {
+//                for id in data
+//                {
+//                    friendList.append(id)
+//                }
+//
+//            }
+//        })
+//        self.user.friendList = friendList
+        userInfo.FriendList = self.user.friendList
+        
+        
+        ref.child("/Users/\(self.user.id)/chats").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? [String:AnyObject]
+            if let data = value
+            {
+                print(data)
+                
+            }
+        })
+        
         
         
         let post = ["Coordinate": ["x" : userInfo.CoordinateX, "y" : userInfo.CoordinateY],

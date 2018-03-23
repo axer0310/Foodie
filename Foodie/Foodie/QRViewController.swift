@@ -116,8 +116,7 @@ class QRViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegat
             
             let childUpdates = ["/Users/\(self.user.id)/FriendIDs": friendList]
             self.ref.updateChildValues(childUpdates)
-            
-            
+                        
             //Verifying if add sucuess
             self.ref.child("/Users/\(self.user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
                 
