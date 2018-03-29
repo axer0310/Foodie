@@ -21,6 +21,25 @@ class ChatRoom:JSQMessagesViewController
     var path = "chats"
     var userid = ""
     var friendid = ""
+    
+    /*
+    var outgoingBubble = setupOutgoingBubble()
+    var incomingBubble = setupIncomingBubble(nil)
+    
+    func setupIncomingBubble(gender: String?) -> JSQMessagesBubbleImage {
+    switch gender {
+        case "male":
+        return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "2573C5"))
+        case "female":
+        return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "E452CE"))
+        default:
+        return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "848484"))
+    }
+     }
+    */
+    
+    
+    
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
