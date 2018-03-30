@@ -36,6 +36,16 @@ class ChatRoom:JSQMessagesViewController
         return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "848484"))
     }
      }
+     
+     let message = messages[indexPath.row]
+     
+     if message.senderId == self.senderId {
+     cell.textView!.textColor = UIColor.black
+     }
+     else {
+     cell.textView!.textColor = UIColor.blue
+     }
+     
     */
     
     
