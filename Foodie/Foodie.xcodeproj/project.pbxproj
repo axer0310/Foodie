@@ -22,6 +22,7 @@
 		8C1E570F2063201700721626 /* MainPartyTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
 		8CB72DB320521DAC00C519AD /* MainPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */; };
+		8CD93016206EA0E500A5451B /* TipCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD93015206EA0E500A5451B /* TipCalculatorViewController.swift */; };
 		8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */; };
 		8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A0725205E2115001B2724 /* FriendListViewController.swift */; };
 		8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1A0727205E2125001B2724 /* FriendList.storyboard */; };
@@ -82,6 +83,7 @@
 		8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartyTableViewCells.swift; sourceTree = "<group>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartyViewController.swift; sourceTree = "<group>"; };
+		8CD93015206EA0E500A5451B /* TipCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorViewController.swift; sourceTree = "<group>"; };
 		8E0D16F4202A3D390019B0C8 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		8E1A0722205E1106001B2724 /* SwiftQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1A0723205E1172001B2724 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/QRCodeDemo-chdzbrqcunfoomakbbrwdotaatpl/Build/Products/Debug-iphoneos/QRCode.framework"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				8E2E8FEC20521A5B000F67EE /* QR.storyboard */,
 				8E2E8FEE20521ACD000F67EE /* QRViewController.swift */,
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
+				8CD93015206EA0E500A5451B /* TipCalculatorViewController.swift */,
 				3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */,
 				3F0B22E820633F29008DDF32 /* PersonalAnn.swift */,
 				3F0B22EA20633F97008DDF32 /* Food.swift */,
@@ -469,6 +472,7 @@
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				3F0B22ED20634110008DDF32 /* PersonalAnnView.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
+				8CD93016206EA0E500A5451B /* TipCalculatorViewController.swift in Sources */,
 				8ED50C142064945200FFEA85 /* ChatViewController.swift in Sources */,
 				3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */,
 				3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */,

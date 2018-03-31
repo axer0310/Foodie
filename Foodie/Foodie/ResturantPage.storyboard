@@ -111,6 +111,11 @@
                         <viewLayoutGuide key="safeArea" id="nSi-Oe-uNJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="U9f-rd-uxw">
+                        <barButtonItem key="leftBarButtonItem" title="Tip Calculator" id="tja-6Z-MEC">
+                            <connections>
+                                <segue destination="SAy-IV-MZL" kind="presentation" id="852-jj-GSx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="ZCW-KT-hW5">
                             <connections>
                                 <action selector="dismiss:" destination="Lh4-PO-I7J" id="uqW-Ve-nhD"/>
@@ -129,6 +134,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdD-zk-xhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1151.2" y="-100.29985007496252"/>
+        </scene>
+        <!--Tip Calculator View Controller-->
+        <scene sceneID="vqu-Q1-xl5">
+            <objects>
+                <viewController id="zqj-76-nSt" customClass="TipCalculatorViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="953-na-aDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LTw-8i-giH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EeA-bh-1pe">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Rzt-FZ-S0x">
+                            <connections>
+                                <action selector="BackButton:" destination="zqj-76-nSt" id="cVW-Yr-A4F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azk-Fj-CPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3114" y="-783"/>
         </scene>
         <!--Detailview Controller-->
         <scene sceneID="MfO-2a-RtP">
@@ -315,6 +342,24 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="286" y="-100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IZl-dI-OaJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SAy-IV-MZL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Igf-mn-okm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zqj-76-nSt" kind="relationship" relationship="rootViewController" id="bmk-OT-Mbo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kim-xb-mmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083.1999999999998" y="-782.60869565217399"/>
         </scene>
     </scenes>
 </document>
