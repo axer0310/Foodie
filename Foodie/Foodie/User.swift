@@ -34,4 +34,6 @@ struct  firebaseUserInfo{
     var UserId = ""
     var profilePicURL=""
     var name = ""
+    
+    var restaurantLocations = [""]
 }
