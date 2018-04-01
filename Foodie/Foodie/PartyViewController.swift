@@ -26,65 +26,7 @@ class PartyViewController: UIViewController
     var randString: String = ""
     
     
-    func NextButton() {
-        
-        let randomString = Helper.randomString(length: 16)
-        randString = randomString
-        
-        let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
-        
-        let childUpdates = ["PartyIDs/\(randomString)": post ]
-        
-        ref.updateChildValues(childUpdates)
-    }
-    
-    @IBAction func BackButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBOutlet weak var PartyNameLabel: UILabel!
-    
-    @IBOutlet weak var PartyName: UITextField!
-    
-    @IBAction func PartyName(_ sender: Any) {
-        partyName = PartyName.text!
-    }
-    
-    @IBOutlet weak var Location: UILabel!
-    
-    @IBOutlet weak var LocationName: UITextField!
-    
-    @IBAction func LocationName(_ sender: Any) {
-        location = LocationName.text!
-    }
-    
-    @IBOutlet weak var Description: UILabel!
-    
-    @IBOutlet weak var Description2: UITextField!
-    
-    @IBAction func Description(_ sender: Any) {
-        
-        info = Description2.text!
-    }
-    
-    @IBOutlet weak var NumPeople: UILabel!
-    
-    @IBOutlet weak var NumberOfPeople: UILabel!
-    
-    @IBOutlet weak var CarPool: UILabel!
-    
-    @IBOutlet weak var CarPoolButton: UISwitch!
-    
-    @IBAction func CarPoolButton(_ sender: Any) {
 
-        if CarPoolButton.isOn {
-            carpool_status = true
-            CarPool.text = "Carpool Option On"
-        } else {
-            carpool_status = false
-            CarPool.text = "Carpool Option Off"
-        }
-    }
     
     override func viewDidLoad()
     {
