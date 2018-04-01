@@ -21,7 +21,6 @@ class Helper
             var nextChar = letters.character(at: Int(rand))
             randomString += NSString(characters: &nextChar, length: 1) as String
         }
-        
         return randomString
     }
 }
