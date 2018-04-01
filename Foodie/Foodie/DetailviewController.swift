@@ -52,7 +52,48 @@ class DetailviewController: UIViewController {
     {
         ratings.text = "\(updateVal) / 5"
     }
-
+    func getRating()
+    {
+        if let id = infos?.id
+        {
+            ref.child("/Restaurants/\(id)/Ratings").observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let value = snapshot.value as? Double
+               
+                if(value == nil)
+                {
+                    if let infoRating = self.infos?.rating
+                    {
+                        if let customRating = self.customRating.text
+                        {
+                            if(customRating != "")
+                            {
+                                var customDoubleRating = Double(customRating)!
+                                if(customDoubleRating > 5)
+                                {
+//                                    customDoubleRating = 5.0
+                                    let alert = UIAlertView()
+                                    alert.title = "Exceed max rating number"
+                                    alert.message = "Please rate from 0 to 5"
+                                    alert.addButton(withTitle: "OK")
+                                    alert.show()
+                                }
+                                else
+                                {
+                                    self.updateVal = ( customDoubleRating + infoRating)/2
+                                }
+                            }
+                            else
+                            {
+                                self.updateVal = infoRating
+                            }
+                            
+                        }
+                        else
+                        {
+                            self.updateVal = infoRating
+                        }
+                    }
                     
                     
                 }
