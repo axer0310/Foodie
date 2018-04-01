@@ -40,16 +40,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         ref.child("/Users/\(user.id)/FriendIDs").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? [String]
-            if let friends = value
-            {
-                for friend in friends
-                {
+            if let friends = value {
+                for friend in friends {
                     self.friendList.append(friend as! String)
                 }
                 
             }
-            for friend in self.friendList
-            {
+            for friend in self.friendList {
                 print(friend)
             }
             self.getData()
@@ -58,15 +55,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         })
     }
-    func getData()
-    {
-        for id in friendList
-        {
+    func getData() {
+        for id in friendList  {
             ref.child("/Users/\(id)").observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 let value = snapshot.value as? [String:AnyObject]
-                if let data = value
-                {
+                if let data = value {
                     self.dataList.append(data)
                     self.friendIDList.append(id)
                 }
@@ -77,23 +71,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-//        var bufferList = [String]()
-//        for ids in dataList
-//        {
-//            for value in ids
-//            {
-//                bufferList.append(value.key)
-////                bufferList.append()
-//            }
-//
-//        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         friendID = friendIDList[indexPath.row]
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "ChatFriendCell") as! FriendListCell
         
         let data = dataList[indexPath.row]
