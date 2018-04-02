@@ -117,6 +117,16 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
 //
 //    }
     
+    @IBAction func callUber(_ sender: Any)
+    {
+        if let story = UIStoryboard.init(name: "Uber", bundle: nil) as? UIStoryboard
+        {
+            if let vc = story.instantiateViewController(withIdentifier: "uberNav") as? UINavigationController
+            {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
     
     @IBOutlet weak var DoneButton: UIBarButtonItem!
     

@@ -42,6 +42,8 @@
 		8E2E8FF12052249F000F67EE /* scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E8FF02052249E000F67EE /* scan@2x.png */; };
 		8E30737D2061B86200E1A3CB /* FriendLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E30737C2061B86200E1A3CB /* FriendLocation.storyboard */; };
 		8E30737F2061B87500E1A3CB /* FriendLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30737E2061B87500E1A3CB /* FriendLocationViewController.swift */; };
+		8E3B04922071B2830072A870 /* Uber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B04912071B2830072A870 /* Uber.storyboard */; };
+		8E3B04982071B2EC0072A870 /* uberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B04972071B2EC0072A870 /* uberViewController.swift */; };
 		8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D843203FD28C003E9958 /* ResturantPage.storyboard */; };
 		8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48D844203FD28C003E9958 /* ResturantViewController.swift */; };
 		8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D847203FD38E003E9958 /* FoodieImage.png */; };
@@ -104,6 +106,8 @@
 		8E2E8FF02052249E000F67EE /* scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan@2x.png"; sourceTree = "<group>"; };
 		8E30737C2061B86200E1A3CB /* FriendLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendLocation.storyboard; sourceTree = "<group>"; };
 		8E30737E2061B87500E1A3CB /* FriendLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendLocationViewController.swift; sourceTree = "<group>"; };
+		8E3B04912071B2830072A870 /* Uber.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Uber.storyboard; sourceTree = "<group>"; };
+		8E3B04972071B2EC0072A870 /* uberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uberViewController.swift; sourceTree = "<group>"; };
 		8E48D843203FD28C003E9958 /* ResturantPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
 		8E48D844203FD28C003E9958 /* ResturantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
 		8E48D847203FD38E003E9958 /* FoodieImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodieImage.png; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 				8EB670C12021004200E9228B /* LaunchScreen.storyboard */,
 				8C76B16C202BC62C0080A70D /* PartyViewController.swift */,
 				8E2DEB7D203E2E5F0067717B /* Party.storyboard */,
+				8E3B04912071B2830072A870 /* Uber.storyboard */,
+				8E3B04972071B2EC0072A870 /* uberViewController.swift */,
 				8EB670C42021004200E9228B /* Info.plist */,
 				8EB670CA2021048600E9228B /* GoogleService-Info.plist */,
 				8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */,
@@ -355,6 +361,7 @@
 				8E2E8FED20521A5B000F67EE /* QR.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
 				8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */,
+				8E3B04922071B2830072A870 /* Uber.storyboard in Resources */,
 				8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */,
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
 				8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */,
@@ -483,6 +490,7 @@
 				8ED50C0F20648EF200FFEA85 /* CreateRoomViewController.swift in Sources */,
 				3F4B6166205F6A5F007FFAB6 /* DetailviewController.swift in Sources */,
 				8EB670B92021004200E9228B /* AppDelegate.swift in Sources */,
+				8E3B04982071B2EC0072A870 /* uberViewController.swift in Sources */,
 				8C1E570F2063201700721626 /* MainPartyTableViewCells.swift in Sources */,
 				3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */,
 				8317973A20644DCB00216943 /* ChatInfo.swift in Sources */,

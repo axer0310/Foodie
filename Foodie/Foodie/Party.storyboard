@@ -178,6 +178,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Parties" id="pcP-rs-5OO">
+                                        <barButtonItem key="leftBarButtonItem" title="Uber" id="QxW-hv-gcZ">
+                                            <connections>
+                                                <action selector="callUber:" destination="dXk-Hx-lLM" id="c7r-pb-NfF"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="JpP-WY-LSG">
                                             <connections>
                                                 <action selector="DoneButton:" destination="dXk-Hx-lLM" id="3Dg-5g-tbX"/>
