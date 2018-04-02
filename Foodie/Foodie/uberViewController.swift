@@ -8,8 +8,17 @@
 
 import Foundation
 import UIKit
+import UberRides
 
 class uberViewController: UIViewController
 {
+    override func viewDidLoad()
+    {
+        
+    }
+    @IBAction func dismiss(_ sender: Any)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
