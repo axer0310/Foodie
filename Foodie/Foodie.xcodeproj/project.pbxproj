@@ -51,6 +51,7 @@
 		8E89FB58205F7E2B007A5F96 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E89FB57205F7E2B007A5F96 /* reload@2x.png */; };
 		8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0681202D3C390046A904 /* MainPageViewController.swift */; };
 		8EAB0684202D3CD60046A904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0683202D3CD60046A904 /* User.swift */; };
+		8EAD6A7B2076B63100507D70 /* appicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD6A7A2076B63100507D70 /* appicon@3x.png */; };
 		8EB670B92021004200E9228B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670B82021004200E9228B /* AppDelegate.swift */; };
 		8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB670BA2021004200E9228B /* LoginViewController.swift */; };
 		8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB670BC2021004200E9228B /* MainPage.storyboard */; };
@@ -114,6 +115,7 @@
 		8E89FB57205F7E2B007A5F96 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
 		8EAB0681202D3C390046A904 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		8EAB0683202D3CD60046A904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8EAD6A7A2076B63100507D70 /* appicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@3x.png"; sourceTree = "<group>"; };
 		8EB670B52021004200E9228B /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB670B82021004200E9228B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EB670BA2021004200E9228B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		8E20332820386C47003B71A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				8EAD6A7A2076B63100507D70 /* appicon@3x.png */,
 				8E89FB57205F7E2B007A5F96 /* reload@2x.png */,
 				8E89FB55205F7DF5007A5F96 /* friend@2x.png */,
 				8E2E8FF02052249E000F67EE /* scan@2x.png */,
@@ -354,6 +357,7 @@
 				8EB670C32021004200E9228B /* LaunchScreen.storyboard in Resources */,
 				8E2E8FED20521A5B000F67EE /* QR.storyboard in Resources */,
 				8EB670CB2021048600E9228B /* GoogleService-Info.plist in Resources */,
+				8EAD6A7B2076B63100507D70 /* appicon@3x.png in Resources */,
 				8E1A0728205E2125001B2724 /* FriendList.storyboard in Resources */,
 				8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */,
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
