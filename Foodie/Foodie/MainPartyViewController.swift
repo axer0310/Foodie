@@ -66,35 +66,8 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                     }
                     
                 }
-                
-//                for id in data["PartyIDs"]?.values as? [String]
-//                {
-//                    array.append(id)
-//                }
             }
             
-                //                var partyIDs = data["PartyIDs"] as? [String]
-//                if let partyIDs = partyIDs
-//                {
-//                    self.partyIDList = partyIDs
-//                }
-                
-            
-//            if let parties = value
-//            {
-//
-//                for party in parties.values
-//                {
-//                    if let partyDic = party as? [String:AnyObject]
-//                    {
-//                        var partyID = partyDic["Name"] as? String
-//                        self.partyList.append(partyID!)
-//                    }
-//                }
-//                self.tableView.reloadData()
-//                self.tableView.delegate = self
-//                self.tableView.dataSource = self
-//            }
         })
 
 
@@ -117,16 +90,6 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
 //
 //    }
     
-    @IBAction func callUber(_ sender: Any)
-    {
-        if let story = UIStoryboard.init(name: "Uber", bundle: nil) as? UIStoryboard
-        {
-            if let vc = story.instantiateViewController(withIdentifier: "uberNav") as? UINavigationController
-            {
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
-    }
     
     @IBOutlet weak var DoneButton: UIBarButtonItem!
     
@@ -153,6 +116,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                 if let vc = sb.instantiateViewController(withIdentifier: "chatRoomView") as? ChatRoom
                 {
                     vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
+                    vc.partyID = partyIDList[indexPath.row]
                     self.present(vc, animated: true, completion: nil)
                 }
             
