@@ -21,11 +21,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yz-Uv-dhj">
                                 <rect key="frame" x="0.0" y="32" width="375" height="667"/>
                             </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6UE-3p-8wg">
-                                <rect key="frame" x="-1" y="64" width="376" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJv-8E-yMR">
                                 <rect key="frame" x="0.0" y="486" width="375" height="181"/>
                                 <subviews>
@@ -118,7 +113,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Search" destination="6UE-3p-8wg" id="OeQ-AD-1qr"/>
                         <outlet property="addressLabel" destination="UmW-dA-67u" id="Gc2-Uh-3Wh"/>
                         <outlet property="infoView" destination="PJv-8E-yMR" id="WC9-oW-wJx"/>
                         <outlet property="mapView" destination="8Yz-Uv-dhj" id="fAG-ZL-W67"/>
@@ -315,6 +309,50 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="286" y="-100"/>
+        </scene>
+        <!--Location Search-->
+        <scene sceneID="rct-tN-6JO">
+            <objects>
+                <tableViewController storyboardIdentifier="LocationSearchTable" id="gFe-jk-Ss6" customClass="LocationSearch" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IGA-Rp-VrY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Fq4-ur-3N2" detailTextLabel="TPw-AK-7cH" style="IBUITableViewCellStyleSubtitle" id="Snl-vS-hLO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Snl-vS-hLO" id="55F-OF-qIt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fq4-ur-3N2">
+                                            <rect key="frame" x="16" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TPw-AK-7cH">
+                                            <rect key="frame" x="16" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gFe-jk-Ss6" id="xTo-fC-WIb"/>
+                            <outlet property="delegate" destination="gFe-jk-Ss6" id="Pkd-iP-VYd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ji-mW-gUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2209" y="560"/>
         </scene>
     </scenes>
 </document>

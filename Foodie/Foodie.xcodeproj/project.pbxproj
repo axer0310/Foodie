@@ -11,6 +11,7 @@
 		3F0B22E920633F29008DDF32 /* PersonalAnn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B22E820633F29008DDF32 /* PersonalAnn.swift */; };
 		3F0B22EB20633F97008DDF32 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B22EA20633F97008DDF32 /* Food.swift */; };
 		3F0B22ED20634110008DDF32 /* PersonalAnnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B22EC20634110008DDF32 /* PersonalAnnView.swift */; };
+		3F4207EA2077DD4E005BA06F /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4207E92077DD4E005BA06F /* LocationSearch.swift */; };
 		3F4B6166205F6A5F007FFAB6 /* DetailviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */; };
 		3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5861F42062F94800AB1A27 /* AnnotationView.swift */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
@@ -67,6 +68,7 @@
 		3F0B22E820633F29008DDF32 /* PersonalAnn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAnn.swift; sourceTree = "<group>"; };
 		3F0B22EA20633F97008DDF32 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		3F0B22EC20634110008DDF32 /* PersonalAnnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAnnView.swift; sourceTree = "<group>"; };
+		3F4207E92077DD4E005BA06F /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
 		3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailviewController.swift; sourceTree = "<group>"; };
 		3F5861F42062F94800AB1A27 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		3FB34B5B203E2DA4000821F7 /* YelpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				8E2E8FEC20521A5B000F67EE /* QR.storyboard */,
 				8E2E8FEE20521ACD000F67EE /* QRViewController.swift */,
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
+				3F4207E92077DD4E005BA06F /* LocationSearch.swift */,
 				3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */,
 				3F0B22E820633F29008DDF32 /* PersonalAnn.swift */,
 				3F0B22EA20633F97008DDF32 /* Food.swift */,
@@ -485,6 +488,7 @@
 				8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */,
 				8E5502A22046001600F11825 /* Helper.swift in Sources */,
 				8E5502A02045FF3800F11825 /* Party.swift in Sources */,
+				3F4207EA2077DD4E005BA06F /* LocationSearch.swift in Sources */,
 				8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

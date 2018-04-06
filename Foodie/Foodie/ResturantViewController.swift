@@ -182,7 +182,7 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 
                 //Zooming in on annotation
                 let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
-                let span = MKCoordinateSpanMake(0.1, 0.1)
+                let span = MKCoordinateSpanMake(0.05, 0.05)
                 let region = MKCoordinateRegionMake(coordinate, span)
                 self.mapView.setRegion(region, animated: true)
             }

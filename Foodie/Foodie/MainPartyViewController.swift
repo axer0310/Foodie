@@ -19,6 +19,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     var partyIDList = [String]()
     var dataList = [[String:AnyObject]]()
     var user = Party()
+    var user2 = User()
     
     var ref = Database.database().reference()
     
@@ -144,6 +145,12 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                 {
                     vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
                     self.present(vc, animated: true, completion: nil)
+                    
+                    var userInfo = firebaseUserInfo()
+                    let partyString = ["PartyID" : partyIDList[indexPath.row], "Location" : "Some kind of location"]
+                    
+                    let userParty = ["/Users/\(self.user2.id)/previousPartyLocation" : partyString]
+                    ref.updateChildValues(userParty)
                 }
             
         }
