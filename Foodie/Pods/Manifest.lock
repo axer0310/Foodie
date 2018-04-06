@@ -109,6 +109,9 @@ PODS:
   - SnapKit (4.0.0)
   - SVPullToRefresh (0.4.1)
   - SwiftQRCode (3.0.2)
+  - UberCore (0.9.0)
+  - UberRides (0.9.0):
+    - UberCore
   - YelpAPI (3.0.0)
 
 DEPENDENCIES:
@@ -125,6 +128,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SVPullToRefresh
   - SwiftQRCode
+  - UberRides (~> 0.8)
   - YelpAPI
 
 SPEC CHECKSUMS:
@@ -152,8 +156,10 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
+  UberCore: c734f82e2152dcae52beaefc3bdf7e40186af821
+  UberRides: 90b7d6f60d01f3afa6e797f58f3ccbde824f90bf
   YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 2f6692846d4bf48fa7e8b6dbf954747cc8304386
+PODFILE CHECKSUM: 365e58e1573f4d5cb8bb17b627a420d1e3e89992
 
 COCOAPODS: 1.4.0

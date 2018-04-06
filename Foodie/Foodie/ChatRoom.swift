@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Firebase
 import JSQMessagesViewController
+import CoreLocation
+import UberRides
 
 class ChatRoom:JSQMessagesViewController
 {
@@ -18,6 +20,7 @@ class ChatRoom:JSQMessagesViewController
     var REF :  DatabaseReference?
     var REF2 :  DatabaseReference?
     var chatVC : ChatViewController?
+    var partyID = ""
     var path = "chats"
     var userid = ""
     var friendid = ""
@@ -50,6 +53,7 @@ class ChatRoom:JSQMessagesViewController
     
     
     
+    var ref = Database.database().reference()
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
@@ -61,12 +65,43 @@ class ChatRoom:JSQMessagesViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        button.backgroundColor = .blue
-        button.setTitle("Back", for: .normal)
-        button.addTarget(self, action: #selector(BackButton), for: .touchUpInside)
+        let backbutton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        backbutton.backgroundColor = .blue
+        backbutton.setTitle("Back", for: .normal)
+        backbutton.addTarget(self, action: #selector(BackButton), for: .touchUpInside)
+        self.view.addSubview(backbutton)
         
-        self.view.addSubview(button)
+        var partyLocation =  CLLocation()
+        ref.child("/PartyIDs/\(partyID)/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? [String:Double]
+            if let Coordinate = value
+            {
+                print("\(Coordinate["x"])   \(Coordinate["y"])")
+               partyLocation = CLLocation(latitude: Coordinate["x"]!, longitude: Coordinate["y"]!)
+            }
+            
+            let button = RideRequestButton()
+            let locationManager = CLLocationManager()
+            let builder = RideParametersBuilder()
+            let pickupLocation = locationManager.location
+            let dropoffLocation = partyLocation
+            print(partyLocation.coordinate)
+            builder.pickupLocation = pickupLocation
+            builder.dropoffLocation = dropoffLocation
+            builder.dropoffNickname = "Party Destination"
+            let rideParameters = builder.build()
+            button.rideParameters = rideParameters
+            button.frame = CGRect(x: self.view.frame.size.width-30,y: 20,width: 30,height:  30)
+            
+            
+            
+            self.view.addSubview(button)
+
+        })
+
+        
+        
         
         if let chatVC = chatVC
         {
