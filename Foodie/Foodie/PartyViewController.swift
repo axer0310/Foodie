@@ -24,18 +24,23 @@ class PartyViewController: UIViewController
     var y: Double = -86.9169629
     var carpool_status: Bool = false;
     var randString: String = ""
-    
+    var user = User()
     
     func NextButton() {
         
         let randomString = Helper.randomString(length: 16)
         randString = randomString
+        let previousPartyLocation: String = "previousPartyLocation"
         
         let post = [ "Carpool": carpool_status ,"Name": partyName, "Location": location, "Coordinate": ["x" : x, "y": y], "Description": info, "MemberLimit": (NumberOfPeople.text)] as [String : Any]
         
         let childUpdates = ["PartyIDs/\(randomString)": post ]
         
+        let partyString = ["PartyID" : randomString, "Location" : location]
+        let userParty = ["/Users/\(previousPartyLocation)" : partyString]
+        
         ref.updateChildValues(childUpdates)
+        ref.updateChildValues(userParty)
     }
     
     @IBAction func BackButton(_ sender: Any) {

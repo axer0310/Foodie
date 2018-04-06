@@ -19,12 +19,5 @@ class CreateRoomViewController:UIViewController {
     }
     
     
-    func setToolbarItems(_ toolbarItems: [UIBarButtonItem]?, animated: Bool) {
-        //set up for airdrops in the chatroom
-    }
-    
-    
-    
-    
     
 }
