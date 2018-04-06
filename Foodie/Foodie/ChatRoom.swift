@@ -13,7 +13,7 @@ import JSQMessagesViewController
 import CoreLocation
 import UberRides
 
-class ChatRoom:JSQMessagesViewController
+class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     
     var messages = [JSQMessage]()
@@ -24,6 +24,8 @@ class ChatRoom:JSQMessagesViewController
     var path = "chats"
     var userid = ""
     var friendid = ""
+    var imageToShare : UIImage?
+    let picker = UIImagePickerController()
     var ref = Database.database().reference()
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
@@ -35,12 +37,22 @@ class ChatRoom:JSQMessagesViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.allowsEditing = false
+        picker.delegate = self
         
+        // Backbutton
         let backbutton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        backbutton.backgroundColor = .blue
+        backbutton.setTitleColor(.blue, for: .normal)
         backbutton.setTitle("Back", for: .normal)
         backbutton.addTarget(self, action: #selector(BackButton), for: .touchUpInside)
         self.view.addSubview(backbutton)
+        
+        //ShareButton
+        let shareButton = UIButton(frame: CGRect(x: 60, y: 0, width: 50, height: 50))
+        shareButton.setTitleColor(UIColor(red:0.00, green:0.70, blue:1.00, alpha:0.8), for: .normal)
+        shareButton.setTitle("Share", for: .normal)
+        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+        self.view.addSubview(shareButton)
         
         var partyLocation =  CLLocation()
         ref.child("/PartyIDs/\(partyID)/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -234,8 +246,49 @@ class ChatRoom:JSQMessagesViewController
         super.didReceiveMemoryWarning()
         
     }
+     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageToShare = pickedImage
+        }
+        
+        self.dismiss(animated: true, completion: {
+            if let image = self.imageToShare
+            {
+                var activityController = UIActivityViewController.init(activityItems: [image], applicationActivities: nil)
+                self.present(activityController, animated: true, completion: nil)
+            }
+            else
+            {
+                print("***noimage")
+            }
+        })
+        
+    }
     
-    
+   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func share()
+    {
+        let alert = UIAlertController(title: "Choose Image from", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.picker.sourceType = .camera
+            self.present(self.picker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
+            self.picker.sourceType = .photoLibrary
+            self.present(self.picker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+
+    }
     
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
