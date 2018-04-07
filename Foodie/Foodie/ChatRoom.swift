@@ -40,21 +40,8 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         picker.allowsEditing = false
         picker.delegate = self
         
-        // Backbutton
-        let backbutton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        backbutton.setTitleColor(.blue, for: .normal)
-        backbutton.setTitle("Back", for: .normal)
-        backbutton.addTarget(self, action: #selector(BackButton), for: .touchUpInside)
-        self.view.addSubview(backbutton)
-        
-        //ShareButton
-        let shareButton = UIButton(frame: CGRect(x: 60, y: 0, width: 50, height: 50))
-        shareButton.setTitleColor(UIColor(red:0.00, green:0.70, blue:1.00, alpha:0.8), for: .normal)
-        shareButton.setTitle("Share", for: .normal)
-        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
-        self.view.addSubview(shareButton)
-        
         var partyLocation =  CLLocation()
+        
         ref.child("/PartyIDs/\(partyID)/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? [String:Double]
@@ -62,24 +49,36 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
             {
                 print("\(Coordinate["x"])   \(Coordinate["y"])")
                partyLocation = CLLocation(latitude: Coordinate["x"]!, longitude: Coordinate["y"]!)
+                let button = RideRequestButton()
+                let locationManager = CLLocationManager()
+                let builder = RideParametersBuilder()
+                let pickupLocation = locationManager.location
+                let dropoffLocation = partyLocation
+                print(partyLocation.coordinate)
+                builder.pickupLocation = pickupLocation
+                builder.dropoffLocation = dropoffLocation
+                builder.dropoffNickname = "Party Destination"
+                let rideParameters = builder.build()
+                button.rideParameters = rideParameters
+                //            button.frame = CGRect(x: 0,y: 65,width: 30,height:  30)
+                let barButton = UIBarButtonItem(customView: button)
+                NSLayoutConstraint.activate([(barButton.customView!.widthAnchor.constraint(equalToConstant: 30)),(barButton.customView!.heightAnchor.constraint(equalToConstant: 30))])
+                self.navigationItem.leftBarButtonItem = barButton
             }
             
-            let button = RideRequestButton()
-            let locationManager = CLLocationManager()
-            let builder = RideParametersBuilder()
-            let pickupLocation = locationManager.location
-            let dropoffLocation = partyLocation
-            print(partyLocation.coordinate)
-            builder.pickupLocation = pickupLocation
-            builder.dropoffLocation = dropoffLocation
-            builder.dropoffNickname = "Party Destination"
-            let rideParameters = builder.build()
-            button.rideParameters = rideParameters
-            button.frame = CGRect(x: self.view.frame.size.width-30,y: 20,width: 30,height:  30)
+           
             
             
+//
+//            button.frame = CGRect(x: 0,y: 0,width: 30,height:  30)
+//            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: button)
+//            self.navigationItem.leftBarButtonItem?.customView?.widthAnchor.constraint(equalToConstant: 30)
+//            self.navigationItem.leftBarButtonItem?.customView?.heightAnchor.constraint(equalToConstant: 30)
+//            self.navigationItem.leftBarButtonItem!.customView!.frame =  CGRect(x: 20,y: 20,width: 30,height:  30)
+//
             
-            self.view.addSubview(button)
+//            self.navigationController?.navigationBar.
+//            self.view.addSubview(button)
 
         })
 
@@ -269,7 +268,7 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
-    @objc func share()
+    @IBAction func share()
     {
         let alert = UIAlertController(title: "Choose Image from", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in

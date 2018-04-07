@@ -112,13 +112,25 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     {
         if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
         {
-            
-                if let vc = sb.instantiateViewController(withIdentifier: "chatRoomView") as? ChatRoom
+            if let nav = sb.instantiateViewController(withIdentifier: "PartyChatNavigationController") as? UINavigationController
+            {
+                
+//                present(nav, animated: true)
+                if let vc = nav.childViewControllers[0] as? ChatRoom
                 {
                     vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
                     vc.partyID = partyIDList[indexPath.row]
-                    self.present(vc, animated: true, completion: nil)
+                    
+
                 }
+                self.present(nav, animated: true, completion: nil)
+            }
+//                if let vc = sb.instantiateViewController(withIdentifier: "chatRoomView") as? ChatRoom
+//                {
+//                    vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
+//                    vc.partyID = partyIDList[indexPath.row]
+//                    self.present(vc, animated: true, completion: nil)
+//                }
             
         }
     }
