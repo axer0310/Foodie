@@ -40,11 +40,11 @@ class PartyViewController: UIViewController
         
         //Before this works fine
         var userInfo = firebaseUserInfo()
-        let partyString = ["PartyID" : randomString, "Location" : location]
-        
-    
-        let userParty = ["/Users/\(self.user.id)/previousPartyLocation" : partyString]
-                ref.updateChildValues(userParty)
+//        let partyString = ["PartyID" : randomString, "Location" : location]
+//        
+//    
+//        let userParty = ["/Users/\(self.user.id)/previousPartyLocation" : partyString]
+//                ref.updateChildValues(userParty)
     }
     
     @IBAction func BackButton(_ sender: Any) {
