@@ -163,6 +163,10 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
             if response == nil
             {
                 print("ERROR")
+                
+                let alert = UIAlertController(title: "Not found", message: "Unable to find location", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             else
             {

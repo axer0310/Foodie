@@ -40,7 +40,7 @@ class PartyViewController: UIViewController
 
         
         //Before this works fine
-        var userInfo = firebaseUserInfo()
+//        var userInfo = firebaseUserInfo()
 //        let partyString = ["PartyID" : randomString, "Location" : location]
 //        
 //    

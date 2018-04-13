@@ -21,7 +21,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     var dataList = [[String:AnyObject]]()
     var user = Party()
     var user2 = User()
-    var user = User()
+//    var user = User()
     
     let id  = firebaseUserInfo()
     var ref = Database.database().reference()
@@ -138,7 +138,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                     vc.partyID = partyIDList[indexPath.row]
                     
                     var history = [String]()
-                    ref.child("/Users/\(self.user.id)/partyHistory").observeSingleEvent(of: .value, with: { (snapshot) in
+                    ref.child("/Users/\(self.user2.id)/partyHistory").observeSingleEvent(of: .value, with: { (snapshot) in
                                     let value = snapshot.value as? [String]
                                     if let data = value
                                     {
@@ -154,7 +154,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                         
                         
                         
-                        let childUpdates = ["/Users/\(self.user.id)/partyHistory": history] as [String : Any?]
+                        let childUpdates = ["/Users/\(self.user2.id)/partyHistory": history] as [String : Any?]
                         self.ref.updateChildValues(childUpdates)
                         self.present(nav, animated: true, completion: nil)
                     })
