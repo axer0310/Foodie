@@ -196,7 +196,7 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
             }
             else
             {
-                let names = ["Ford", "Arthur", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
+                let names = ["Alex", "Arthur", "Ben", "Kevin", "Sarah", "Paul", "Peter"]
                 textField.text = names[Int(arc4random_uniform(UInt32(names.count)))]
             }
         }
