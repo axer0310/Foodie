@@ -12,6 +12,9 @@ target 'Foodie' do
     pod 'Firebase/Storage'
     pod 'Firebase/Database'
     pod 'Firebase/Auth'
+    pod 'Firebase/RemoteConfig'
+    
+
     pod 'JSQMessagesViewController'
     pod 'GoogleSignIn'
     pod 'GoogleMaps'
@@ -19,7 +22,7 @@ target 'Foodie' do
     pod 'AFNetworking', '~> 2.5’
     pod 'BDBOAuth1Manager'
     pod 'SVPullToRefresh'
-#    pod 'QRCode'
+    pod 'UberRides', '~> 0.8'
 
     pod 'SwiftQRCode'
     pod 'JSQMessagesViewController'

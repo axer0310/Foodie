@@ -69,10 +69,10 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleMaps (2.6.0):
-    - GoogleMaps/Maps (= 2.6.0)
-  - GoogleMaps/Base (2.6.0)
-  - GoogleMaps/Maps (2.6.0):
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
   - GoogleSignIn (4.1.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
@@ -109,6 +109,9 @@ PODS:
   - SnapKit (4.0.0)
   - SVPullToRefresh (0.4.1)
   - SwiftQRCode (3.0.2)
+  - UberCore (0.8.1)
+  - UberRides (0.8.1):
+    - UberCore
   - YelpAPI (3.0.0)
 
 DEPENDENCIES:
@@ -125,6 +128,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SVPullToRefresh
   - SwiftQRCode
+  - UberRides (~> 0.8)
   - YelpAPI
 
 SPEC CHECKSUMS:
@@ -139,7 +143,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   FirebaseRemoteConfig: 3310f264fff78b6c2e78b24dcfc4c1b3d6766209
   FirebaseStorage: 181bb543d39ee3c53e0558de7ba86b1286a0427f
-  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
@@ -152,8 +156,10 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
+  UberCore: 5cd5b35aa39194ce90153945630d0ed2393b9e42
+  UberRides: cb0e6fa7ec5bbe433999343842bd3c8ef6d30a5b
   YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 2f6692846d4bf48fa7e8b6dbf954747cc8304386
+PODFILE CHECKSUM: 365e58e1573f4d5cb8bb17b627a420d1e3e89992
 
 COCOAPODS: 1.4.0

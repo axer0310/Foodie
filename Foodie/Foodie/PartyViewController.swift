@@ -12,6 +12,7 @@ import Firebase
 import FirebaseDatabase
 
 
+
 class PartyViewController: UIViewController
 {
  
@@ -47,6 +48,9 @@ class PartyViewController: UIViewController
 //                ref.updateChildValues(userParty)
     }
     
+    @IBAction func viewPartyHistory(_ sender: Any)
+    {
+    }
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -99,7 +103,7 @@ class PartyViewController: UIViewController
     {
         super.viewDidLoad()
         ref = Database.database().reference()
-
+        CarPoolButton.isOn = false
         self.navigationItem.title = "Create Party"
     }
     
@@ -119,12 +123,26 @@ class PartyViewController: UIViewController
             if let vc = vc {
                 var party = Party()
                 party.PartyID = randString
-                vc.user = party
+                vc.user = user
             }
         }
         else if segue.identifier == "viewAllParties"
         {
+            var vc = segue.destination as? MainPartyViewController
+            if let vc = vc
+            {
+                vc.user = user
+            }
             print("viewingAllParties")
+        }
+        else if segue.identifier == "partyHistory"
+        {
+            var vc = segue.destination as? PartyHistoryTableViewController
+            if let vc = vc
+            {
+                vc.user = user
+            }
+
         }
     }
     

@@ -10,17 +10,23 @@ import Foundation
 import UIKit
 import Firebase
 import JSQMessagesViewController
+import CoreLocation
+import UberRides
 
-class ChatRoom:JSQMessagesViewController
+class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     
     var messages = [JSQMessage]()
     var REF :  DatabaseReference?
     var REF2 :  DatabaseReference?
     var chatVC : ChatViewController?
+    var partyID = ""
     var path = "chats"
     var userid = ""
     var friendid = ""
+    var imageToShare : UIImage?
+    let picker = UIImagePickerController()
+    var ref = Database.database().reference()
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
@@ -31,13 +37,53 @@ class ChatRoom:JSQMessagesViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.allowsEditing = false
+        picker.delegate = self
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        button.backgroundColor = .blue
-        button.setTitle("Back", for: .normal)
-        button.addTarget(self, action: #selector(BackButton), for: .touchUpInside)
+        var partyLocation =  CLLocation()
         
-        self.view.addSubview(button)
+        ref.child("/PartyIDs/\(partyID)/Coordinate").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? [String:Double]
+            if let Coordinate = value
+            {
+                print("\(Coordinate["x"])   \(Coordinate["y"])")
+               partyLocation = CLLocation(latitude: Coordinate["x"]!, longitude: Coordinate["y"]!)
+                let button = RideRequestButton()
+                let locationManager = CLLocationManager()
+                let builder = RideParametersBuilder()
+                let pickupLocation = locationManager.location
+                let dropoffLocation = partyLocation
+                print(partyLocation.coordinate)
+                builder.pickupLocation = pickupLocation
+                builder.dropoffLocation = dropoffLocation
+                builder.dropoffNickname = "Party Destination"
+                let rideParameters = builder.build()
+                button.rideParameters = rideParameters
+                //            button.frame = CGRect(x: 0,y: 65,width: 30,height:  30)
+                let barButton = UIBarButtonItem(customView: button)
+                NSLayoutConstraint.activate([(barButton.customView!.widthAnchor.constraint(equalToConstant: 30)),(barButton.customView!.heightAnchor.constraint(equalToConstant: 30))])
+                self.navigationItem.leftBarButtonItem = barButton
+            }
+            
+           
+            
+            
+//
+//            button.frame = CGRect(x: 0,y: 0,width: 30,height:  30)
+//            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: button)
+//            self.navigationItem.leftBarButtonItem?.customView?.widthAnchor.constraint(equalToConstant: 30)
+//            self.navigationItem.leftBarButtonItem?.customView?.heightAnchor.constraint(equalToConstant: 30)
+//            self.navigationItem.leftBarButtonItem!.customView!.frame =  CGRect(x: 20,y: 20,width: 30,height:  30)
+//
+            
+//            self.navigationController?.navigationBar.
+//            self.view.addSubview(button)
+
+        })
+
+        
+        
         
         if let chatVC = chatVC
         {
@@ -79,7 +125,7 @@ class ChatRoom:JSQMessagesViewController
         title = "Chat: \(senderDisplayName!)"
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showDisplayNameDialog))
-        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTapsRequired = 5
         
         navigationController?.navigationBar.addGestureRecognizer(tapGesture)
         
@@ -199,8 +245,49 @@ class ChatRoom:JSQMessagesViewController
         super.didReceiveMemoryWarning()
         
     }
+     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageToShare = pickedImage
+        }
+        
+        self.dismiss(animated: true, completion: {
+            if let image = self.imageToShare
+            {
+                var activityController = UIActivityViewController.init(activityItems: [image], applicationActivities: nil)
+                self.present(activityController, animated: true, completion: nil)
+            }
+            else
+            {
+                print("***noimage")
+            }
+        })
+        
+    }
     
-    
+   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func share()
+    {
+        let alert = UIAlertController(title: "Choose Image from", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.picker.sourceType = .camera
+            self.present(self.picker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
+            self.picker.sourceType = .photoLibrary
+            self.present(self.picker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+
+    }
     
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
