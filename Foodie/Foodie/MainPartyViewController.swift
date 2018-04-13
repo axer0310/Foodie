@@ -19,9 +19,9 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     var partyIDList = [String]()
     var carPoolList = [Bool]()
     var dataList = [[String:AnyObject]]()
-    var user = Party()
+//    var user = Party()
     var user2 = User()
-//    var user = User()
+    var user = User()
     
     let id  = firebaseUserInfo()
     var ref = Database.database().reference()
