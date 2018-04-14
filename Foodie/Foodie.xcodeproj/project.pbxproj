@@ -19,6 +19,7 @@
 		3FD6B45320635C8D00B9D105 /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6B45220635C8D00B9D105 /* CustomCalloutView.xib */; };
 		8317973A20644DCB00216943 /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317973920644DCB00216943 /* ChatInfo.swift */; };
 		8329E88F206334BB00C46589 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329E88E206334BB00C46589 /* ChatModel.swift */; };
+		8C16CC452081BB8F00BAEEF0 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C16CC442081BB8F00BAEEF0 /* CalculatorViewController.swift */; };
 		8C1E570F2063201700721626 /* MainPartyTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */; };
 		8C76B16D202BC62C0080A70D /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C76B16C202BC62C0080A70D /* PartyViewController.swift */; };
 		8CB72DB320521DAC00C519AD /* MainPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */; };
@@ -80,6 +81,7 @@
 		8329E88C2063348E00C46589 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8329E88E206334BB00C46589 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		837C2343202FA7D00050F05E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8C16CC442081BB8F00BAEEF0 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		8C1E570E2063201700721626 /* MainPartyTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartyTableViewCells.swift; sourceTree = "<group>"; };
 		8C76B16C202BC62C0080A70D /* PartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		8CB72DB220521DAC00C519AD /* MainPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPartyViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				8E2E8FEC20521A5B000F67EE /* QR.storyboard */,
 				8E2E8FEE20521ACD000F67EE /* QRViewController.swift */,
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
+				8C16CC442081BB8F00BAEEF0 /* CalculatorViewController.swift */,
 				8CD93015206EA0E500A5451B /* TipCalculatorViewController.swift */,
 				3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */,
 				3F0B22E820633F29008DDF32 /* PersonalAnn.swift */,
@@ -475,6 +478,7 @@
 				8CD93016206EA0E500A5451B /* TipCalculatorViewController.swift in Sources */,
 				8ED50C142064945200FFEA85 /* ChatViewController.swift in Sources */,
 				3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */,
+				8C16CC452081BB8F00BAEEF0 /* CalculatorViewController.swift in Sources */,
 				3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */,
 				8E1A0726205E2116001B2724 /* FriendListViewController.swift in Sources */,
 				8E30737F2061B87500E1A3CB /* FriendLocationViewController.swift in Sources */,

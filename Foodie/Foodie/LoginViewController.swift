@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     {
        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways)
         {
-            self.user.coordinate = ["x":(locationManager.location?.coordinate.latitude)!, "y": (locationManager.location?.coordinate.longitude)!]
+//            self.user.coordinate = ["x":(locationManager.location?.coordinate.latitude)!, "y": (locationManager.location?.coordinate.longitude)!]
             completion()
         }
         else

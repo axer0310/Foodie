@@ -25,23 +25,3 @@ class Helper
         return randomString
     }
 }
-
-@IBOutlet var logoImage: UIImageView!
-var user = User()
-var ref: DatabaseReference!
-var userLocalInfo = UserDefaults.standard // use to store user id to local
-
-let locationManager = CLLocationManager()
-typealias CompletionHandler = () -> Void
-@IBOutlet var googleSignButton: GIDSignInButton!
-
-@IBOutlet var fbSignInButton: FBSDKLoginButton!
-override func viewDidLoad()
-{
-    super.viewDidLoad()
-    logoImage.image = UIImage(named:"FoodieImage.png" )
-    GIDSignIn.sharedInstance().uiDelegate = self
-    GIDSignIn.sharedInstance().delegate = self as! GIDSignInDelegate
-    fbSignInButton.delegate = self
-    self.ref = Database.database().reference()
-        
