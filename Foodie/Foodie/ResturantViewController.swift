@@ -153,13 +153,14 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
         
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = searchBar.text
+        var stringtext = searchBar.text
         let active = MKLocalSearch(request: request)
         
         active.start { (response, error) in
             
             activity.stopAnimating()
             UIApplication.shared.endIgnoringInteractionEvents()
-            
+            print(response)
             if response == nil
             {
                 print("ERROR")
@@ -178,6 +179,18 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
                 
+                
+                if let index = self.businesses?.index(where: { $0.name == stringtext}){
+                    
+                    print(self.businesses[index].name!)
+                    print(self.businesses[index].address!)
+                    var moreinfo = ["Name": self.businesses[index].name, "Address":self.businesses[index].address, "ImageURL" : self.businesses[index].imageURL,"Distance": self.businesses[index].distance, "Rating": self.businesses[index].rating, "reviewCount" : self.businesses[index].reviewCount, "Phone": self.businesses[index].phone, "Reviews": self.businesses[index].reviewwritten, "ID": self.businesses[index].id] as Dictionary
+                    self.addAnnotationAtAddress(address: self.businesses[index].address!, title: self.businesses[index].name!, subtitle: self.businesses[index].distance!, lat: self.businesses[index].lat!, long: self.businesses[index].long!, moreInfo: moreinfo)
+                    let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
+                    let span = MKCoordinateSpanMake(0.05, 0.05)
+                    let region = MKCoordinateRegionMake(coordinate, span)
+                    self.mapView.setRegion(region, animated: true)
+                }else {
                 //Create annotation
                 let annotation = MKPointAnnotation()
                 annotation.title = searchBar.text
@@ -189,6 +202,10 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 let span = MKCoordinateSpanMake(0.05, 0.05)
                 let region = MKCoordinateRegionMake(coordinate, span)
                 self.mapView.setRegion(region, animated: true)
+                
+//                var moreinfo = ["Name": response.name, "Address":response.address, "ImageURL" : response.imageURL,"Distance": business.distance, "Rating": business.rating, "reviewCount" : business.reviewCount, "Phone": response.phone, "Reviews": business.reviewwritten, "ID": business.id] as Dictionary
+//                self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!, lat: business.lat!, long: business.long!, moreInfo: moreinfo)
+                }
             }
         }
         
