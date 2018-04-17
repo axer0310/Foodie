@@ -122,12 +122,17 @@ class TipCalculatorViewController: UIViewController {
         if (num == "0") {
             num = ""
         }
+        if (!num.contains(".")) {
         num += "."
+        }
         Tip.text = num
     }
     
     @IBOutlet weak var Backspace: UIButton!
     @IBAction func Backspace(_ sender: Any) {
+        if (num == "") {
+            num = "0"
+        }
         if (num.count > 0) {
             num = String(num.prefix(num.count - 1))
             if (num.count == 0) {
@@ -151,9 +156,13 @@ class TipCalculatorViewController: UIViewController {
     
     @IBOutlet weak var Tip1: UIButton!
     @IBAction func Tip1(_ sender: Any) {
+        
         if (Tip.text == "0") {
                     alertMessage(title: "Error", message: "Please Enter a Number First")
         } else {
+            if (Tip.text?.last! == ".") {
+                Tip.text? += "0"
+            }
             total = Double(Tip.text!)!
             total *= tip1
             total = (total * 100).rounded()/100
@@ -168,6 +177,9 @@ class TipCalculatorViewController: UIViewController {
         if (Tip.text == "0") {
             alertMessage(title: "Error", message: "Please Enter a Number First")
         } else {
+            if (Tip.text?.last! == ".") {
+                Tip.text? += "0"
+            }
             total = Double(Tip.text!)!
             total *= tip2
             total = (total * 100).rounded()/100
@@ -224,6 +236,8 @@ class TipCalculatorViewController: UIViewController {
             displayPrompt(title: "Error", message: "Tips cannot be negative")
         } else if (!alphabetCheck(input: temp)){
             displayPrompt(title: "Error", message: "Your custom tip cannot contain alphabets or non-numeric characters")
+        } else if (temp == "%") {
+            displayPrompt(title: "Error", message: "Your custom tip must contain numbers before the \"%\" sign")
         } else {
         
         Tip1.setTitle(custom_tip?.text, for: .normal)
@@ -248,6 +262,8 @@ class TipCalculatorViewController: UIViewController {
             displayPrompt(title: "Error", message: "Tips cannot be negative")
         } else if (!alphabetCheck(input: temp2)){
             displayPrompt(title: "Error", message: "Your custom tip cannot contain alphabets")
+        } else if (temp2 == "%") {
+            displayPrompt(title: "Error", message: "Your custom tip must contain numbers before the \"%\" sign")
         } else {
             
         Tip2.setTitle(custom_tip?.text, for: .normal)
