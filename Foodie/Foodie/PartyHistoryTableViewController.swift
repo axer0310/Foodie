@@ -32,7 +32,7 @@ class PartyHistoryTableViewController: UITableViewController
             
             for partyID in self.history
             {
-                self.ref.child("/PartyIDs/\(partyID)/Name").observeSingleEvent(of: .value, with: { (snapshot) in
+                self.ref.child("/PartyIDs/\(partyID)/Location").observeSingleEvent(of: .value, with: { (snapshot) in
                      let value = snapshot.value as? String
                     if let data = value
                     {
