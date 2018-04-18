@@ -20,6 +20,7 @@ class TipCalculatorViewController: UIViewController {
     var tip2: Double = 1.20
     var custom_tip: UITextField?
     
+    
 
     @IBOutlet weak var Tip: UILabel!
     
