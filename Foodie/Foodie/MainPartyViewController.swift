@@ -154,8 +154,8 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                         
                         
                         
-                        let childUpdates = ["/Users/\(self.user2.id)/partyHistory": history] as [String : Any?]
-                        self.ref.updateChildValues(childUpdates)
+//                        let childUpdates = ["/Users/\(self.user2.id)/partyHistory": history] as [String : Any?]
+//                        self.ref.updateChildValues(childUpdates)
                         self.present(nav, animated: true, completion: nil)
                     })
                    

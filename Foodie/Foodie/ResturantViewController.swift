@@ -225,8 +225,6 @@ class ResturantViewController:UIViewController,MKMapViewDelegate,CLLocationManag
                 let region = MKCoordinateRegionMake(coordinate, span)
                 self.mapView.setRegion(region, animated: true)
                 
-//                var moreinfo = ["Name": response.name, "Address":response.address, "ImageURL" : response.imageURL,"Distance": business.distance, "Rating": business.rating, "reviewCount" : business.reviewCount, "Phone": response.phone, "Reviews": business.reviewwritten, "ID": business.id] as Dictionary
-//                self.addAnnotationAtAddress(address: business.address!, title: business.name!, subtitle: business.distance!, lat: business.lat!, long: business.long!, moreInfo: moreinfo)
                 }
             }
         }
