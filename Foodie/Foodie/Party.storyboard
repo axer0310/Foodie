@@ -5,7 +5,9 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -112,11 +114,19 @@
                         <viewLayoutGuide key="safeArea" id="esS-hV-Gfi"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q1r-mr-u1k">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="VO3-WG-4t2">
-                            <connections>
-                                <action selector="BackButton:" destination="RUG-sX-OB9" id="a1f-a9-wwA"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Back" id="VO3-WG-4t2">
+                                <connections>
+                                    <action selector="BackButton:" destination="RUG-sX-OB9" id="a1f-a9-wwA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="History" image="history.png" id="J3a-FN-VnD">
+                                <connections>
+                                    <action selector="viewPartyHistory:" destination="RUG-sX-OB9" id="HWb-0T-5w8"/>
+                                    <segue destination="tKU-I8-vDs" kind="show" identifier="partyHistory" id="nbP-ao-caw"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Lg6-Lx-yaq">
                             <connections>
                                 <segue destination="dXk-Hx-lLM" kind="presentation" identifier="presentPartyDisplay" id="WDc-Qn-SQI"/>
@@ -160,16 +170,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-JT-4Ox">
-                                                    <rect key="frame" x="94" y="17" width="233" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="315" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car.png" translatesAutoresizingMaskIntoConstraints="NO" id="7aJ-ee-xsl">
+                                                    <rect key="frame" x="338" y="17" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="PartyName" destination="tdK-JT-4Ox" id="Qk5-BA-i6v"/>
+                                            <outlet property="carpool" destination="7aJ-ee-xsl" id="Gk6-w8-AdJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -208,6 +223,46 @@
             </objects>
             <point key="canvasLocation" x="-639.20000000000005" y="-348.57571214392806"/>
         </scene>
+        <!--Party History Table View Controller-->
+        <scene sceneID="AQG-uh-7LE">
+            <objects>
+                <tableViewController id="tKU-I8-vDs" customClass="PartyHistoryTableViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v0Q-y3-h0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="65" id="tPP-yT-F4V" customClass="MainPartyTableViewCells" customModule="Foodie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tPP-yT-F4V" id="gSC-hh-1wi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sX9-Wt-gnw">
+                                            <rect key="frame" x="94" y="17" width="233" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="PartyName" destination="sX9-Wt-gnw" id="92J-NW-xyW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tKU-I8-vDs" id="xYm-mX-Bvm"/>
+                            <outlet property="delegate" destination="tKU-I8-vDs" id="ZXS-0p-Vjr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Csj-KF-gmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662" y="-1229"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="YYW-aF-5YI">
             <objects>
@@ -227,6 +282,10 @@
             <point key="canvasLocation" x="-2049" y="-348"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car.png" width="45" height="45"/>
+        <image name="history.png" width="20" height="20"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Sfb-6s-ekC"/>
     </inferredMetricsTieBreakers>

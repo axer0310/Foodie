@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -188,13 +189,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Name" id="rC6-zM-bCt">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="8tc-8O-jA0">
-                                            <connections>
-                                                <action selector="BackButton:" destination="pk9-J3-y0a" id="hM8-6h-ERF"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Name" id="rC6-zM-bCt"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -205,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GL0-Ae-7GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="945"/>
+            <point key="canvasLocation" x="2297" y="961"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="En4-xO-crW">
@@ -224,6 +219,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywa-m4-5TC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815" y="152"/>
+        </scene>
+        <!--Chat Room-->
+        <scene sceneID="6iA-9A-pYA">
+            <objects>
+                <viewController storyboardIdentifier="partyChatRoomView" id="e7D-Km-lEx" userLabel="Chat Room" customClass="ChatRoom" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1tC-sy-1uq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDy-HT-wHk">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Name" id="Zce-o7-6TI"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lya-nS-QlO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zyo-UB-9MG">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Done" id="NHT-qL-xAq">
+                                <connections>
+                                    <action selector="BackButton:" destination="e7D-Km-lEx" id="lCc-MY-ZeR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Share" id="Wll-6o-631">
+                                <connections>
+                                    <action selector="share" destination="e7D-Km-lEx" id="WHz-1s-3mi"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCj-aJ-q8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120.2898550724638" y="1013.3152173913044"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T5E-rG-596">
+            <objects>
+                <navigationController storyboardIdentifier="PartyChatNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="oBw-yx-mhR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="51Y-66-a8W">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e7D-Km-lEx" kind="relationship" relationship="rootViewController" id="8pf-23-yiw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfw-By-gy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="1013"/>
         </scene>
     </scenes>
 </document>

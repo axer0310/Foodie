@@ -39,7 +39,10 @@ class DetailviewController: UIViewController {
         }
         
         getRating()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissAll))
+        tapGesture.numberOfTapsRequired = 1
         
+        navigationController?.navigationBar.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func sendRating(_ sender: Any)
@@ -139,5 +142,9 @@ class DetailviewController: UIViewController {
         }
         
         
+    }
+    @objc func dismissAll()
+    {
+        customRating.resignFirstResponder()
     }
 }

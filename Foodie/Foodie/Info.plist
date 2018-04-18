@@ -69,5 +69,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UberClientID</key>
+    <string>vCsGlKXvnEBfJdXLElDihk_382O5WjyF</string>
+    <key>UberServerToken</key>
+    <string>syXFQ-PAo9ltva2tdVqqKmV_I_HgPIWGeMsL7jkv</string>
+    <key>UberDisplayName</key>
+    <string>Foodie</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>uber</string>
+        <string>uberauth</string>
+    </array>
 </dict>
 </plist>

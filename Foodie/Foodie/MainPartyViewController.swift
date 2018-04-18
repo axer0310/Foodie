@@ -17,8 +17,9 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     
     var partyList = [String]()
     var partyIDList = [String]()
+    var carPoolList = [Bool]()
     var dataList = [[String:AnyObject]]()
-    var user = Party()
+    var user = User()
     
     var ref = Database.database().reference()
     
@@ -45,6 +46,8 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                     {
                        var partyID = partyDic["Name"] as? String
                         self.partyList.append(partyID!)
+                        var carpool = partyDic["Carpool"] as? Bool
+                        self.carPoolList.append(carpool!)
                     }
                 }
                 self.tableView.reloadData()
@@ -66,35 +69,8 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                     }
                     
                 }
-                
-//                for id in data["PartyIDs"]?.values as? [String]
-//                {
-//                    array.append(id)
-//                }
             }
             
-                //                var partyIDs = data["PartyIDs"] as? [String]
-//                if let partyIDs = partyIDs
-//                {
-//                    self.partyIDList = partyIDs
-//                }
-                
-            
-//            if let parties = value
-//            {
-//
-//                for party in parties.values
-//                {
-//                    if let partyDic = party as? [String:AnyObject]
-//                    {
-//                        var partyID = partyDic["Name"] as? String
-//                        self.partyList.append(partyID!)
-//                    }
-//                }
-//                self.tableView.reloadData()
-//                self.tableView.delegate = self
-//                self.tableView.dataSource = self
-//            }
         })
 
 
@@ -127,6 +103,10 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "PartyCell") as! MainPartyTableViewCells
             cell.PartyName.text = partyList[indexPath.row]
+        if(carPoolList[indexPath.row] == true)
+        {
+            cell.carpool.isHidden = false
+        }
 //        let data = dataList[indexPath.row]
 //
 //        if let name = data["PartyName"] as? String
@@ -139,12 +119,47 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
     {
         if let sb = UIStoryboard.init(name: "Chat", bundle: nil) as? UIStoryboard
         {
-            
-                if let vc = sb.instantiateViewController(withIdentifier: "chatRoomView") as? ChatRoom
+            if let nav = sb.instantiateViewController(withIdentifier: "PartyChatNavigationController") as? UINavigationController
+            {
+                
+//                present(nav, animated: true)
+                if let vc = nav.childViewControllers[0] as? ChatRoom
                 {
                     vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
-                    self.present(vc, animated: true, completion: nil)
+                    vc.partyID = partyIDList[indexPath.row]
+                    
+                    var history = [String]()
+                    ref.child("/Users/\(self.user.id)/partyHistory").observeSingleEvent(of: .value, with: { (snapshot) in
+                                    let value = snapshot.value as? [String]
+                                    if let data = value
+                                    {
+                                        for partyID in data
+                                        {
+                                            history.append(partyID)
+                                        }
+                                    }
+                        if(!history.contains(self.partyIDList[indexPath.row]))
+                        {
+                            history.append(self.partyIDList[indexPath.row])
+                        }
+                        
+                        
+                        
+                        let childUpdates = ["/Users/\(self.user.id)/partyHistory": history] as [String : Any?]
+                        self.ref.updateChildValues(childUpdates)
+                        self.present(nav, animated: true, completion: nil)
+                    })
+                   
+                    
                 }
+                
+            }
+//                if let vc = sb.instantiateViewController(withIdentifier: "chatRoomView") as? ChatRoom
+//                {
+//                    vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
+//                    vc.partyID = partyIDList[indexPath.row]
+//                    self.present(vc, animated: true, completion: nil)
+//                }
             
         }
     }
