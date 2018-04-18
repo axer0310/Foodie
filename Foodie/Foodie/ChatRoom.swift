@@ -178,7 +178,7 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         title = "Chat: \(senderDisplayName!)"
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showDisplayNameDialog))
-        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTapsRequired = 5
         
         navigationController?.navigationBar.addGestureRecognizer(tapGesture)
         

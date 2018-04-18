@@ -42,6 +42,9 @@
 		8E2E8FF12052249F000F67EE /* scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E8FF02052249E000F67EE /* scan@2x.png */; };
 		8E30737D2061B86200E1A3CB /* FriendLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E30737C2061B86200E1A3CB /* FriendLocation.storyboard */; };
 		8E30737F2061B87500E1A3CB /* FriendLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30737E2061B87500E1A3CB /* FriendLocationViewController.swift */; };
+		8E42DC8D2080447000854B30 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E42DC8C2080446F00854B30 /* history@2x.png */; };
+		8E42DC8F208045B300854B30 /* PartyHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42DC8E208045B300854B30 /* PartyHistoryTableViewController.swift */; };
+		8E42DC9320804C8A00854B30 /* car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E42DC9220804C8A00854B30 /* car@2x.png */; };
 		8E48D845203FD28C003E9958 /* ResturantPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D843203FD28C003E9958 /* ResturantPage.storyboard */; };
 		8E48D846203FD28C003E9958 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48D844203FD28C003E9958 /* ResturantViewController.swift */; };
 		8E48D848203FD38E003E9958 /* FoodieImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E48D847203FD38E003E9958 /* FoodieImage.png */; };
@@ -105,6 +108,9 @@
 		8E2E8FF02052249E000F67EE /* scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan@2x.png"; sourceTree = "<group>"; };
 		8E30737C2061B86200E1A3CB /* FriendLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendLocation.storyboard; sourceTree = "<group>"; };
 		8E30737E2061B87500E1A3CB /* FriendLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendLocationViewController.swift; sourceTree = "<group>"; };
+		8E42DC8C2080446F00854B30 /* history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history@2x.png"; sourceTree = "<group>"; };
+		8E42DC8E208045B300854B30 /* PartyHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHistoryTableViewController.swift; sourceTree = "<group>"; };
+		8E42DC9220804C8A00854B30 /* car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car@2x.png"; sourceTree = "<group>"; };
 		8E48D843203FD28C003E9958 /* ResturantPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
 		8E48D844203FD28C003E9958 /* ResturantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
 		8E48D847203FD38E003E9958 /* FoodieImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodieImage.png; sourceTree = "<group>"; };
@@ -178,6 +184,8 @@
 		8E20332820386C47003B71A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				8E42DC9220804C8A00854B30 /* car@2x.png */,
+				8E42DC8C2080446F00854B30 /* history@2x.png */,
 				8EAD6A7A2076B63100507D70 /* appicon@3x.png */,
 				8E89FB57205F7E2B007A5F96 /* reload@2x.png */,
 				8E89FB55205F7DF5007A5F96 /* friend@2x.png */,
@@ -269,6 +277,7 @@
 				8ED50C0C20648EF100FFEA85 /* ChatRoom.swift */,
 				8ED50C132064945100FFEA85 /* ChatViewController.swift */,
 				8ED50C0B20648EF100FFEA85 /* CreateRoomViewController.swift */,
+				8E42DC8E208045B300854B30 /* PartyHistoryTableViewController.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -366,7 +375,9 @@
 				8E30737D2061B86200E1A3CB /* FriendLocation.storyboard in Resources */,
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
 				8E20333020386C47003B71A7 /* restaurant@1x.png in Resources */,
+				8E42DC8D2080447000854B30 /* history@2x.png in Resources */,
 				8E2E8FE920520EE0000F67EE /* QR@2x.png in Resources */,
+				8E42DC9320804C8A00854B30 /* car@2x.png in Resources */,
 				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +483,7 @@
 				8EAB0684202D3CD60046A904 /* User.swift in Sources */,
 				8EB670BB2021004200E9228B /* LoginViewController.swift in Sources */,
 				8CB72DB320521DAC00C519AD /* MainPartyViewController.swift in Sources */,
+				8E42DC8F208045B300854B30 /* PartyHistoryTableViewController.swift in Sources */,
 				8329E88F206334BB00C46589 /* ChatModel.swift in Sources */,
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,

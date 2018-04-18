@@ -12,5 +12,6 @@ class MainPartyTableViewCells: UITableViewCell
 {
     @IBOutlet weak var PartyName: UILabel!
     
+    @IBOutlet var carpool: UIImageView!
 }
 

@@ -34,7 +34,6 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
 
         self.mapView.delegate = self
         getPartys()
-        partyInfoView.isHidden = true
     }
     func getPartys()
     {
@@ -120,6 +119,10 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
             if let nav = storyboard.instantiateViewController(withIdentifier: "PartyNavigation") as? UINavigationController
                 
             {
+                if let vc = nav.childViewControllers[0] as? PartyViewController
+                {
+                    vc.user = user
+                }
                 self.present(nav, animated: true, completion: nil)
             }
         }
