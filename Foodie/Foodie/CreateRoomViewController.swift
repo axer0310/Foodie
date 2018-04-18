@@ -26,8 +26,8 @@ class CreateRoomViewController:UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var backgroundlabel: UILabel!
     @IBOutlet weak var bubblelabel: UILabel!
     
-    let textcolorList = ["White", "Black", "Red"]
-    let backgroundcolorList = ["White", "Yellow", "Green"]
+    let textcolorList = ["White", "Black", "Blue", "Brown", "Cyan", "Dark Gray", "Red"]
+    let backgroundcolorList = ["White", "Black", "Blue", "Brown", "Cyan", "Green", "Yellow"]
     let bubblecolorList = ["Red", "Blue", "Green", "Light Gray"]
     
     var textcolor : String!
@@ -46,13 +46,13 @@ class CreateRoomViewController:UIViewController, UIPickerViewDataSource, UIPicke
     convenience init() {
         self.init(nibName: nil, bundle: nil)
         
-        //self.textcolor = setTextColor(str: textcolorList[0])
-        //self.backgroundcolor = setTextColor(str: backgroundcolorList[0])
-        //self.bubblecolor = setTextColor(str: bubblecolorList[0])
+        self.textcolor = setTextColor(str: textcolorList[0])
+        self.backgroundcolor = setTextColor(str: backgroundcolorList[0])
+        self.bubblecolor = setTextColor(str: bubblecolorList[0])
         
-        self.textcolor = textcolorList[0]
-        self.backgroundcolor = backgroundcolorList[0]
-        self.bubblecolor = bubblecolorList[0]
+        //self.textcolor = textcolorList[0]
+        //self.backgroundcolor = backgroundcolorList[0]
+        //self.bubblecolor = bubblecolorList[0]
         
         
     }
@@ -92,14 +92,17 @@ class CreateRoomViewController:UIViewController, UIPickerViewDataSource, UIPicke
     {
         if(pickerView == textColorPickerview) {
             setTextColor(str: textcolorList[row])
+            UserDefaults.standard.set(textcolorList[row], forKey: "textcolor")
             textlabel.text = textcolorList[row]
         }
         else if(pickerView == backgroundColorPickerview) {
             setBackgroundColor(str: backgroundcolorList[row])
+            UserDefaults.standard.set(backgroundcolorList[row], forKey: "backgroundcolor")
             backgroundlabel.text = backgroundcolorList[row]
         }
         else {
             setBubbleColor(str: bubblecolorList[row])
+            UserDefaults.standard.set(bubblecolorList[row], forKey: "bubblecolor")
             bubblelabel.text = bubblecolorList[row]
         }
     }

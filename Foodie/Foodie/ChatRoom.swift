@@ -32,7 +32,9 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         var bubble : String
         
         init() {
+            
             self.colorSetting = CreateRoomViewController()
+            
             self.text = colorSetting.textcolor
             self.background = colorSetting.backgroundcolor
             self.bubble = colorSetting.bubblecolor
@@ -51,15 +53,18 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         let setting = Setting.init()
         var bubble : String
         
+        let bubblec = UserDefaults.standard.string(forKey: "bubblecolor")
+        
+        
         bubble = setting.bubble
         
-        if(bubble == "Red") {
+        if(bubblec == "Red") {
             return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
         }
-        else if (bubble == "Blue") {
+        else if (bubblec == "Blue") {
             return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
         }
-        else if (bubble == "Green") {
+        else if (bubblec == "Green") {
             return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleGreen())
         }
         else {
@@ -188,12 +193,31 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         
         background = setting.background
         
-        if(background == "Yellow") {
+        let backgroundc = UserDefaults.standard.string(forKey: "backgroundcolor")
+        
+        
+        if(backgroundc == "Yellow") {
             self.collectionView.backgroundColor = UIColor.yellow;
         }
         
-        if(background == "Green") {
+        if(backgroundc == "Green") {
             self.collectionView.backgroundColor = UIColor.green;
+        }
+        
+        if(backgroundc == "Black") {
+            self.collectionView.backgroundColor = UIColor.black;
+        }
+        
+        if(backgroundc == "Brown") {
+            self.collectionView.backgroundColor = UIColor.brown;
+        }
+        
+        if(backgroundc == "Blue") {
+            self.collectionView.backgroundColor = UIColor.blue;
+        }
+        
+        if(backgroundc == "Cyan") {
+            self.collectionView.backgroundColor = UIColor.cyan;
         }
         
         inputToolbar.contentView.leftBarButtonItem = nil
@@ -299,13 +323,31 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         
         text = setting.text
         
-        if(text == "Black") {
+        let textc = UserDefaults.standard.string(forKey: "textcolor")
+        
+        if(textc == "Black") {
             cell.textView.textColor = UIColor.black
             cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
         }
-        else if(text == "Red") {
+        else if(textc == "Red") {
             cell.textView.textColor = UIColor.red
             cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.red, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        else if(textc == "Blue") {
+            cell.textView.textColor = UIColor.blue
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.blue, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        else if(textc == "Brown") {
+            cell.textView.textColor = UIColor.brown
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.brown, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        else if(textc == "Cyan") {
+            cell.textView.textColor = UIColor.cyan
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.cyan, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        else if(textc == "Dark Gray") {
+            cell.textView.textColor = UIColor.darkGray
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.darkGray, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
         }
         else {
             cell.textView.textColor = UIColor.white
