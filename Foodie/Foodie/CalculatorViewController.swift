@@ -22,6 +22,18 @@ class CalculatorViewController: UIViewController {
     var nums: Array<String> = Array()
     var patterns: Array<String>  = Array()
     
+    func alertMessage(title:String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)}))
+        
+        self.present(alert, animated:true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     @IBOutlet weak var Display: UILabel!
     
@@ -32,16 +44,29 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func BackSpace(_ sender: Any) {
         
-        if (num == "") {
+        if (patternCheck(str: num)) {
+            signs.removeAll()
+            nums.removeAll()
             num = "0"
-        }
-        
-        if (num.last! == "+" || num.last! == "-" || num.last! == "*" || num.last! == "/" ) {
-            if (num.count > 0) {
-                num = String(num.prefix(num.count - 1))
-                if (num.count == 0) {
-                    num = "0"
+            total = 0.00
+        } else {
+
+            if (num == "") {
+                num = "0"
+            }
+            
+            if (num.last! == "+" || num.last! == "-" || num.last! == "*" || num.last! == "/" ) {
+                if (num.count > 0) {
+                    num = String(num.prefix(num.count - 1))
+                    if (num.count == 0) {
+                        num = "0"
+                    }
                 }
+            } else {
+                num = String(num.prefix(num.count - 1))
+            }
+            if (num == "") {
+                num = "0"
             }
         }
         Display.text = num
@@ -296,7 +321,7 @@ class CalculatorViewController: UIViewController {
             signs.removeAll()
             nums.removeAll()
             return
-
+            
         }
         
         if (patternCheck(str: num)) {
@@ -344,7 +369,7 @@ class CalculatorViewController: UIViewController {
                 }
                 continue
             }
-
+            
             if (temp.rangeOfCharacter(from: CharacterSet.decimalDigits) == nil) {
                 track += 1
             }
@@ -358,6 +383,8 @@ class CalculatorViewController: UIViewController {
             nums.removeAll()
             num = ""
             total = 0.00
+            alertMessage(title: "Error", message: "You must enter numbers along with the operations")
+            Display.text = "0"
             return
         }
         
@@ -366,6 +393,8 @@ class CalculatorViewController: UIViewController {
             nums.removeAll()
             num = ""
             total = 0.00
+            alertMessage(title: "Error", message: "The values you dial in must contain only one sign between each number")
+            Display.text = "0"
             return
         }
         
@@ -380,19 +409,25 @@ class CalculatorViewController: UIViewController {
                 signs.removeAll()
                 nums.removeAll()
                 total = 0.00
+                alertMessage(title: "Error", message: "Missing number after operator, Re-enter!")
+                Display.text = "0"
                 return
             }
         }
-                
+        
+        nums.append(num)
+        
         if (nums.count == 0) {
             signs.removeAll()
             nums.removeAll()
             total = 0.00
             num = ""
+            alertMessage(title: "Error", message: "Please enter some number to which you want operations to be applied")
+            Display.text = "0"
             return
         }
         
-        nums.append(num)
+
         
         if (nums.count == 1) {
             Display.text = String(nums[0])
@@ -427,14 +462,14 @@ class CalculatorViewController: UIViewController {
             signs.remove(at: 0)
         }
         
-
+        
         for val in signs {
             count = 0
             for val2 in nums {
                 if (count == 1) {
                     break
                 }
-
+                
                 if (val == "+") {
                     total += Double(val2)!
                     nums.remove(at: 0)

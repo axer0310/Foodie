@@ -225,6 +225,19 @@ class TipCalculatorViewController: UIViewController {
         return true
     }
     
+    func percentageChecker(input: String) -> Bool {
+        var counter: Int = 0
+        for chr in input {
+            if (chr == "%") {
+                counter = counter + 1
+            }
+            if (counter == 2) {
+                return true
+            }
+        }
+        return false
+    }
+    
     func tipOneHandler(alert: UIAlertAction!) {
         var temp: String = (custom_tip?.text)!
         
@@ -238,6 +251,8 @@ class TipCalculatorViewController: UIViewController {
             displayPrompt(title: "Error", message: "Your custom tip cannot contain alphabets or non-numeric characters")
         } else if (temp == "%") {
             displayPrompt(title: "Error", message: "Your custom tip must contain numbers before the \"%\" sign")
+        } else if (percentageChecker(input: temp)){
+            displayPrompt(title: "Error", message: "Tips must be in the format \"<number>%\"")
         } else {
         
         Tip1.setTitle(custom_tip?.text, for: .normal)
@@ -264,6 +279,8 @@ class TipCalculatorViewController: UIViewController {
             displayPrompt(title: "Error", message: "Your custom tip cannot contain alphabets")
         } else if (temp2 == "%") {
             displayPrompt(title: "Error", message: "Your custom tip must contain numbers before the \"%\" sign")
+        } else if (percentageChecker(input: temp2)){
+            displayPrompt(title: "Error", message: "Tips must be in the format \"<number>%\"")
         } else {
             
         Tip2.setTitle(custom_tip?.text, for: .normal)
