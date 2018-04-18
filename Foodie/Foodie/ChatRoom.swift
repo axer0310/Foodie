@@ -25,57 +25,67 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
     var userid = ""
     var friendid = ""
     
-    /*
-    var outgoingBubble = setupOutgoingBubble()
-    var incomingBubble = setupIncomingBubble(nil)
-    
-    func setupIncomingBubble(gender: String?) -> JSQMessagesBubbleImage {
-    switch gender {
-        case "male":
-        return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "2573C5"))
-        case "female":
-        return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "E452CE"))
-        default:
-        return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hexString: "848484"))
+    class Setting {
+        let colorSetting : CreateRoomViewController
+        var text : String
+        var background : String
+        var bubble : String
+        
+        init() {
+            self.colorSetting = CreateRoomViewController()
+            self.text = colorSetting.textcolor
+            self.background = colorSetting.backgroundcolor
+            self.bubble = colorSetting.bubblecolor
+            
+        }
     }
-     }
-     
-     let message = messages[indexPath.row]
-     
-     if message.senderId == self.senderId {
-     cell.textView!.textColor = UIColor.black
-     }
-     else {
-     cell.textView!.textColor = UIColor.blue
-     }
-     
-    */
     
     var imageToShare : UIImage?
     let picker = UIImagePickerController()
     
     var ref = Database.database().reference()
+    
+    //bubble color setting hr
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
-        /*
-        if() {
-            return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed()())
+        
+        let setting = Setting.init()
+        var bubble : String
+        
+        bubble = setting.bubble
+        
+        if(bubble == "Red") {
+            return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
         }
-        else if () {
+        else if (bubble == "Blue") {
             return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
         }
-        else if () {
-            return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleGreen()())
+        else if (bubble == "Green") {
+            return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleGreen())
         }
         else {
- */
- return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
-   //     }
+            return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        }
     }()
     
     lazy var incomingBubble: JSQMessagesBubbleImage = {
         //return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        let setting = Setting.init()
+        var bubble : String
         
-        return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        bubble = setting.bubble
+        
+        if(bubble == "Red") {
+            return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
+        }
+        else if (bubble == "Blue") {
+            return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        }
+        else if (bubble == "Green") {
+            return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleGreen())
+        }
+        else {
+            return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        }
     }()
     
     override func viewDidLoad() {
@@ -172,6 +182,19 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         
         navigationController?.navigationBar.addGestureRecognizer(tapGesture)
         
+        //change color background
+        let setting = Setting.init()
+        var background : String
+        
+        background = setting.background
+        
+        if(background == "Yellow") {
+            self.collectionView.backgroundColor = UIColor.yellow;
+        }
+        
+        if(background == "Green") {
+            self.collectionView.backgroundColor = UIColor.green;
+        }
         
         inputToolbar.contentView.leftBarButtonItem = nil
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
@@ -262,6 +285,37 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
     {
         return messages[indexPath.item].senderId == senderId ? 0 : 15
     }
+    
+    // text color change hr
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
+        
+        //let messages = self.messages[indexPath.item]
+        
+
+        let setting = Setting.init()
+        var text : String
+        
+        text = setting.text
+        
+        if(text == "Black") {
+            cell.textView.textColor = UIColor.black
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        else if(text == "Red") {
+            cell.textView.textColor = UIColor.red
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.red, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        else {
+            cell.textView.textColor = UIColor.white
+            cell.textView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white, NSAttributedStringKey.underlineStyle.rawValue : NSUnderlineStyle.styleSingle.rawValue]
+        }
+        
+        return cell
+    
+    }
+    
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {

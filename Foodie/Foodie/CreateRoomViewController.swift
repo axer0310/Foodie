@@ -14,6 +14,8 @@ import GoogleSignIn
 
 class CreateRoomViewController:UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet var subview: UIView!
+    
     @IBOutlet weak var textColorPickerview: UIPickerView!
     
     @IBOutlet weak var backgroundColorPickerview: UIPickerView!
@@ -24,9 +26,36 @@ class CreateRoomViewController:UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var backgroundlabel: UILabel!
     @IBOutlet weak var bubblelabel: UILabel!
     
-    let textcolor = ["Black", "White", "Red"]
-    let backgroundcolor = ["White", "Yellow"]
-    let bubblecolor = ["Red", "Blue", "Green", "Light Gray"]
+    let textcolorList = ["White", "Black", "Red"]
+    let backgroundcolorList = ["White", "Yellow", "Green"]
+    let bubblecolorList = ["Red", "Blue", "Green", "Light Gray"]
+    
+    var textcolor : String!
+    var backgroundcolor : String!
+    var bubblecolor : String!
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)!
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
+        subview = UIView()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    convenience init() {
+        self.init(nibName: nil, bundle: nil)
+        
+        //self.textcolor = setTextColor(str: textcolorList[0])
+        //self.backgroundcolor = setTextColor(str: backgroundcolorList[0])
+        //self.bubblecolor = setTextColor(str: bubblecolorList[0])
+        
+        self.textcolor = textcolorList[0]
+        self.backgroundcolor = backgroundcolorList[0]
+        self.bubblecolor = bubblecolorList[0]
+        
+        
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -36,41 +65,72 @@ class CreateRoomViewController:UIViewController, UIPickerViewDataSource, UIPicke
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         if(pickerView == textColorPickerview) {
-            return textcolor[row]
+            return textcolorList[row]
         }
         else if(pickerView == backgroundColorPickerview) {
-            return backgroundcolor[row]
+            return backgroundcolorList[row]
         }
         else {
-            return bubblecolor[row]
+            return bubblecolorList[row]
         }
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         if(pickerView == textColorPickerview) {
-            return textcolor.count
+            return textcolorList.count
         }
         else if(pickerView == backgroundColorPickerview) {
-            return backgroundcolor.count
+            return backgroundcolorList.count
         }
         else {
-            return bubblecolor.count
+            return bubblecolorList.count
         }
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         if(pickerView == textColorPickerview) {
-            textlabel.text = textcolor[row]
+            setTextColor(str: textcolorList[row])
+            textlabel.text = textcolorList[row]
         }
         else if(pickerView == backgroundColorPickerview) {
-            backgroundlabel.text = backgroundcolor[row]
+            setBackgroundColor(str: backgroundcolorList[row])
+            backgroundlabel.text = backgroundcolorList[row]
         }
         else {
-            bubblelabel.text = bubblecolor[row]
+            setBubbleColor(str: bubblecolorList[row])
+            bubblelabel.text = bubblecolorList[row]
         }
     }
     
+    /*
+    func getTextColor() -> String {
+        return textcolor
+    }
+    
+    func getBackgroundColor() -> String {
+        return backgroundcolor
+    }
+    
+    func getBubbleColor() -> String {
+        return bubblecolor
+    }
+    */
+    func setTextColor(str : String) -> String {
+        textcolor = str
+         return textcolor
+    }
+    
+    func setBackgroundColor(str : String) -> String {
+        backgroundcolor = str
+         return backgroundcolor
+    }
+    
+    func setBubbleColor(str : String ) -> String {
+        bubblecolor = str
+         return bubblecolor
+    }
     
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
