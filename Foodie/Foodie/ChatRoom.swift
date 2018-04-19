@@ -79,13 +79,16 @@ class ChatRoom:JSQMessagesViewController, UIImagePickerControllerDelegate, UINav
         
         bubble = setting.bubble
         
-        if(bubble == "Red") {
+        let bubblec = UserDefaults.standard.string(forKey: "bubblecolor")
+        
+        
+        if(bubblec == "Red") {
             return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
         }
-        else if (bubble == "Blue") {
+        else if (bubblec == "Blue") {
             return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
         }
-        else if (bubble == "Green") {
+        else if (bubblec == "Green") {
             return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleGreen())
         }
         else {
