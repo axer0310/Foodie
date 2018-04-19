@@ -129,7 +129,7 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                 if let vc = nav.childViewControllers[0] as? ChatRoom
                 {
                     vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
-                    self.present(vc, animated: true, completion: nil)
+//                    self.present(vc, animated: true, completion: nil)
 //                    "/Users/\(user.id)/Coordinate"
                     let partyString = ["PartyID" : partyIDList[indexPath.row], "Location" : "Some kind of location"]
                     let userParty = ["Users/\(user2.id)/previousPartyLocation" : partyString]

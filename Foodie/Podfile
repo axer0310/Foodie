@@ -30,6 +30,5 @@ target 'Foodie' do
 pod 'Firebase/RemoteConfig'
 
   # Pods for Foodie
-
 end
 
