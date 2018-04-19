@@ -90,9 +90,9 @@
                                     <action selector="logOut:" destination="BYZ-38-t0r" id="Fyy-jp-ee7"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="reload.png" id="JWH-ZM-z5W">
+                            <barButtonItem image="file.png" id="JWH-ZM-z5W">
                                 <connections>
-                                    <action selector="reload:" destination="BYZ-38-t0r" id="IdK-S1-kb6"/>
+                                    <segue destination="j1a-OL-l6m" kind="show" id="EFh-eK-Hma"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -123,13 +123,49 @@
             </objects>
             <point key="canvasLocation" x="10" y="55"/>
         </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="Rap-Ue-g8Z">
+            <objects>
+                <viewController id="j1a-OL-l6m" customClass="TutorialViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g0O-qF-0DL"/>
+                        <viewControllerLayoutGuide type="bottom" id="trH-xB-THc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ylj-IV-yuw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eav-C2-MR3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eav-C2-MR3" firstAttribute="top" secondItem="g0O-qF-0DL" secondAttribute="bottom" id="3hQ-Pl-qBQ"/>
+                            <constraint firstItem="trH-xB-THc" firstAttribute="top" secondItem="eav-C2-MR3" secondAttribute="bottom" id="Zn3-7J-oi2"/>
+                            <constraint firstItem="trH-xB-THc" firstAttribute="top" secondItem="eav-C2-MR3" secondAttribute="bottom" id="ndl-dG-8cC"/>
+                            <constraint firstItem="eav-C2-MR3" firstAttribute="leading" secondItem="ylj-IV-yuw" secondAttribute="leading" id="vmV-Y1-0B5"/>
+                            <constraint firstAttribute="trailing" secondItem="eav-C2-MR3" secondAttribute="trailing" id="z4N-fo-Egc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cfc-uS-LsX"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="eav-C2-MR3" id="Zt3-R4-Zvt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOD-oa-WrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="55"/>
+        </scene>
     </scenes>
     <resources>
         <image name="QR.png" width="20" height="20"/>
         <image name="chat.png" width="45" height="45"/>
+        <image name="file.png" width="20" height="20"/>
         <image name="friend.png" width="20" height="20"/>
         <image name="party.png" width="45" height="45"/>
-        <image name="reload.png" width="20" height="20"/>
         <image name="restaurant.png" width="45" height="45"/>
     </resources>
 </document>

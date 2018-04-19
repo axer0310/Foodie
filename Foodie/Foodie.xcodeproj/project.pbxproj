@@ -14,8 +14,6 @@
 		3F4207EA2077DD4E005BA06F /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4207E92077DD4E005BA06F /* LocationSearch.swift */; };
 		3F4B6166205F6A5F007FFAB6 /* DetailviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */; };
 		3F5861F52062F94800AB1A27 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5861F42062F94800AB1A27 /* AnnotationView.swift */; };
-		3F846AFC2087A98600D4E228 /* FoodieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F846AFB2087A98600D4E228 /* FoodieTests.swift */; };
-		3F846B042087A9AF00D4E228 /* UnitTestRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F846B032087A9AF00D4E228 /* UnitTestRest.swift */; };
 		3FB34B5C203E2DA4000821F7 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5B203E2DA4000821F7 /* YelpClient.swift */; };
 		3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB34B5D203E2DD1000821F7 /* Business.swift */; };
 		3FD6B45120635C4A00B9D105 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6B45020635C4A00B9D105 /* CustomCalloutView.swift */; };
@@ -57,6 +55,9 @@
 		8E5502A22046001600F11825 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5502A12046001600F11825 /* Helper.swift */; };
 		8E89FB56205F7DF5007A5F96 /* friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E89FB55205F7DF5007A5F96 /* friend@2x.png */; };
 		8E89FB58205F7E2B007A5F96 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E89FB57205F7E2B007A5F96 /* reload@2x.png */; };
+		8E8C9F1B208828C800AB959B /* file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C9F1A208828C700AB959B /* file@2x.png */; };
+		8E8C9F1D208829ED00AB959B /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C9F1C208829ED00AB959B /* TutorialViewController.swift */; };
+		8EA9B9112088381500F9E106 /* Tutorial_total.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9B9102088381500F9E106 /* Tutorial_total.pdf */; };
 		8EAB0682202D3C390046A904 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0681202D3C390046A904 /* MainPageViewController.swift */; };
 		8EAB0684202D3CD60046A904 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB0683202D3CD60046A904 /* User.swift */; };
 		8EAD6A7B2076B63100507D70 /* appicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD6A7A2076B63100507D70 /* appicon@3x.png */; };
@@ -73,7 +74,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-
 		8C638FA42086933D00EE27F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EB670AD2021004200E9228B /* Project object */;
@@ -82,7 +82,6 @@
 			remoteInfo = Foodie;
 		};
 		8C638FB42086971200EE27F7 /* PBXContainerItemProxy */ = {
-
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EB670AD2021004200E9228B /* Project object */;
 			proxyType = 1;
@@ -98,7 +97,6 @@
 		3F4207E92077DD4E005BA06F /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
 		3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailviewController.swift; sourceTree = "<group>"; };
 		3F5861F42062F94800AB1A27 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
-		3F846AF92087A98600D4E228 /* FoodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F846AFB2087A98600D4E228 /* FoodieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieTests.swift; sourceTree = "<group>"; };
 		3F846AFD2087A98600D4E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F846B032087A9AF00D4E228 /* UnitTestRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestRest.swift; sourceTree = "<group>"; };
@@ -152,6 +150,9 @@
 		8E7FF9D1203CD4CB00370B98 /* ResturantPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResturantPage.storyboard; sourceTree = "<group>"; };
 		8E89FB55205F7DF5007A5F96 /* friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friend@2x.png"; sourceTree = "<group>"; };
 		8E89FB57205F7E2B007A5F96 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
+		8E8C9F1A208828C700AB959B /* file@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "file@2x.png"; sourceTree = "<group>"; };
+		8E8C9F1C208829ED00AB959B /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		8EA9B9102088381500F9E106 /* Tutorial_total.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Tutorial_total.pdf; sourceTree = "<group>"; };
 		8EAB0681202D3C390046A904 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		8EAB0683202D3CD60046A904 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8EAD6A7A2076B63100507D70 /* appicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@3x.png"; sourceTree = "<group>"; };
@@ -180,7 +181,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8C638FAC2086971200EE27F7 /* Frameworks */ = {
-
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -242,6 +242,7 @@
 		8E20332820386C47003B71A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				8E8C9F1A208828C700AB959B /* file@2x.png */,
 				8E42DC9220804C8A00854B30 /* car@2x.png */,
 				8E42DC8C2080446F00854B30 /* history@2x.png */,
 				8EAD6A7A2076B63100507D70 /* appicon@3x.png */,
@@ -297,6 +298,8 @@
 				3FD6B44F20635C3100B9D105 /* Custom Call */,
 				3FB34B58203E2D88000821F7 /* APIs&Map */,
 				8EAB0683202D3CD60046A904 /* User.swift */,
+				8EA9B9102088381500F9E106 /* Tutorial_total.pdf */,
+				8E8C9F1C208829ED00AB959B /* TutorialViewController.swift */,
 				8E55029F2045FF3800F11825 /* Party.swift */,
 				8329E88E206334BB00C46589 /* ChatModel.swift */,
 				8E5502A12046001600F11825 /* Helper.swift */,
@@ -310,12 +313,9 @@
 				8E2E8FEC20521A5B000F67EE /* QR.storyboard */,
 				8E2E8FEE20521ACD000F67EE /* QRViewController.swift */,
 				8E48D843203FD28C003E9958 /* ResturantPage.storyboard */,
-
 				3F4207E92077DD4E005BA06F /* LocationSearch.swift */,
-
 				8C16CC442081BB8F00BAEEF0 /* CalculatorViewController.swift */,
 				8CD93015206EA0E500A5451B /* TipCalculatorViewController.swift */,
-
 				3F4B6165205F6A5F007FFAB6 /* DetailviewController.swift */,
 				3F0B22E820633F29008DDF32 /* PersonalAnn.swift */,
 				3F0B22EA20633F97008DDF32 /* Food.swift */,
@@ -362,7 +362,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-
 		8C638F9E2086933D00EE27F7 /* FoodieTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C638FA62086933D00EE27F7 /* Build configuration list for PBXNativeTarget "FoodieTests" */;
@@ -370,7 +369,6 @@
 				8C638F9B2086933D00EE27F7 /* Sources */,
 				8C638F9C2086933D00EE27F7 /* Frameworks */,
 				8C638F9D2086933D00EE27F7 /* Resources */,
-
 			);
 			buildRules = (
 			);
@@ -398,7 +396,6 @@
 			name = FoodieTest;
 			productName = FoodieTest;
 			productReference = 8C638FAF2086971200EE27F7 /* FoodieTest.xctest */;
-
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8EB670B42021004200E9228B /* Foodie */ = {
@@ -439,7 +436,6 @@
 					8C638FAE2086971200EE27F7 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
-
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8EB670B42021004200E9228B;
 					};
@@ -465,7 +461,6 @@
 				8EB670B42021004200E9228B /* Foodie */,
 				8C638F9E2086933D00EE27F7 /* FoodieTests */,
 				8C638FAE2086971200EE27F7 /* FoodieTest */,
-
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +474,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8C638FAD2086971200EE27F7 /* Resources */ = {
-
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -508,10 +502,12 @@
 				8E0D16F5202A3D390019B0C8 /* LoginPage.storyboard in Resources */,
 				8E2DEB7E203E2E5F0067717B /* Party.storyboard in Resources */,
 				3FD6B45320635C8D00B9D105 /* CustomCalloutView.xib in Resources */,
+				8EA9B9112088381500F9E106 /* Tutorial_total.pdf in Resources */,
 				8E30737D2061B86200E1A3CB /* FriendLocation.storyboard in Resources */,
 				8EB670C02021004200E9228B /* Assets.xcassets in Resources */,
 				8E20333020386C47003B71A7 /* restaurant@1x.png in Resources */,
 				8E42DC8D2080447000854B30 /* history@2x.png in Resources */,
+				8E8C9F1B208828C800AB959B /* file@2x.png in Resources */,
 				8E2E8FE920520EE0000F67EE /* QR@2x.png in Resources */,
 				8E42DC9320804C8A00854B30 /* car@2x.png in Resources */,
 				8EB670BE2021004200E9228B /* MainPage.storyboard in Resources */,
@@ -621,7 +617,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +634,7 @@
 				3FB34B5E203E2DD1000821F7 /* Business.swift in Sources */,
 				8E1A072A205E2336001B2724 /* FriendListCell.swift in Sources */,
 				3F0B22ED20634110008DDF32 /* PersonalAnnView.swift in Sources */,
+				8E8C9F1D208829ED00AB959B /* TutorialViewController.swift in Sources */,
 				8E2E8FEF20521ACD000F67EE /* QRViewController.swift in Sources */,
 				8CD93016206EA0E500A5451B /* TipCalculatorViewController.swift in Sources */,
 				8ED50C142064945200FFEA85 /* ChatViewController.swift in Sources */,
@@ -675,7 +671,6 @@
 			isa = PBXTargetDependency;
 			target = 8EB670B42021004200E9228B /* Foodie */;
 			targetProxy = 8C638FB42086971200EE27F7 /* PBXContainerItemProxy */;
-
 		};
 /* End PBXTargetDependency section */
 
@@ -699,7 +694,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-
 		8C638FA72086933D00EE27F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -713,7 +707,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Testing.FoodieTests;
-
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -777,7 +770,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tester.FoodieTest;
-
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -953,7 +945,6 @@
 			buildConfigurations = (
 				8C638FB72086971200EE27F7 /* Debug */,
 				8C638FB82086971200EE27F7 /* Release */,
-
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

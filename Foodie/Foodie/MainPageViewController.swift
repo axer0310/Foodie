@@ -72,13 +72,8 @@ class MainPageViewController: UIViewController, MKMapViewDelegate
 //            print("User tapped on annotation with title: \(annotationTitle!)")
 //        }
     }
-    @IBAction func joinParty(_ sender: Any)
-    {
-    }
-    @IBAction func reload(_ sender: Any)
-    {
-        getPartys()
-    }
+    
+    
     @IBAction func showRestaurant(_ sender: Any)
     {
         
