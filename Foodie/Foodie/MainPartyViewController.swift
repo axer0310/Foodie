@@ -129,24 +129,18 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                 if let vc = nav.childViewControllers[0] as? ChatRoom
                 {
                     vc.path = "/PartyIDs/\(partyIDList[indexPath.row])/chats"
-//                    self.present(vc, animated: true, completion: nil)
-//                    "/Users/\(user.id)/Coordinate"
-                    let partyString = ["PartyID" : partyIDList[indexPath.row], "Location" : "Some kind of location"]
-                    let userParty = ["Users/\(user2.id)/previousPartyLocation" : partyString]
-                    print(userParty)
-                    ref.updateChildValues(userParty)
                     vc.partyID = partyIDList[indexPath.row]
                     
                     var history = [String]()
-                    ref.child("/Users/\(self.user2.id)/partyHistory").observeSingleEvent(of: .value, with: { (snapshot) in
-                                    let value = snapshot.value as? [String]
-                                    if let data = value
-                                    {
-                                        for partyID in data
-                                        {
-                                            history.append(partyID)
-                                        }
-                                    }
+                    ref.child("/Users/\(self.user.id)/partyHistory").observeSingleEvent(of: .value, with: { (snapshot) in
+                        let value = snapshot.value as? [String]
+                        if let data = value
+                        {
+                            for partyID in data
+                            {
+                                history.append(partyID)
+                            }
+                        }
                         if(!history.contains(self.partyIDList[indexPath.row]))
                         {
                             history.append(self.partyIDList[indexPath.row])
@@ -154,11 +148,12 @@ class MainPartyViewController: UIViewController, UITableViewDataSource, UITableV
                         
                         
                         
-//                        let childUpdates = ["/Users/\(self.user2.id)/partyHistory": history] as [String : Any?]
-//                        self.ref.updateChildValues(childUpdates)
+                        let childUpdates = ["/Users/\(self.user.id)/partyHistory": history] as [String : Any?]
+                        self.ref.updateChildValues(childUpdates)
                         self.present(nav, animated: true, completion: nil)
                     })
-                   
+                    
+
                
                 }
                 
